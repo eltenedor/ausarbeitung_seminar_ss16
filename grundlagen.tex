@@ -116,6 +116,7 @@ Die soeben eingeführten Begriffe veranschaulicht Abbildung \ref{fig:fundamental
 Wir betrachten nun einen Spezialfall von Spiegelungsgruppen. Allgemeine Spiegelungsgruppen werden in \cite{humphreys1992reflection} behandelt.
 
 \begin{defn}
+  \label{def:weylgroup}
   Sei $\Phi$ ein Wurzelsystem in $E$. 
   Dann bezeichnet $\W$ die von den Spiegelungen $\sigma_\alpha$, $\alpha \in \Phi$, erzeugte Untergruppe der allgemeinen linearen Gruppe $\GL(E)$. 
   Man nennt $\W$ die \emph{\weyl\hyp{}Gruppe} von $\Phi$.
@@ -187,11 +188,12 @@ Mit weiteren Eigenschaften dieser Gruppenoperationen werden wir uns in Abschnitt
   Da $\sigma$ als orthogonale Abbildung insbesondere injektiv ist, folgt, dass $\sigma(\Delta)$ wieder ein System linear unabhängiger Vektoren und damit aufgrund von (B1) wieder eine Basis von $E$ ist.
   
   Ist nun $\beta \in \Phi$ gegeben, so gilt
-  $\sigma(\beta) 
+  \begin{displaymath}
+  \sigma(\beta) 
     = \sigma(\sum_{\alpha \in \Delta} k_\alpha \alpha)
     = \sum_{\alpha \in \Delta} k_\alpha \sigma(\alpha)
     = \sum_{\sigma(\alpha) \in \sigma(\Delta)} k_\alpha \sigma(\alpha)
-  $
+  \end{displaymath}
   aufgrund der Linearität von $\sigma$.
   Die Vorzeichen der Linearfaktoren $k_\alpha$ bleiben zudem unverändert, womit (B2) folgt.
   Damit ist auch $\sigma(\Delta)$ ein Fundamentalsystem.

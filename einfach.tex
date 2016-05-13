@@ -118,3 +118,33 @@ Das folgende Lemma demonstriert, wie sich aus einer positiven Wurzel neue positi
     = \delta - \alpha. \qedhere
   \end{align*}
 \end{proof}
+
+Nach Definition \ref{def:weylgroup} wird die \weyl\hyp{}Gruppe $\W$ von den Spiegelungen an den zu Wurzeln orthogonalen Hyperebenen erzeugt.
+Das folgende Lemma liefert ein Kriterium dafür, wann man entsprechende Darstellungen von Elementen aus $\W$ vereinfachen kann.
+
+\begin{lem}
+  Seien $\alpha_1,\dots,\alpha_t$ nicht notwendig verschiedenene einfache Wurzeln. Es sei $\sigma_i := \sigma_{\alpha_i}$.
+  Ist $\sigma_1 \dots \sigma_{t-1}(\alpha_t)$ eine negative Wurzel, dann existiert ein Index $1 \leq s < t$, sodass $\sigma_1 \dots \sigma_t = \sigma_1 \dots \sigma_{s-1} \sigma_{s+1} \dots \sigma_{t-1}$.
+\end{lem}
+
+\begin{proof}
+  Sei $\beta_i := \sigma_{i + 1} \dots \sigma_{t-1}(\alpha_t)$, für alle $0 \leq i \leq t - 2$ und $\beta_{t - 1} := \alpha_t$.
+  Nach Voraussetzung ist $\beta_0$ negativ und $\beta_{t - 1}$ positiv.
+  Es existiert also aufgrund der Endlichkeit der Folge der $\beta_i$ ein minimaler Index $s$, sodass jeweils $\beta_s$ positiv und $\sigma_s(\beta_s) = \beta_{s - 1}$ negativ sind.
+  Dies wiederum impliziert $\beta_s = \alpha_s$ durch Lemma \ref{lem:permute}, da sonst andernfalls $\beta_s$ positiv sein müsste.
+  Mit Lemma \ref{lem:conjReflection} folgt sodann
+  \begin{displaymath}
+    \sigma_s 
+    = \sigma_{\alpha_s} 
+    = \sigma_{\sigma_{s+1} \dots \sigma_{t - 1}(\alpha_t)}
+    = (\sigma_{s+1} \dots \sigma_{t - 1}) \sigma_{t} (\sigma_{s+1} \dots \sigma_{t - 1})^{-1}.
+  \end{displaymath}
+  Dies impliziert wiederum
+  \begin{align*}
+    \sigma_1 \dots \sigma_t 
+    &= \sigma_1 \dots \sigma_{s - 1} \sigma_s \sigma_{s+1} \dots \sigma_t \\
+    &= \sigma_1 \dots \sigma_{s - 1} (\sigma_{s+1} \dots \sigma_{t - 1}) \sigma_{t} (\sigma_{s+1} \dots \sigma_{t - 1})^{-1} \sigma_{s+1} \dots \sigma_{t - 1} \sigma_t\\
+    &= \sigma_1 \dots \sigma_{s - 1} (\sigma_{s+1} \dots \sigma_{t - 1}) \sigma_t  \sigma_t\\
+    &= \sigma_1 \dots \sigma_{s - 1} \sigma_{s+1} \dots \sigma_{t - 1}. \qedhere
+  \end{align*}
+\end{proof}
