@@ -98,6 +98,84 @@ Die soeben eingeführten Begriffe veranschaulicht Abbildung \ref{fig:fundamental
 Wir betrachten nun einen Spezialfall von Spiegelungsgruppen. Allgemeine Spiegelungsgruppen werden in \cite{humphreys1992reflection} behandelt.
 
 \begin{defn}
-  Sei $\Phi$ ein Wurzelsystem in $E$. Dann bezeichnet $\mathcal{W}$ die von den Spiegelungen $\sigma_\alpha$, $\alpha \in \Phi$, erzeugte Untergruppe der allgemeinen linearen Gruppe $\GL(E)$. Man nennt $\mathcal{W}$ die \emph{\weyl-Gruppe} von $\Phi$.
+  Sei $\Phi$ ein Wurzelsystem in $E$. Dann bezeichnet $\W$ die von den Spiegelungen $\sigma_\alpha$, $\alpha \in \Phi$, erzeugte Untergruppe der allgemeinen linearen Gruppe $\GL(E)$. Man nennt $\W$ die \emph{\weyl-Gruppe} von $\Phi$.
 \end{defn}
 
+Es lassen sich nun unterschiedliche von $\W$ induzierte Gruppenoperationen betrachten. Über deren Wohldefiniertheit gibt die folgende Proposition Auskunft. Mit weiteren Eigenschaften dieser Gruppenoperationen behandelt Abschnitt \ref{sec:weylgroup}.
+
+\begin{prop}
+  Sei $\Phi$ ein Wurzelsystem über $E$ mit \weyl-Gruppe $\W$.
+  Dann gelten für alle $\gamma, \gamma' \in E$ und $\sigma \in \W$ die folgenden Aussagen:
+  \begin{enumerate}[(1)]
+    \item $\W$ operiert auf der Menge der regulären Elemente: 
+      \begin{addmargin}[2em]{2em}
+        Es ist $\sigma(\gamma)$ genau dann regulär, wenn $\gamma$ regulär ist.
+      \end{addmargin}
+      
+    \item Aus $\mathfrak{C}(\gamma) = \mathfrak{C}(\gamma')$ folgt, dass auch $\mathfrak{C}(\sigma(\gamma)) = \mathfrak{C}(\sigma(\gamma'))$. Es operiert $\W$ auf der Menge der \weyl-Kammern $\{\mathfrak{C}(\gamma) \mid \gamma \text{ regulär}\}$ durch $\mathfrak{C}(\sigma(\gamma)) = \sigma(\mathfrak{C}(\gamma))$.
+
+    \item $\W$ operiert auf der Menge der Fundamentalsysteme $\{\Delta(\gamma) \mid \gamma \text{ regulär}\}$: 
+      \begin{addmargin}[2em]{2em}
+        Ist $\Delta$ ein Fundamentalsystem für $\Phi$, so auch $\sigma(\Delta)$. 
+      \end{addmargin}
+
+    \item Die unter (3) und (4) beschriebenen Gruppenoperationen sind kompatibel in dem Sinne, dass 
+      $\sigma(\Delta(\gamma)) = \Delta(\sigma(\gamma))$.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  (1): 
+  Angenommen $\sigma(\gamma)$ sein nicht regulär, dann existiert ein $\alpha \in \Phi$, sodass $\sigma(\gamma) \in P_\alpha$.
+  Damit folgt $\sigma(\gamma) = \sigma_\alpha \sigma(\gamma)$, da $\sigma_\alpha$ Elemente aus $P_\alpha$ fixiert.
+  Hieraus folgt nun $\gamma = \sigma^{-1} \sigma_\alpha \sigma(\gamma) = \sigma_{\sigma(\alpha)}(\gamma)$, was wiederum $\gamma \in P_{\sigma(\alpha)}$ impliziert.
+  Zu Beginn wurde jedoch $\gamma$ als regulär vorausgesetzt.
+  Es muss also auch $\sigma(\gamma)$ regulär sein.
+  
+  Die Umkehrung der Aussage folgt aus der gezeigten Implikationsrichtung durch Anwendung der Spiegelung $\sigma^{-1}$ auf $\sigma(\gamma)$.
+
+  (2): 
+  Es gelte $\mathfrak{C}(\gamma) = \mathfrak{C}(\gamma')$.
+  Angenommen $\mathfrak{C}(\sigma(\gamma)) \neq \mathfrak{C}(\sigma(\gamma'))$.
+  Dann existiert ein $\alpha \in \Phi$, sodass $(\sigma(\gamma), \alpha) > 0$ während andererseits $(\sigma(\gamma'), \alpha) < 0$.
+  Wir betrachten nun die Abbildung $x \mapsto  (\sigma(x), \alpha)$.
+  Diese ist als Linearform stetig bezüglich der \textsc{euklid}ischen Topologie auf $E$.
+  Da $\mathfrak{C}(\gamma)$ eine zusammenhängende Menge ist, folgt mit dem Zwischenwertsatz \cite[S.232]{bartsch2015allgemeine}, dass ein reguläres $x \in \mathfrak{C}(\gamma)$ existiert mit $(\sigma(x), \alpha) = 0$.
+  Dies bedeutet jedoch gerade, dass $\sigma(x) \in P_\alpha$ und damit wäre $\sigma(x)$ nicht regulär im Widerspruch zu (1). Es muss also auch $\mathfrak{C}(\sigma(\gamma)) = \mathfrak{C}(\sigma(\gamma'))$ gelten.
+  
+  Sei nun für den zweiten Teil der zu beweisenden Aussage $x \in \mathfrak{C}(\sigma(\gamma))$.
+  Daraus folgt $\mathfrak{C}(x) = \mathfrak{C}(\sigma(\gamma))$.
+  Dann gilt nach der soeben bewiesenen Aussage auch $\mathfrak{C}(\sigma^{-1}(x)) = \mathfrak{C}(\gamma)$.
+  Insbesondere gilt also $\sigma^{-1}(x) \in \mathfrak{C}(\gamma)$ und damit auch $x \in \sigma(\mathfrak{C}(\gamma))$
+  
+  Die umgekehrte Ungleichung folgt analog: Ist $x \in \sigma(\mathfrak{C}(\gamma))$, so ist $\sigma(x) \in \mathfrak{C}(\gamma)$, also $\mathfrak{C}(\sigma(x)) = \mathfrak{C}(\gamma)$. 
+  Wie schon gezeigt, folgt daraus unter Betrachtung von Bildern unter $\sigma^{-1} = \sigma$ sofort $\mathfrak{C}(x) = \mathfrak{C}(\sigma(\gamma))$, also insbesondere $x \in \mathfrak{C}(\sigma(\gamma))$.
+
+  (3): 
+  Da $\sigma$ als orthogonale Abbildung insbesondere injektiv ist, folgt, dass $\sigma(\Delta)$ wieder ein System linear unabhängiger Vektoren und damit aufgrund von (B1) wieder eine Basis von $E$ ist.
+  
+  Ist nun $\beta \in \Phi$ gegeben, so gilt
+  $\sigma(\beta) 
+    = \sigma(\sum_{\alpha \in \Delta} k_\alpha \alpha)
+    = \sum_{\alpha \in \Delta} k_\alpha \sigma(\alpha)
+    = \sum_{\sigma(\alpha) \in \sigma(\Delta)} k_\alpha \sigma(\alpha)
+  $
+  aufgrund der Linearität von $\sigma$.
+  Die Vorzeichen der Linearfaktoren $k_\alpha$ bleiben zudem unverändert, womit (B2) folgt.
+  Damit ist auch $\sigma(\Delta)$ ein Fundamentalsystem.
+
+  (4):
+  Wir stellen zunächst fest, dass aufgrund der Aussage (3), die zu zeigende Gleichheit in dem Sinne wohldefiniert ist, dass $\sigma(\Delta(\gamma))$ als Bild eines Fundamentalsystems wieder ein Fundamentalsystem darstellt.
+
+  Sei nun $\sigma(\alpha) \in \sigma(\Delta(\gamma))$.
+  Da $\alpha \in \Delta(\gamma)$, gilt definitionsgemäß $(\alpha, \gamma) > 0$.
+  Spiegelungen erhalten als Isometrien das Skalarprodukt, es gilt also auch $(\sigma(\alpha), \sigma(\gamma)) > 0$.
+  Dies wiederum impliziert $\sigma(\alpha) \in \Phi^+(\sigma(\gamma))$.
+  Angenommen $\sigma(\alpha)$ wäre eine zerlegbare Wurzel.
+  Dann ist auch $\alpha$ zerlegbar, da $\sigma$ bijektiv ist.
+  Dies steht jedoch im Wiederspruch dazu, dass mit $\alpha \in \Delta$ die Wurzel $\alpha$ als einfach vorausgesetzt wurde.
+  Also muss $\sigma(\alpha)$ auch einfach sein, womit $\sigma(\alpha) \in \sigma(\Delta(\gamma))$ folgt.
+  Das bedeutet, dass $\sigma(\Delta(\gamma)) \subseteq \Delta(\sigma(\gamma))$.
+  
+  Da $\sigma$ bijektiv ist und beide Mengen als Teilmengen des endlichen Wurzelsystems $\Phi$ auch endlich sind, folgt hiermit bereits die Gleichheit.
+\end{proof}
