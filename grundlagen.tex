@@ -1,4 +1,5 @@
 \section{Grundlagen zu Wurzelsystemen}
+\label{sec:grundlagen}
 
 Dieser Abschnitt beinhaltet die für diese Arbeit benötigten Grundlagen zu Wurzelsystemen.
 
@@ -60,10 +61,11 @@ Oft lassen sich Eigenschaften von Wurzelsystemen, bereits anhand der Eigenschaft
   Entsprechend des Vorzeichens der Höhenfunktion bezeichnet man Wurzeln auch als \emph{positiv} oder \emph{negativ}.
   Die Menge der positiven Wurzeln bezeichnen wir im Folgenden auch mit $\Phi^+$, die der negativen Wurzeln entsprechend mit $\Phi^-$.
   Einfache Wurzeln sind stets positiv.
-  Zudem induziert jedes Fundamentalsystem $\Delta$ eine Halbordnung auf $\Phi$ durch
-  \begin{displaymath}
-    \beta \preceq \alpha \quad \text{gilt genau dann, wenn} \quad \alpha - \beta \text{ positiv ist oder } \alpha = \beta \text{ gilt}.
-  \end{displaymath}
+  Die von einer einfachen Wurzel induzierte Spiegelung, nennen wir auch einfache Spiegelung.
+% Zudem induziert jedes Fundamentalsystem $\Delta$ eine Halbordnung auf $\Phi$ durch
+% \begin{displaymath}
+%   \beta \preceq \alpha \quad \text{gilt genau dann, wenn} \quad \alpha - \beta \text{ positiv ist oder } \alpha = \beta \text{ gilt}.
+% \end{displaymath}
 \end{bem}
 
 Bezüglich eines Wurzelsystems $\Phi$ lassen sich auch Vektoren des umfassenden Vektorraums klassifizieren.
@@ -136,9 +138,10 @@ Der Beweis dieses Lemmas findet sich in \cite[S.43]{humphreys1972introduction}.
 Mit weiteren Eigenschaften dieser Gruppenoperationen werden wir uns in Abschnitt \ref{sec:weylgroup} beschäftigen.
 
 \begin{prop}
+  \label{prop:groupOp}
   Sei $\Phi$ ein Wurzelsystem über $E$ mit \weyl\hyp{}Gruppe $\W$.
   Dann gelten für alle $\gamma, \gamma' \in E$ und $\sigma \in \W$ die folgenden Aussagen:
-  \begin{enumerate}[(1)]
+  \begin{enumerate}[(a)]
     \item $\W$ operiert auf der Menge der regulären Elemente: 
       \begin{addmargin}[2em]{2em}
         Es ist $\sigma(\gamma)$ genau dann regulär, wenn $\gamma$ regulär ist.
@@ -152,13 +155,13 @@ Mit weiteren Eigenschaften dieser Gruppenoperationen werden wir uns in Abschnitt
         Ist $\Delta$ ein Fundamentalsystem für $\Phi$, so auch $\sigma(\Delta)$. 
       \end{addmargin}
 
-    \item Die unter (3) und (4) beschriebenen Gruppenoperationen sind kompatibel in dem Sinne, dass 
+    \item Die unter (c) und (d) beschriebenen Gruppenoperationen sind kompatibel in dem Sinne, dass 
       $\sigma(\Delta(\gamma)) = \Delta(\sigma(\gamma))$.
   \end{enumerate}
 \end{prop}
 
 \begin{proof}
-  (1): 
+  (a): 
   Angenommen $\sigma(\gamma)$ sei nicht regulär, dann existiert ein $\alpha \in \Phi$, sodass $\sigma(\gamma) \in P_\alpha$.
   Damit folgt $\sigma(\gamma) = \sigma_\alpha \sigma(\gamma)$, da $\sigma_\alpha$ Elemente aus $P_\alpha$ fixiert.
   Hieraus folgt mit Lemma \ref{lem:conjReflection} nun $\gamma = \sigma^{-1} \sigma_\alpha \sigma(\gamma) = \sigma_{\sigma(\alpha)}(\gamma)$, was wiederum $\gamma \in P_{\sigma(\alpha)}$ impliziert.
@@ -167,7 +170,7 @@ Mit weiteren Eigenschaften dieser Gruppenoperationen werden wir uns in Abschnitt
   
   Die Umkehrung der Aussage folgt aus der gezeigten Implikationsrichtung durch Anwendung der Spiegelung $\sigma^{-1}$ auf $\sigma(\gamma)$.
 
-  (2): 
+  (b): 
   Es gelte $\mathfrak{C}(\gamma) = \mathfrak{C}(\gamma')$.
   Angenommen $\mathfrak{C}(\sigma(\gamma)) \neq \mathfrak{C}(\sigma(\gamma'))$.
   Dann existiert ein $\alpha \in \Phi$, sodass $(\sigma(\gamma), \alpha) > 0$ während andererseits $(\sigma(\gamma'), \alpha) < 0$.
@@ -184,7 +187,7 @@ Mit weiteren Eigenschaften dieser Gruppenoperationen werden wir uns in Abschnitt
   Die umgekehrte Ungleichung folgt analog: Ist $x \in \sigma(\mathfrak{C}(\gamma))$, so ist $\sigma(x) \in \mathfrak{C}(\gamma)$, also $\mathfrak{C}(\sigma(x)) = \mathfrak{C}(\gamma)$. 
   Wie schon gezeigt, folgt daraus unter Betrachtung von Bildern unter $\sigma^{-1} = \sigma$ sofort $\mathfrak{C}(x) = \mathfrak{C}(\sigma(\gamma))$, also insbesondere $x \in \mathfrak{C}(\sigma(\gamma))$.
 
-  (3): 
+  (c): 
   Da $\sigma$ als orthogonale Abbildung insbesondere injektiv ist, folgt, dass $\sigma(\Delta)$ wieder ein System linear unabhängiger Vektoren und damit aufgrund von (B1) wieder eine Basis von $E$ ist.
   
   Ist nun $\beta \in \Phi$ gegeben, so gilt
@@ -198,8 +201,8 @@ Mit weiteren Eigenschaften dieser Gruppenoperationen werden wir uns in Abschnitt
   Die Vorzeichen der Linearfaktoren $k_\alpha$ bleiben zudem unverändert, womit (B2) folgt.
   Damit ist auch $\sigma(\Delta)$ ein Fundamentalsystem.
 
-  (4):
-  Wir stellen zunächst fest, dass aufgrund der Aussage (3), die zu zeigende Gleichheit in dem Sinne wohldefiniert ist, dass $\sigma(\Delta(\gamma))$ als Bild eines Fundamentalsystems wieder ein Fundamentalsystem darstellt.
+  (d):
+  Wir stellen zunächst fest, dass aufgrund der Aussage (c), die zu zeigende Gleichheit in dem Sinne wohldefiniert ist, dass $\sigma(\Delta(\gamma))$ als Bild eines Fundamentalsystems wieder ein Fundamentalsystem darstellt.
 
   Sei nun $\sigma(\alpha) \in \sigma(\Delta(\gamma))$.
   Da $\alpha \in \Delta(\gamma)$, gilt definitionsgemäß $(\alpha, \gamma) > 0$.
