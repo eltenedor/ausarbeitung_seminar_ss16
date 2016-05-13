@@ -1,1 +1,25 @@
 \section{Einfache Wurzeln}
+
+In diesem Abschnitt sollen einige Eigenschaften einfacher Wurzeln bewiesen werden.  
+Im Folgenden bezeichne $\Delta$ eine fest gewählte Basis des Wurzelsystems $\Phi$.
+
+\begin{lem}
+  Ist $\alpha \in \Phi$ eine positive aber nicht einfache Wurzel, so ist für alle $\beta \in \Delta$ die Differenz $\alpha - \beta$ eine notwendig positive Wurzel.
+\end{lem}
+
+\begin{cor}
+  Jedes $\beta \in \Phi^+$ lässt sich als Linearkombination $\alpha_1 + \dots + \alpha_k$ mit $\alpha_i \in \Delta$ so schreiben, dass jede Partialsumme $\alpha_1 + \dots + \alpha_i$, $i \in \{1,\dots,k\}$, eine Wurzel ist.
+\end{cor}
+
+\begin{lem}
+  Sei $\alpha \in \Delta$. 
+  Dann permutiert die Spiegelung $\sigma_\alpha$ alle von $\alpha$ verschiedenen Wurzeln, also 
+  \begin{displaymath}
+    \sigma_\alpha(\Phi^+ \setminus \{\alpha\}) = \Phi^+ \setminus \{\alpha\}.
+  \end{displaymath}
+\end{lem}
+
+\begin{cor}
+  Sei $\delta := \tfrac{1}{2} \sum_{\beta \succ 0} \beta$.
+  Dann gilt $\sigma_\alpha(\delta) = \delta - \alpha$ für alle $\alpha \in \Delta$.
+\end{cor}

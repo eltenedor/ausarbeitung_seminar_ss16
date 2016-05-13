@@ -1,4 +1,36 @@
 \section{Grundlagen zu Wurzelsystemen}
 
+Dieser Abschnitt beinhaltet die für diese Arbeit benötigten Grundlagen zu Wurzelsystemen.
 
+Im Folgenden bezeichne $E$ stets einen \emph{euklidischen} Vektorraum, also einen $\R$-Vektorraum mit Skalarprodukt $(\cdot,\cdot)$.
+Unter einer \emph{Spiegelung} $\sigma$ versteht man eine orthogonale Abbildung, welche eine \emph{Hyperebene}, also einen Unterraum der Kodimension $1$, punktweise fixiert und jeden Vektor des orthogonalen Komplements der Hyperebene auf sein Negatives abbildet.
+Jeder Vektor $\alpha \in E \setminus \{0\}$ induziert eine \emph{Spiegelung} $\sigma_\alpha$ an der Hyperebene 
+\begin{displaymath}
+  P_\alpha := \spn(\{\alpha\})^\perp = \{\beta \in E \mid (\beta, \alpha) = 0\}.
+\end{displaymath}
+Definiert man nun $\langle \beta, \alpha \rangle := \tfrac{2 (\beta, \alpha)}{(\beta, \alpha)}$, so gilt
+\begin{displaymath}
+  \sigma_\alpha(\beta) 
+  = \beta - \frac{2 (\beta, \alpha)}{(\alpha,\alpha)} \alpha 
+  = \beta - \langle \beta, \alpha \rangle \alpha,
+\end{displaymath}
+denn $\sigma_\alpha(\alpha) = -\alpha$ und $\sigma_\alpha(\beta) = \beta$ für alle $\beta \in P_\alpha$.
+Man beachte, dass im Gegensatz zum Skalarprodukt, der Ausdruck $\langle \alpha, \beta \rangle$ nur linear in der ersten Variablen ist.
+Es gilt jedoch $\sign \langle \alpha, \beta \rangle = \sign (\alpha, \beta)$ für alle $\alpha, \beta \in E$.
+
+\begin{defn}
+  Eine Teilmenge $\Phi$ des euklidischen Vektorraums $E$ heißt \emph{Wurzelsystem}, falls folgende Bedingungen erfüllt sind:
+  \begin{enumerate}[(R1)]
+    \item Die Menge $\Phi$ ist endlich, sie spannt $E$ auf und sie enthält nicht die $0$.
+    \item Falls $\alpha \in \Phi$, so sind $\pm \alpha$ die einzigen Vielfachen von $\alpha$ in $\Phi$.
+    \item Falls $\alpha \in \Phi$, so lässt die Spiegelung $\sigma_\alpha$ die Menge $\Phi$ invariant, also $\sigma_\alpha(\Phi) = \Phi$.
+    \item Falls $\alpha, \beta \in \Phi$, dann ist $\langle \beta, \alpha \rangle \in \Z$.
+  \end{enumerate}
+\end{defn}
+
+Wir betrachten nun einen Spezialfall von Spiegelungsgruppen:
+
+\begin{defn}
+  Sei $\Phi$ ein Wurzelsystem in $E$. Dann bezeichnet $\mathcal{W}$ die von den Spiegelungen $\sigma_\alpha$, $\alpha \in \Phi$, erzeugte Untergruppe der allgemeinen linearen Gruppe $\GL(E)$. Man nennt $\mathcal{W}$ die \emph{Weyl-Gruppe} von $\Phi$.
+\end{defn}
 
