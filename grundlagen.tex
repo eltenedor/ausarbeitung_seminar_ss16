@@ -2,7 +2,7 @@
 
 Dieser Abschnitt beinhaltet die für diese Arbeit benötigten Grundlagen zu Wurzelsystemen.
 
-Im Folgenden bezeichne $E$ stets einen \emph{euklidischen} Vektorraum, also einen $\R$-Vektorraum mit Skalarprodukt $(\cdot,\cdot)$.
+Im Folgenden bezeichne $E$ stets einen \emph{\textsc{euklid}ischen} Vektorraum, also einen $\R$-Vektorraum mit Skalarprodukt $(\cdot,\cdot)$.
 Unter einer \emph{Spiegelung} $\sigma$ versteht man eine orthogonale Abbildung, welche eine \emph{Hyperebene}, also einen Unterraum der Kodimension $1$, punktweise fixiert und jeden Vektor des orthogonalen Komplements der Hyperebene auf sein Negatives abbildet.
 Jeder Vektor $\alpha \in E \setminus \{0\}$ induziert eine \emph{Spiegelung} $\sigma_\alpha$ an der Hyperebene 
 \begin{displaymath}
@@ -19,7 +19,7 @@ Man beachte, dass im Gegensatz zum Skalarprodukt, der Ausdruck $\langle \alpha, 
 Es gilt jedoch $\sign \langle \alpha, \beta \rangle = \sign (\alpha, \beta)$ für alle $\alpha, \beta \in E$.
 
 \begin{defn}
-  Eine Teilmenge $\Phi$ des euklidischen Vektorraums $E$ heißt \emph{Wurzelsystem}, falls folgende Bedingungen erfüllt sind:
+  Eine Teilmenge $\Phi$ des euklidischen Vektorraums $E$ heißt \emph{Wurzelsystem in} $E$, falls folgende Bedingungen erfüllt sind:
   \begin{enumerate}[(R1)]
     \item Die Menge $\Phi$ ist endlich, sie spannt $E$ auf und sie enthält nicht die $0$.
     \item Falls $\alpha \in \Phi$, so sind $\pm \alpha$ die einzigen Vielfachen von $\alpha$ in $\Phi$.
@@ -28,9 +28,76 @@ Es gilt jedoch $\sign \langle \alpha, \beta \rangle = \sign (\alpha, \beta)$ fü
   \end{enumerate}
 \end{defn}
 
-Wir betrachten nun einen Spezialfall von Spiegelungsgruppen:
+Oft lassen sich Eigenschaften von Wurzelsystemen, bereits anhand der Eigenschaften von Erzeugern dieses Wurzelsystems ausmachen.
 
 \begin{defn}
-  Sei $\Phi$ ein Wurzelsystem in $E$. Dann bezeichnet $\mathcal{W}$ die von den Spiegelungen $\sigma_\alpha$, $\alpha \in \Phi$, erzeugte Untergruppe der allgemeinen linearen Gruppe $\GL(E)$. Man nennt $\mathcal{W}$ die \emph{Weyl-Gruppe} von $\Phi$.
+  Eine Teilmenge $\Delta$ von $\Phi$ heißt \emph{Fundamentalsystem}, falls die folgenden Bedingungen erfüllt sind:
+  \begin{enumerate}[(B1)]
+    \item Es ist $\Delta$ eine Vektorraumbasis von $E$.
+    \item Jede Wurzel $\beta \in \Phi$ lässt sich schreiben als $\beta = \sum_{\alpha \in \Delta} k_\alpha \alpha$ mit ganzzahligen Linearfaktoren $k_\alpha$ die alle dasselbe Vorzeichen besitzen.
+  \end{enumerate}
+  Die Elemente von $\Delta$ bezeichnet man auch als $\emph{einfache}$ Wurzeln.
+\end{defn}
+
+\begin{bem}
+  Einen Beweis dafür, dass jedes Fundamentalsystem eine Basis besitzt, findet man zum Beispiel in \cite[S.48]{humphreys1972introduction} oder \cite[S.116]{erdmann2006introduction}.
+  Aus Eigenschaft (B1) von Fundamentalsystemen folgt sofort, dass die Linearfaktoren in (B2) eindeutig bestimmt sind. 
+  Es lässt sich daher die Höhenfunktion 
+  \begin{displaymath}
+    \hgt(\beta) := \sum_{\alpha \in \Delta} k_\alpha 
+  \end{displaymath}
+  definieren.
+  Entsprechend des Vorzeichens der Höhenfunktion bezeichnet man Wurzeln auch als \emph{positiv} oder \emph{negativ}.
+  Einfache Wurzeln sind stets positiv.
+  Zudem induziert jedes Fundamentalsystem $\Delta$ eine Halbordnung auf $\Phi$ durch
+  \begin{displaymath}
+    \beta \preceq \alpha \quad \text{gilt genau dann, wenn} \quad \alpha - \beta \text{ positiv ist oder } \alpha = \beta \text{ gilt}.
+  \end{displaymath}
+\end{bem}
+
+Bezüglich eines Wurzelsystems $\Phi$ lassen sich auch Vektoren des umfassenden Vektorraums klassifizieren.
+
+\begin{defn}
+  Sei $\Phi$ ein Wurzelsystem in $E$.
+  Ein Vektor $\gamma \in E$ heißt \emph{regulär}, falls $\gamma \in E \setminus \bigcup_{\alpha \in \Phi} P_\alpha$.
+  Die Familie $(P_\alpha)_{\alpha \in \Phi}$ liefert eine Partition von $E$ in maximal zusammenhängende Mengen, die sogenannten \emph{\weyl-Kammern}.
+Die jedem $\gamma \in E$ eindeutig zugeordnete \weyl-Kammer zuordnen, werde mit $\mathfrak{C}(\gamma)$ bezeichnet.
+\end{defn}
+
+Liegen zwei reguläre Wurzeln $\gamma, \gamma'$ in derselben \weyl-Kammer, so liegen sie bezüglich allen Hyperebenen $P_\alpha$ derselben Seite, was bedeutet, dass $\sign (\gamma, \alpha) = \sign( \gamma', \alpha)$ gilt, für alle $\alpha \in \Phi$.
+Bezeichnet man mit
+\begin{displaymath}
+  \Phi^+(\gamma) := \{ \alpha \in \Phi \mid (\gamma, \alpha) > 0 \}
+\end{displaymath}
+die Menge aller Wurzeln, die mit $\gamma$ einen spitzen Winkel einschließen, so gilt in diesem Falle $\Phi^+(\gamma) = \Phi^+(\gamma')$.
+Bezeichnet man zudem mit $\Delta(\gamma)$ das Fundamentalsystem aller Wurzeln $\alpha \in \Phi^+(\gamma)$, die sich als Summe $\alpha = \beta_1 + \beta_2$ zweier positiver Wurzeln $\beta_1, \beta_2 \in \Phi^+(\gamma)$ schreiben lassen, so gilt zusätzlich $\Delta(\gamma) = \Delta(\gamma')$. 
+Dass $\Delta(\gamma)$ tatsächlich ein Fundamentalsystem von $\Phi$ ist, lässt sich in \cite[S.48]{humphreys1972introduction} nachlesen.
+Wurzeln, die sich in der oben genannten Weise ausdrücken lassen, bezeichnet man auch als \emph{zerlegbar}.
+
+Das folgende Lemma fasst nochmals die vorangehenden Überlegungen zusammen.
+
+\begin{lem}
+  Seien $\gamma, \gamma' \in E$ regulär bezüglich des Wurzelsystems $\Phi$.
+  Dann folgt aus $\mathfrak{C}(\gamma) = \mathfrak{C}(\gamma')$, dass $\Phi^+(\gamma) = \Phi^+(\gamma')$. 
+  Dies ist wiederum genau dann der Fall, wenn $\Delta(\gamma) = \Delta(\gamma')$ gilt.
+  Jeder \weyl-Kammer $\mathfrak{C}(\gamma)$ entspricht also genau ein Fundamentalsystem $\Delta(\gamma)$.
+\end{lem}
+
+Die soeben eingeführten Begriffe veranschaulicht Abbildung \ref{fig:fundamentalWeylChamber}.
+
+\begin{figure}
+  \caption{Das Wurzelsystem A2}
+  \label{fig:fundamentalWeylChamber}
+\end{figure}
+
+\begin{defn}
+  Sei $\Phi$ ein Wurzelsystem in $E$ mit Fundamentalsystem $\Delta$.
+  Gilt für ein reguläres $\gamma \in E$, dass $\Delta = \Delta(\gamma)$, so bezeichnet man $\mathfrak{C}(\Delta) := \mathfrak{C}(\gamma)$ als \emph{Fundamentalkammer bezüglich} $\Delta$.
+\end{defn}
+
+Wir betrachten nun einen Spezialfall von Spiegelungsgruppen. Allgemeine Spiegelungsgruppen werden in \cite{humphreys1992reflection} behandelt.
+
+\begin{defn}
+  Sei $\Phi$ ein Wurzelsystem in $E$. Dann bezeichnet $\mathcal{W}$ die von den Spiegelungen $\sigma_\alpha$, $\alpha \in \Phi$, erzeugte Untergruppe der allgemeinen linearen Gruppe $\GL(E)$. Man nennt $\mathcal{W}$ die \emph{\weyl-Gruppe} von $\Phi$.
 \end{defn}
 
