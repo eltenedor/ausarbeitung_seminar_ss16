@@ -1,15 +1,83 @@
 \section{Einfache Wurzeln}
 
 In diesem Abschnitt sollen einige Eigenschaften einfacher Wurzeln bewiesen werden.  
-Im Folgenden bezeichne $\Delta$ eine fest gewählte Basis des Wurzelsystems $\Phi$ im \textsc{euklid}ischen Vektorraum $E$.
+Im Folgenden bezeichne $\Delta$ ein fest gewähltes Fundamentalsystem des Wurzelsystems $\Phi$ im \textsc{euklid}ischen Vektorraum $E$.
 
 \begin{lem}
-  Ist $\alpha \in \Phi$ eine positive aber nicht einfache Wurzel, so ist für alle $\beta \in \Delta$ die Differenz $\alpha - \beta$ eine notwendig positive Wurzel.
+  \label{lem:independentSet}
+  Sei $M \subseteq E$ eine Teilmenge von Vektoren und $P_\gamma$ eine Hyperebene.
+  Es gelte $(\alpha, \gamma) > 0$ für alle $\alpha \in M$ und zudem $(\alpha, \beta) \leq 0$ für alle paarweise verschiedenen $\alpha, \beta \in M$.
+  Dann ist $M$ linear unabhängig.
 \end{lem}
 
+\begin{proof}
+  Wir betrachten die Gleichung $\sum_{\alpha \in M} k_\alpha \alpha = 0$ und definieren die disjunkten Mengen $A := \{\alpha \in M \mid k_\alpha < 0\}$ und  $B := \{\beta \in M \mid k_\beta > 0\}$. 
+  Damit gilt 
+  \begin{displaymath}
+    \sum_{\alpha \in A} k_\alpha \alpha = \sum_{\beta \in B} k_\beta \beta.
+  \end{displaymath}
+  Daraus folgt mit $\varepsilon := \sum_{\alpha \in A} k_\alpha \alpha$ dann
+  \begin{displaymath}
+    0 
+    \leq (\varepsilon, \varepsilon) 
+    = (\;\sum_{\alpha \in A} k_\alpha \alpha,\sum_{\beta \in B} k_\beta \beta\;) 
+    = \sum_{\alpha \in A, \beta \in B} k_\alpha k_\beta \; (\alpha, \beta) 
+    \leq 0,
+  \end{displaymath}
+  aufgrund der Eigenschaften des Skalarprodukts und der Voraussetzung, dass $(\alpha, \beta) \leq 0$ für alle paarweise verschiedenen $\alpha, \beta$.
+  Dies impliziert $\varepsilon = 0$, womit auch 
+  \begin{displaymath}
+    0 = (\varepsilon, \gamma) = \sum_{\alpha \in A} k_\alpha (\alpha, \gamma)
+  \end{displaymath}
+  folgt. Da voraussetzungsgemäß $(\alpha, \gamma) > 0$ gilt, müssen alle $k_\alpha$ mit $\alpha \in A$ bereits $0$ sein.
+  Analog folgert man, dass alle $k_\beta$ mit $\beta \in B$ gleich $0$ sein müssen.
+\end{proof}
+
+Das folgende Lemma demonstriert, wie sich aus einer positiven Wurzel neue positive Wurzeln gewinnen lassen.
+
+\begin{lem}
+  \label{lem:posRootNewRoot}
+  Ist $\alpha \in \Phi$ eine positive aber nicht einfache Wurzel, so existiert ein $\beta \in \Delta$ sodass die Differenz $\alpha - \beta$ eine positive Wurzel ist.
+\end{lem}
+
+\begin{proof}
+  Wir wollen zeigen, dass ein $\beta \in \Delta$ existiert mit $(\alpha, \beta) > 0$.
+  Angenommen, für alle $\beta \in \Delta$ gelte $(\alpha, \beta) \leq 0$.
+  Zudem gilt für alle $\beta, \beta' \in \Delta$ immer $(\beta, \beta') \leq 0$, denn sonst wäre nach Lemma \ref{lem:sumDiffRoot} auch $\beta - \beta'$ eine Wurzel, was jedoch (B2) widerspricht.
+  Damit sind die Voraussetzungen für Lemma \ref{lem:independentSet} erfüllt und es ist $\Delta \cup \{\alpha\}$ eine linear unabhängige Menge.
+  Dies widerspricht jedoch der Voraussetzung, dass $\Delta$ ein Fundamentalsystem ist.
+
+  Also muss ein $\beta \in \Delta$ existieren mit $(\alpha, \beta) > 0$.
+  Zudem kann $\beta$ nicht proportional zu $\alpha$ sein, da sonst $\alpha$ nicht positiv sein könnte.
+  Unter Verwendung von Lemma \ref{lem:sumDiffRoot} folgt somit, dass $\alpha - \beta$ eine Wurzel ist.
+  
+  Bezüglich $\Delta$ lässt sich $\alpha$ auch schreiben als $\alpha = \sum_{\gamma \in \Delta} k_\gamma \gamma$, wobei aufgrund der Positivität von $\alpha$ alle $k_\gamma$ größer oder gleich $0$ sind und darüber hinaus auch mindestens ein $k_\gamma$ mit $\gamma \neq \beta$ echt größer als $0$ existiert.
+  Ansonsten wäre nämlich $\alpha$ proportional zu $\beta$, und damit nach (R2) entweder gleich $\beta$, was der Voraussetzung, dass $\alpha$ nicht einfach ist, widerspricht, oder $\alpha = -\beta$, was der vorausgesetzten Positivität von $\alpha$ widerspricht.
+
+  Die Eigenschaft (B2) erzwingt nun die Positivität aller restlichen Linearfaktoren und folglich ist auch $\alpha - \beta$ eine positive Wurzel.
+\end{proof}
+ 
 \begin{cor}
   Jedes $\beta \in \Phi^+$ lässt sich als Linearkombination $\alpha_1 + \dots + \alpha_k$ mit $\alpha_i \in \Delta$ so schreiben, dass jede Partialsumme $\alpha_1 + \dots + \alpha_i$, $i \in \{1,\dots,k\}$, eine Wurzel ist.
 \end{cor}
+
+\begin{proof}
+  Wir führen einen Induktionsbeweis und induzieren über die Höhe $\hgt(\beta)$.
+  Sei $\hgt(\beta) = 1$, dann ist $\beta \in \Delta$ und die Behauptung ist erfüllt.
+  Angenommen die Behauptung gelte für ein $k-1 \in \N$.
+  Sei nun $\hgt(\beta) = k$ und damit $\beta$ positiv aber nicht einfach.
+  Nach (B2) lässt sich dann 
+  \begin{displaymath}
+    \beta = \alpha_1 + \dots + \alpha_k \tag{$\ast$}
+  \end{displaymath}
+  schreiben, wobei die $\alpha_i$ nicht zwingend paarweise verschieden sind.
+  Mit Lemma \ref{lem:posRootNewRoot} folgt dann, dass ein $\alpha \in \Delta$ existiert, sodass $\beta - \alpha$ eine positive Wurzel ist.
+  Aufgrund der Eindeutigkeit der Darstellung ($\ast$) bis auf Reihenfolge der Summanden, lässt sich ohne Beschränkung der Allgemeinheit annehmen, dass $\alpha = \alpha_k$.
+
+  Es gilt $\hgt(\beta - \alpha_{k}) = k - 1$ und nach Induktionsvoraussetzung gilt 
+  somit für alle $i \in \{1,\dots,k-1\}$ die Partialsumme $\alpha_1 + \dots + \alpha_{k-1} \in \Phi^+$.
+  Der Fall $i = k$ folgt jedoch bereits mit ($\ast$), womit die Behauptung für $k$ vollständig bewiesen ist.
+\end{proof}
 
 \begin{lem}
   Sei $\alpha \in \Delta$. 
