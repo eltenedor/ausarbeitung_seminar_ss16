@@ -80,14 +80,41 @@ Das folgende Lemma demonstriert, wie sich aus einer positiven Wurzel neue positi
 \end{proof}
 
 \begin{lem}
+  \label{lem:permute}
   Sei $\alpha \in \Delta$. 
-  Dann permutiert die Spiegelung $\sigma_\alpha$ alle von $\alpha$ verschiedenen Wurzeln, also 
-  \begin{displaymath}
-    \sigma_\alpha(\Phi^+ \setminus \{\alpha\}) = \Phi^+ \setminus \{\alpha\}.
-  \end{displaymath}
+  Dann permutiert die Spiegelung $\sigma_\alpha$ alle von $\alpha$ verschiedenen positiven Wurzeln, es gilt also $\sigma_\alpha(\Phi^+ \setminus \{\alpha\}) = \Phi^+ \setminus \{\alpha\}$.
 \end{lem}
 
+\begin{proof}
+  Sei $\beta \in \Phi^+ \setminus \{\alpha\}$. 
+  Dann existiert eine Darstellung der Form $\beta = \sum_{\gamma \in \Delta} k_\gamma \gamma$ mit positiven Koeffizienten $k_\gamma$.
+  Es kann $\beta$ nicht proportional zu $\alpha$ sein, da sonst nach (R2) und unter der Voraussetzung $\beta \neq \alpha$ ein Wiederspruch zur Voraussetzung dass $\beta$ positiv ist entsteht.
+  Daher muss ein $k_\gamma > 0$ für $\gamma \neq \beta$ existieren.
+
+  Aufgrund der Linearität von $\sigma_\alpha$ besitzt dann auch $\sigma_\alpha(\beta)$ mindestens eine positiven Linearfaktor, damit ist nach (B2) auch $\sigma_\alpha(\beta)$ positiv.
+  Des Weiteren ist $\sigma_\alpha(\beta)$ nicht proportional zu $\alpha$, da sonst $\beta = -\alpha$ gelten würde, was ja im vorangehenden Absatz bereits ausgeschlossen wurde.
+  Hieraus folgt die Behauptung.
+\end{proof}
+
 \begin{cor}
-  Sei $\delta := \tfrac{1}{2} \sum_{\beta \succ 0} \beta$.
+  Sei $\delta := \tfrac{1}{2} \sum_{\beta \in \Phi^+} \beta$.
   Dann gilt $\sigma_\alpha(\delta) = \delta - \alpha$ für alle $\alpha \in \Delta$.
 \end{cor}
+
+\begin{proof}
+  Es gilt mit Lemma \ref{lem:permute}
+  \begin{displaymath}
+    \frac{1}{2} \sum_{\substack{\beta \in \Phi^+\\ \beta \neq \alpha}} \sigma_\alpha(\beta) + \frac{1}{2}\alpha 
+  = \frac{1}{2} \sum_{\substack{\beta \in \Phi^+\\ \beta \neq \alpha}} \beta + \frac{1}{2}\alpha
+  = \frac{1}{2} \sum_{\beta \in \Phi^+} \beta
+  = \delta.
+  \end{displaymath}
+  Daraus folgt nun die Behauptung, denn
+  \begin{align*}
+    \sigma_\alpha(\delta) 
+    &= \frac{1}{2} \sum_{\substack{\beta \in \Phi^+\\ \beta \neq \alpha}} \sigma_\alpha(\beta) + \frac{1}{2} \sigma_\alpha(\alpha) + \frac{1}{2} \alpha - \frac{1}{2} \alpha \\
+    &= \frac{1}{2} \sum_{\substack{\beta \in \Phi^+\\ \beta \neq \alpha}} \beta + \frac{1}{2} \alpha - \alpha 
+    = \frac{1}{2} \sum_{\beta \in \Phi^+} \beta - \alpha 
+    = \delta - \alpha. \qedhere
+  \end{align*}
+\end{proof}
