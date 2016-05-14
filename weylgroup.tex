@@ -148,6 +148,7 @@ Es soll gezeigt werden, dass der in der \textsc{euklid}ischen Topologie gebildet
 Dies bedeutet, dass für alle Vektoren $x \in E$ genau ein $y \in \overline{\mathfrak{C}(\Delta)}$ existiert mit $x \in \W y = \{\sigma(y) \mid \sigma \in \W\}$.
 
 \begin{lem}
+  \label{lem:fundamentalDomain}
   Sei $\Delta$ ein Fundamentalsystem eines Wurzelsystems $\Phi$ in $E$ und $\W$ die entsprechende \weyl\hyp{}Gruppe.
   Dann gelten folgende Aussagen:
   \begin{enumerate}[(1)]
@@ -159,6 +160,18 @@ Dies bedeutet, dass für alle Vektoren $x \in E$ genau ein $y \in \overline{\mat
 
 \begin{proof}
   (1):
+  Wir setzen die in Abschnitt \ref{sec:grundlagen} auf der Menge der Wurzeln $\Phi$ definierte Halbordnungsrelation $\succeq$ nun auf ganz $E$ fort, indem wir genau dann $\beta \preceq \alpha$ setzen, wenn $\alpha - \beta$ eine $\R$-Linearkombination mit sämtlich positiven Koeffizienten ist oder $\alpha = \beta$ gilt.
+
+  Sei nun $\lambda \in E$ gegeben. 
+  Wir betrachten nun die Teilmenge $M$ aller $\W$-Bahnelemente $\mu \in \W\lambda$, für die $\mu \succeq \lambda$ gilt.
+  Da $M$ endlich und aufgrund von $\lambda \in M$ nichtleer ist, existieren bezüglich der Halbordnung $\succeq$ maximale Elemente.
+
+  Sei $\mu = \sigma\lambda$ mit $\sigma \in \W$ ein solches maximales Element.
+  Wir möchten nun zeigen, dass $\mu \in \overline{\mathfrak{C}(\Delta)}$ gilt.
+  Sei dazu $\alpha \in \Delta$.
+  Es ist $\sigma_\alpha(\mu) = \mu - \langle \mu, \alpha \rangle \alpha$.
+  Da $\sigma_\alpha(\mu) = \sigma_\alpha \sigma \lambda \in \W\lambda$ muss, um nicht der Maximalität von $\mu$ zu widersprechen $\langle \mu, \alpha \rangle \geq 0$ gelten.
+  Damit liegt jedoch $\mu$ in $\overline{\mathfrak{C}(\Delta)}$.
 
   (2):
   Wir führen einen Induktionsbeweis über die Länge $\ell(\sigma)$.
@@ -185,3 +198,5 @@ Dies bedeutet, dass für alle Vektoren $x \in E$ genau ein $y \in \overline{\mat
   Nach Lemma \ref{lem:lengthAndNegativeRoots}(1) gilt $n(\sigma\sigma_\alpha) = n(\sigma) - 1$, woraus schließlich mit \ref{lem:lengthAndNegativeRoots}(2) die Gleichheit $\ell(\sigma\sigma_\alpha) = \ell(\sigma) - 1$ folgt.
   Es gilt also $\ell(\sigma\sigma_\alpha) < \ell(\sigma)$ und darum sich aufgrund der Induktionsannahme $\lambda = \mu$ folgern.
 \end{proof}
+ 
+Eine Verschärfung von Lemma \ref{lem:fundamentalDomain} findet sich in \cite[S.22]{humphreys1992reflection}.
