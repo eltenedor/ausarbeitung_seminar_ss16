@@ -32,6 +32,7 @@ Ein Lemma stellt zuvor noch Sicher, dass es sich bei $\W$ um eine endliche Grupp
 
 
 \begin{thm}
+  \label{thm:simplyTransitive}
   Es sei $\Delta$ ein Fundamentalsystem des Wurzelsystems $\Phi$ in $E$.
   Dann gelten die folgenden Aussagen:
   \begin{enumerate}[(a)]
@@ -110,24 +111,77 @@ Ein Lemma stellt zuvor noch Sicher, dass es sich bei $\W$ um eine endliche Grupp
 \end{defn}
 
 \begin{lem}
+  \label{lem:lengthAndNegativeRoots}
   Sei $\Phi$ ein Wurzelsystem in $E$ und $\W$ die zugehörige \weyl\hyp{}Gruppe.
-  Es bezeichne $n(\sigma)$ die Anzahl der positiven Wurzeln $\alpha$ mit negativem Bild $\sigma(\alpha)$.
-  Für alle $\sigma \in \W$ gilt dann $\ell(\sigma) = n(\sigma)$.
+  Für $\sigma \in \W$ bezeichne $n(\sigma)$ die Anzahl der positiven Wurzeln $\alpha$ mit negativem Bild $\sigma(\alpha)$.
+  Dann gelten die folgenden Aussagen:
+  \begin{enumerate}[(1)]
+    \item Sei $\alpha \in \Delta$. Falls $\sigma(\alpha)$ negativ ist, so gilt $n(\sigma\sigma_\alpha(\alpha)) = n(\sigma) - 1$.
+    \item Es gilt $\ell(\sigma) = n(\sigma)$.
+  \end{enumerate}
 \end{lem}
 
 \begin{proof}
+  (1):
+  Sei $\sigma(\alpha)$ negativ.
+  Dann folgt mi Lemma \ref{lem:permute}, dass $\sigma_\alpha$ alle von $\alpha$ verschiedenen positiven Wurzeln permutiert.
+  Es enthält somit $\sigma(\Phi^+ \setminus \{\alpha\})$ genauso viele negative Wurzeln wie $\sigma(\sigma_\alpha(\Phi^+ \setminus \{\alpha\}))$.
+  Andererseits ist jedoch $\sigma \sigma_\alpha (\alpha) = -\sigma(\alpha)$ positiv.
+  Daraus können wir $n(\sigma\sigma_\alpha) = n(\sigma) - 1$ folgern.
+
+  (2):
   Wir führen den Beweis mittels Induktion über $\ell(\sigma)$.
+
   Ist $\ell(\sigma)=0$, so gilt $\sigma = \mathds{1}$, was wiederum $n(\sigma)=0$ zur Folge hat.
 
   Angenommen, die Behauptung gelte für alle $\tau \in \W$ mit $\ell(\tau) < \ell(\sigma)$.
   Wir schreiben nun $\sigma$ in der reduzierten Form $\sigma = \sigma_{\alpha_1} \dots \sigma_{\alpha_t}$ und definieren $\alpha := \alpha_t$.
   Mit Korollar \ref{cor:minimalReflection} folgt damit die Negativität von $\sigma(\alpha)$.
-  Lemma \ref{lem:permute} impliziert nun, dass $\sigma_\alpha$ alle von $\alpha$ verschiedenen positiven Wurzeln permutiert, es enthält somit $\sigma(\Phi^+ \setminus \{\alpha\})$ genauso viele negative Wurzeln wie $\sigma(\sigma_\alpha(\Phi^+ \setminus \{\alpha\}))$.
-  Andererseits ist jedoch $\sigma \sigma_\alpha (\alpha) = -\sigma(\alpha)$ positiv.
-  Daraus können wir $n(\sigma\sigma_\alpha) = \ell(\sigma) - 1$ folgern.
+  Aufgrund von (1) können wir einerseits $n(\sigma\sigma_\alpha) = n(\sigma) - 1$ folgern.
   
   Andererseits gilt $\ell(\sigma\sigma_\alpha) = \ell(\sigma_{\alpha_1} \dots \sigma_{\alpha_{t -1}}) = \ell(\sigma) - 1 < \ell(\sigma)$.
-  Nach der Induktionsvoraussetzung gilt somit $\ell(\sigma\sigma_\alpha) = n(\sigma\sigma_\alpha)$, also $\ell(\sigma) - 1 = n(\sigma) - 1$, woraus die Behauptung folgt.
+  Mit der Induktionsvoraussetzung folgt somit $\ell(\sigma\sigma_\alpha) = n(\sigma\sigma_\alpha)$, also $\ell(\sigma) - 1 = n(\sigma) - 1$, woraus sich die Behauptung ergibt.
 \end{proof}
 
+Nun betrachten wir die einfach transitive Operation der \weyl\hyp{}Gruppe auf den \weyl\hyp{}Kammern aus Satz \ref{thm:simplyTransitive}.
+Es soll gezeigt werden, dass der in der \textsc{euklid}ischen Topologie gebildete Abschluss $\overline{\mathfrak{C}(\Delta)}$ der Fundamentalkammer bezüglich des Fundamentalsystems $\Delta$ ein \emph{Fundamentalbereich} der Gruppenoperation von $\W$ auf $E$ ist.
+Dies bedeutet, dass für alle Vektoren $x \in E$ genau ein $y \in \overline{\mathfrak{C}(\Delta)}$ existiert mit $x \in \W y = \{\sigma(y) \mid \sigma \in \W\}$.
 
+\begin{lem}
+  Sei $\Delta$ ein Fundamentalsystem eines Wurzelsystems $\Phi$ in $E$ und $\W$ die entsprechende \weyl\hyp{}Gruppe.
+  Dann gelten folgende Aussagen:
+  \begin{enumerate}[(1)]
+    \item Jeder Punkt aus $E$ liegt in der $\W$-Bahn eines Elementes aus  $\overline{\mathfrak{C}(\Delta)}$.
+    \item Falls für $\lambda, \mu \in \overline{\mathfrak{C}(\Delta)}$ ein $\sigma \in \W$ existiert mit $\sigma \lambda = \mu$, dann ist $\sigma$ das Produkt einfacher Spiegelungen, die $\lambda$ fixieren und es gilt speziell $\lambda = \mu$.
+  \end{enumerate}
+  Insbesondere ist $\overline{\mathfrak{C}(\Delta)}$ ein Fundamentalbereich der Gruppenoperation von $\W$ auf $E$.
+\end{lem}
+
+\begin{proof}
+  (1):
+
+  (2):
+  Wir führen einen Induktionsbeweis über die Länge $\ell(\sigma)$.
+
+  Ist $\ell(\sigma) = 0$ so folgt $\sigma = \mathds{1}$ und damit sofort $\lambda = \mu$.
+
+  Sei nun $\ell(\sigma) > 0$ und die Aussage für alle $\tau \in \W$ mit $\ell(\tau) < \ell(\sigma)$ bereits bewiesen.
+  Nach Lemma \ref{lem:lengthAndNegativeRoots} bildet eine positive Wurzel auf eine negative Wurzel ab.
+  Insbesondere existiert also eine einfache Wurzel $\alpha \in \Delta$ mit negativem Bild $\sigma(\alpha)$.
+  Für alle $\xi \in \mathfrak{C}(\Delta)$ gilt $(\xi, \sigma(\alpha)) = \sum_{\beta \in \Delta} k_\beta (\xi,\beta) < 0$. 
+  Denn alle $k_\beta$ sind nach Voraussetzung negativ sind zudem gilt $(\xi,\beta) > 0$, weil $\xi$ als Element der Fundamentalkammer mit allen einfachen Wurzeln einen spitzen Winkel einschließt.
+  Aufgrund der Stetigkeit des Skalarproduktes gilt somit auch $0 \geq (\mu, \sigma(\alpha))$.
+  
+  Andererseits folgt mit derselben Argumentation angewendet auf $\lambda$ die Identität
+  \begin{displaymath}
+    0 \geq (\mu, \sigma(\alpha)) = (\sigma^{-1}(\mu), \alpha) = (\lambda, \alpha) \geq 0,
+  \end{displaymath}
+  weil Spiegelungen Isometrien sind.
+  Hieraus folgt zunächst $(\lambda, \alpha) = 0$, also gilt $\lambda \in P_\alpha$.
+  Dies wiederum impliziert $\sigma_\alpha(\lambda) = \lambda$ und weiter noch $\sigma \sigma_\alpha(\lambda) = \mu$.
+  Somit erfüllt $\sigma \sigma_\alpha$ die Voraussetzungen des zu beweisenden Lemmas. 
+
+  Wir zeigen nun, dass auf $\sigma \sigma_\alpha$ auch die Induktionsannahme zutrifft.
+  Nach Lemma \ref{lem:lengthAndNegativeRoots}(1) gilt $n(\sigma\sigma_\alpha) = n(\sigma) - 1$, woraus schließlich mit \ref{lem:lengthAndNegativeRoots}(2) die Gleichheit $\ell(\sigma\sigma_\alpha) = \ell(\sigma) - 1$ folgt.
+  Es gilt also $\ell(\sigma\sigma_\alpha) < \ell(\sigma)$ und darum sich aufgrund der Induktionsannahme $\lambda = \mu$ folgern.
+\end{proof}
