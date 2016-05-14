@@ -15,6 +15,7 @@ Dies wird unter anderem auch durch den nachfolgenden Satz bewiesen.
 Ein Lemma stellt zuvor noch Sicher, dass es sich bei $\W$ um eine endliche Gruppe handelt.
 
 \begin{lem}
+  \label{lem:weylFinite}
   Es sei $\Phi$ ein Wurzelsystem in $E$. Dann ist die entsprechende \weyl\hyp{}Gruppe endlich. 
 \end{lem}
 
@@ -25,7 +26,7 @@ Ein Lemma stellt zuvor noch Sicher, dass es sich bei $\W$ um eine endliche Grupp
   Ist dieser Homomorphismus injektiv, also die Gruppenoperation treu, so lässt sich $\W$ als eine Untergruppe von $\Sym(\Phi)$ auffassen und ist damit endlich.
   Sei $\sigma \in \W$ im Kern dieses Homomorphismus.
   Dann fixiert $\sigma$ alle Wurzeln aus $\Phi$.
-  Da nach (R1) die Wurzeln den Vektorraum $E$ aufspannen ist $\sigma$ bereits eindeutig festgelegt und es folgt $\sigma = id$.
+  Da nach (R1) die Wurzeln den Vektorraum $E$ aufspannen ist $\sigma$ bereits eindeutig festgelegt und es folgt $\sigma = \mathds{1}$.
   Also ist die Gruppenoperation treu und $\W$ damit endlich.
 \end{proof}
 
@@ -42,10 +43,10 @@ Ein Lemma stellt zuvor noch Sicher, dass es sich bei $\W$ um eine endliche Grupp
       Es operiert $\W$ also transitiv auf der Menge der Fundamentalsysteme.
 
     \item Für eine beliebige Wurzel $\alpha \in \Phi$ existiert ein $\sigma \in \W$, sodass $\sigma(\alpha) \in \Delta$.
-      Jede Wurzel liegt also in der Bahn einer einfachen Wurzel.
+      Jede Wurzel liegt also in der $\W$-Bahn einer einfachen Wurzel.
     \item Die \weyl\hyp{}Gruppe wird erzeugt von den Spiegelungen $\sigma_\alpha$ für $\alpha \in \Delta$.
 
-    \item Ist $\sigma \in \W$ und gilt $\sigma(\Delta) = \Delta$, so folgt $\sigma = id_{E}$.
+    \item Ist $\sigma \in \W$ und gilt $\sigma(\Delta) = \Delta$, so folgt $\sigma = \mathds{1}$.
       Also operiert $\W$ einfach transitiv auf der Menge der Fundamentalsysteme.
   \end{enumerate}
 \end{thm}
@@ -55,15 +56,43 @@ Ein Lemma stellt zuvor noch Sicher, dass es sich bei $\W$ um eine endliche Grupp
   Nach dem Beweis von (d) folgt $\W' = \W$.
 
   (a):
-  Es sei $\delta = \tfrac{1}{2} \sum_{\alpha \in \Phi^+} \alpha$.
-  Aufgrund 
+  Es sei $\gamma \in E$ regulär und $\delta := \tfrac{1}{2} \sum_{\alpha \in \Phi^+} \alpha$.
+  Da nach Lemma \ref{lem:weylFinite} die \weyl\hyp{}Gruppe und damit auch die Untergruppe $\W'$ endlich sind, existiert ein $\sigma \in \W'$, sodass $(\sigma(\gamma), \delta)$ maximal wird.
+  Für $\alpha \in \Delta$ gilt auch $\sigma_\alpha\sigma \in \W'$ aufgrund der Untergruppeneigenschaft.
+  Daraus folgt
+  \begin{align*}
+    (\sigma(\gamma), \delta) 
+    &\geq (\sigma_\alpha \sigma(\gamma), \delta) &&\text{aufgrund der Maximalität} \\
+    &= (\sigma(\gamma), \sigma_\alpha(\delta)) &&\text{da $\sigma_\alpha$ eine Isometrie und zudem selbstinvers ist} \\
+    &= (\sigma(\gamma), \delta - \alpha) &&\text{nach Korollar \ref{cor:sigmaDelta}} \\
+    &= (\sigma(\gamma), \delta) - (\sigma(\gamma), \alpha) &&\text{aufgrund der Bilinearität des Skalarproduktes.}
+  \end{align*}
+  Also muss $(\sigma(\gamma), \alpha) \geq 0$ für alle $\alpha \in \Delta$ gelten, um nicht der Maximalitätseigenschaft von $\sigma$ zu widersprechen.
+
+  Nach Voraussetzung ist $\gamma$ regulär.
+  Daher kann für kein $\alpha \in \Delta$ die Identität $(\sigma(\gamma),\alpha) = 0$ gelten, da sonst $\gamma$ in $P_{\sigma^{-1}(\alpha)}$ liegt, was der vorausgesetzten Regularität widerspricht.
+  Somit gilt für alle $\alpha \in \Delta$ die strikte Ungleichung $(\sigma(\gamma), \alpha) > 0$.
+  Das bedeutet jedoch gerade, dass $\sigma(\gamma)$ in der Fundamentalkammer $\mathfrak{C}(\Delta)$ liegt.
+
+  Also bildet entsprechend Proposition \ref{prop:groupOp} die Spiegelung $\sigma$ die \weyl\hyp{}Kammer $\mathfrak{C}(\gamma)$ auf $\mathfrak{C}(\Delta)$ ab. 
+  Somit gilt, dass alle \weyl\hyp{}Kammern mit der Fundamentalkammer verbunden sind, die Menge der \weyl\hyp{}Kammern ist also eine $\W'$-Bahn und die Gruppenoperation damit transitiv.
+
 
   (b):
-  Da nach dem vorangehenden Beweis $\W$ die \weyl\hyp{}Kammern transitiv permutiert, gilt dies nach Proposition \ref{prop:groupOp} auch für die korrespondierende Gruppenoperation auf Fundamentalsystemen.
+  Da nach dem vorangehenden Beweis $\W'$ die \weyl\hyp{}Kammern transitiv permutiert, gilt dies nach Proposition \ref{prop:groupOp} auch für die korrespondierende Gruppenoperation auf Fundamentalsystemen.
 
   (c):
+  Da nach (b) die Untergruppe $\W'$ transitiv auf der Menge der Fundamentalsysteme operiert, genügt es nachzuweisen, dass jede Wurzel in einem Fundamentalsystem enthalten ist.
 
   (d):
+  Da nach $\W'$ eine Untergruppe von $\W$ ist, reicht es zu zeigen, dass jede Spiegelung $\sigma_\alpha$ mit $\alpha \in \Phi$ ein Element von $\W'$ ist.
+  Nach (c) existiert ein $\sigma \in \W'$, sodass $\beta := \sigma(\alpha) \in \Delta$.
+  Damit gilt insbesondere $\sigma_\beta \in \W'$.
+  Aufgrund Lemma \ref{lem:conjReflection} ist $\sigma_{\sigma(\alpha)} = \sigma \sigma_\alpha \sigma^{-1}$, also folgt mit der Untergruppeneigenschaft von $\W'$ sodann $\sigma_\alpha = \sigma^{-1} \sigma_\beta \sigma \in \W'$.
+  Folglich gilt bereits $\W' = \W$ und alle bereits für $\W'$ bewiesenen Aussagen gelten auch für $\W$.
 
   (e):
+  Sei $\sigma \in \W$ mit $\sigma(\Delta) = \Delta$.
+  Angenommen, $\sigma \neq \mathds{1}$.
+  Nach (d) lässt sich $\sigma$ als Produkt einfacher Spiegelungen schreiben, es gilt also $\sigma = \sigma_1\dots\sigma_t$ und $\sigma_1 \dots \sigma_t(\alpha_t)$ ist nach Korollar \ref{cor:minimalReflection}.
 \end{proof}

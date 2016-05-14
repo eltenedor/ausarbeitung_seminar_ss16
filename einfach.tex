@@ -98,6 +98,7 @@ Das folgende Lemma demonstriert, wie sich aus einer positiven Wurzel neue positi
 \end{proof}
 
 \begin{cor}
+  \label{cor:sigmaDelta}
   Sei $\delta := \tfrac{1}{2} \sum_{\beta \in \Phi^+} \beta$.
   Dann gilt $\sigma_\alpha(\delta) = \delta - \alpha$ für alle $\alpha \in \Delta$.
 \end{cor}
@@ -124,6 +125,7 @@ Nach Definition \ref{def:weylgroup} wird die \weyl\hyp{}Gruppe $\W$ von den Spie
 Das folgende Lemma liefert ein Kriterium dafür, wann man entsprechende Darstellungen von Elementen aus $\W$ vereinfachen kann.
 
 \begin{lem}
+  \label{lem:simplify}
   Seien $\alpha_1,\dots,\alpha_t$ nicht notwendig verschiedenene einfache Wurzeln. Es sei $\sigma_i := \sigma_{\alpha_i}$.
   Ist $\sigma_1 \dots \sigma_{t-1}(\alpha_t)$ eine negative Wurzel, dann existiert ein Index $1 \leq s < t$, sodass $\sigma_1 \dots \sigma_t = \sigma_1 \dots \sigma_{s-1} \sigma_{s+1} \dots \sigma_{t-1}$.
 \end{lem}
@@ -148,4 +150,17 @@ Das folgende Lemma liefert ein Kriterium dafür, wann man entsprechende Darstell
     &= \sigma_1 \dots \sigma_{s - 1} (\sigma_{s+1} \dots \sigma_{t - 1}) \sigma_t  \sigma_t\\
     &= \sigma_1 \dots \sigma_{s - 1} \sigma_{s+1} \dots \sigma_{t - 1}. \qedhere
   \end{align*}
+\end{proof}
+
+\begin{cor}
+  \label{cor:minimalReflection}
+  Sei $\sigma = \sigma_1 \dots \sigma_t \in \W$, mit einfachen Spiegelungen $\sigma_i$, wobei $t$ minimal gewählt sei. Dann ist $\sigma(\alpha_t)$ eine negative Wurzel.
+\end{cor}
+
+\begin{proof}
+  Nach Voraussetzung lässt sich der Ausdruck für $\sigma$ nicht weiter verkürzen.
+  Mit Lemma \ref{lem:simplify} folgt dass $\sigma_1 \dots \sigma_{t-1}(\alpha_t)$ positiv ist.
+  Da $\sigma_t$ eine Spiegelung ist, gilt $\alpha_t = \sigma_t(-\alpha_t)$.
+  Damit folgt dann, dass auch $\sigma_1 \dots \sigma_{t-1}(\sigma_t(-\alpha_t)) = \sigma_1 \dots \sigma_t(-\alpha_t)$ positiv ist.
+  Die Linearität von Spiegelungen impliziert dann die Negativität von $\sigma = \sigma_1 \dots \sigma_t(\alpha_t)$.
 \end{proof}
