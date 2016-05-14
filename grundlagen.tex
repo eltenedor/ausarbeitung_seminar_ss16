@@ -19,6 +19,23 @@ denn $\sigma_\alpha(\alpha) = -\alpha$ und $\sigma_\alpha(\beta) = \beta$ für a
 Man beachte, dass im Gegensatz zum Skalarprodukt, der Ausdruck $\langle \alpha, \beta \rangle$ nur linear in der ersten Variablen ist.
 Es gilt jedoch $\sign \langle \alpha, \beta \rangle = \sign (\alpha, \beta)$ für alle $\alpha, \beta \in E$.
 
+\begin{lem}
+  \label{lem:orthogonalRoots}
+  Es sei $E$ ein \textsc{euklid}ischer Vektorraum.
+  Falls $(\alpha, \beta) = 0$ für $\alpha, \beta \in E$ gilt, so kommutieren die korrespondierenden Spiegelungen $\sigma_\alpha$ und $\sigma_\beta$.
+\end{lem}
+
+\begin{proof}
+  Für $\gamma \in E$ gilt $\sigma_\alpha(\gamma) = \gamma - \langle \gamma, \alpha \rangle \alpha$. Da aus $(\alpha, \beta) = 0$ sofort $\langle \alpha, \beta \rangle = 0$ folgt, gilt also auch
+  \begin{align*}
+    \sigma_\beta \sigma_\alpha(\gamma) 
+    &= \gamma - \langle \gamma, \beta \rangle \beta - \langle \gamma, \alpha \rangle (\alpha - \langle \alpha, \beta \rangle \beta) \\
+    &= \gamma - \langle \gamma, \beta \rangle \beta - \langle \gamma, \alpha \rangle \alpha \\
+    &= \dots \\
+    &= \sigma_\alpha \sigma_\alpha(\gamma).\qedhere
+  \end{align*} 
+\end{proof}
+
 \begin{defn}
   Eine Teilmenge $\Phi$ des euklidischen Vektorraums $E$ heißt \emph{Wurzelsystem in} $E$, falls folgende Bedingungen erfüllt sind:
   \begin{enumerate}[(R1)]

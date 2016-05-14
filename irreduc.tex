@@ -1,1 +1,43 @@
 \section{Irreduzible Wurzelsysteme}
+
+In diesem Abschnitt beschäftigen wir uns mit den kleinsten ``Bausteinen'' aus denen Wurzelsysteme zusammengesetzt sind.
+
+\begin{defn}
+  Ein Wurzelsystem $\Phi$ in einem \textsc{euklid}ischen Vektorraum $E$ heißt \emph{irreduzibel} wenn keine Zerlegung von $\Phi$ in zwei disjunkte Mengen existiert, sodass die Elemente aus unterschiedlichen Mengen paarweise orthogonal sind.
+  Ebenso bezeichne man ein Fundamentalsystem eines Wurzelsystems als irreduzibel, falls keine disjunkte Zerlegung im obigen Sinne existiert.
+\end{defn}
+
+\begin{lem}
+  Sei $\Delta$ ein Fundamentalsystem eines Wurzelsystems $\Phi$ in $E$.
+  Dann ist $\Phi$ genau dann irreduzibel, wenn $\Delta$ irreduzibel ist.
+\end{lem}
+
+\begin{proof}
+  ``$\Rightarrow$'':
+  Angenommen, es existiere eine Zerlegung $\Phi = \Phi_1 \cup \Phi_2$ mit $(\Phi_1, \Phi_2)$ = 0.
+  Falls $\Delta \not\subseteq \Phi_i$ gilt für ein $i \in \{1,2\}$, so ist $\Delta = (\Phi_1 \cap \Delta) \cup (\Phi_2 \cap \Delta)$ eine entsprechende Zerlegung des Fundamentalsystems.
+  Anderfalls ist ohne Beschränkung der Allgemeinheit $\Delta \subseteq \Phi_1$ und damit $(\Delta, \Phi_2) = 0$
+  Da nach $(B1)$ das Fundamentalsystem eine Vektorraumbasis ist, folgt mit der Linearität des Skalarproduktes sogleich $(E, \Phi_2) = 0$ und da Skalarprodukte nicht ausgeartet sind letztlich $\Phi_2 = {0}$ im Widerspruch zu $(B1)$.
+
+  ``$\Leftarrow$'':
+  Angenommen, $\Phi$ sei irreduzibel aber es existiere eine Zerlegung $\Delta = \Delta_1 \cup \Delta_2$ mit $(\Delta_1, \Delta_2) = 0$.
+  Wir definieren für $i \in \{1,2\}$ die Mengen $\Phi_i$ aller Wurzeln, die in der $\W$\hyp{}Bahn einer einfachen Wurzel liegen. 
+  Nach Satz \ref{thm:simplyTransitive}(3) gilt $\Phi = \Phi_1 \cup \Phi_2$.
+
+  Sei $\gamma$ eine Wurzel in $\Phi_i$.
+  Nach \ref{thm:simplyTransitive}(3) existiert ein $\sigma \in \W$, sodass $\sigma(\alpha) = \gamma$ für ein $\alpha \in \Delta$.
+  Es existiert eine Darstellung $\sigma = \sigma_{\alpha_1} \dots \sigma_{\alpha_t}$ ($\ast$) mit $\alpha_i \in \Delta$.
+  Wir können ohne Beschränkung der Allgemeinheit $\alpha_i \in \Delta_1$ für alle $i$ annehmen.
+  Denn da nach Voraussetzung $(\Delta_1, \Delta_2) = 0$ gilt, folgt für die Darstellung ($\ast$), dass
+  \begin{displaymath}
+    \sigma = \sigma_{\alpha_1} \dots \sigma_{\alpha_{t-j}} \sigma_{\alpha_{t-j+1}} \dots \sigma_{\alpha_t}
+  \end{displaymath}
+  mit $\alpha_k \in \Delta_2$ für $k \geq t-j+1$ gilt.
+  Da $\alpha$ aus $\Delta_1$ stammt und für $\alpha_k \in \Delta_2$ gilt, dass $\sigma_{\alpha_j}(\alpha) = \alpha - \langle \alpha, \alpha_j \rangle \alpha_j = \alpha$ folgt sogleich $\sigma = \sigma_{\alpha_1} \dots \sigma_{\alpha_{t - j}}$. 
+  Damit folgt schließlich
+  $\gamma = \sigma(\alpha) = \sigma_{\alpha_1} \dots \sigma_{\alpha_k}(\alpha)$.
+
+  Daher liegt $\Phi_i$ im Teilraum $E_i \subseteq E$, welcher von $\Delta_i$ aufgespannt wird.
+  Mit der Bilinearität des Skalaproduktes folgt sodann $(\Phi_1, \Phi_2) = 0$.
+  Da Skalarprodukte nicht ausgeartet sind folgt $\Phi_1 = \emptyset$ oder $\Phi_2 = \emptyset$, was wiederum $\Delta_1 = \emptyset$ beziehungsweise $\Delta-2 = \emptyset$ impliziert, im Widerspruch zur Voraussetzung.
+\end{proof}
