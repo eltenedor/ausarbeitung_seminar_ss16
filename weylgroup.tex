@@ -1,7 +1,7 @@
 \section{Die Weyl-Gruppe}
 \label{sec:weylgroup}
 
-Nach der in den bisherigen Abschnitten geleisteten Vorarbeit, wenden wir uns in diesem Abschnitt nun wieder der Gruppenoperation der \weyl\hyp{}Gruppe auf der Menge der\weyl\hyp{}Kammern beziehungsweise der Menge der Fundamentalsysteme eines Wurzelsystems $\Phi$ aus Proposition \ref{prop:groupOp} zu.
+Nach der in den bisherigen Abschnitten geleisteten Vorarbeit, wenden wir uns in diesem Abschnitt nun wieder der Gruppenoperation der \weyl\hyp{}Gruppe auf der Menge der \weyl\hyp{}Kammern beziehungsweise auf der Menge der Fundamentalsysteme eines Wurzelsystems $\Phi$ aus Proposition \ref{prop:groupOp} zu.
 
 Wir beginnen mit einer für beliebige Gruppenoperationen definierten Eigenschaft.
 
@@ -83,9 +83,10 @@ Ein Lemma stellt zuvor noch Sicher, dass es sich bei $\W$ um eine endliche Grupp
 
   (c):
   Da nach (b) die Untergruppe $\W'$ transitiv auf der Menge der Fundamentalsysteme operiert, genügt es nachzuweisen, dass jede Wurzel in einem Fundamentalsystem enthalten ist.
+  UNVOLLSTÄNDIG
 
   (d):
-  Da nach $\W'$ eine Untergruppe von $\W$ ist, reicht es zu zeigen, dass jede Spiegelung $\sigma_\alpha$ mit $\alpha \in \Phi$ ein Element von $\W'$ ist.
+  Da nach Konstruktion $\W'$ eine Untergruppe von $\W$ ist, reicht es zu zeigen, dass jede Spiegelung $\sigma_\alpha$ mit $\alpha \in \Phi$ ein Element von $\W'$ ist.
   Nach (c) existiert ein $\sigma \in \W'$, sodass $\beta := \sigma(\alpha) \in \Delta$.
   Damit gilt insbesondere $\sigma_\beta \in \W'$.
   Aufgrund Lemma \ref{lem:conjReflection} ist $\sigma_{\sigma(\alpha)} = \sigma \sigma_\alpha \sigma^{-1}$, also folgt mit der Untergruppeneigenschaft von $\W'$ sodann $\sigma_\alpha = \sigma^{-1} \sigma_\beta \sigma \in \W'$.
@@ -94,5 +95,39 @@ Ein Lemma stellt zuvor noch Sicher, dass es sich bei $\W$ um eine endliche Grupp
   (e):
   Sei $\sigma \in \W$ mit $\sigma(\Delta) = \Delta$.
   Angenommen, $\sigma \neq \mathds{1}$.
-  Nach (d) lässt sich $\sigma$ als Produkt einfacher Spiegelungen schreiben, es gilt also $\sigma = \sigma_1\dots\sigma_t$ und $\sigma_1 \dots \sigma_t(\alpha_t)$ ist nach Korollar \ref{cor:minimalReflection}.
+  Nach (d) lässt sich $\sigma$ als Produkt einfacher Spiegelungen schreiben, es gilt also $\sigma = \sigma_1\dots\sigma_t$ und $\sigma_1 \dots \sigma_t(\alpha_t)$. 
+  Unter Berücksichtigung von Lemma \ref{lem:simplify} kann man Annehmen, dass die multiplikative Darstellung nicht mehr verkürzt werden kann.
+  Dann ist nach Korollar \ref{cor:minimalReflection} das Bild $\sigma(\alpha_t)$ negativ, also gilt insbesondere $\sigma(\alpha_t) \not\in \Delta$ im Widerspruch zur Voraussetzung.
+  Die Annahme muss also verworfen werden und es folgt $\sigma = \mathds{1}$.
 \end{proof}
+
+ÜBERLEITUNG
+
+\begin{defn}
+  Sei $\Phi$ ein Wurzelsystem mit Fundamentalsystem $\Delta$ und \weyl\hyp{}Gruppe $\W$. 
+  Des Weiteren sei $\sigma \in \W$, mit einer Darstellung $\sigma = \sigma_{\alpha_1}\dots\sigma_{\alpha_t}$ ($\ast$), wobei $t$ minimal gewählt sei und $\alpha_i \in \Delta$. 
+  Dann nennt man den Ausdruck ($\ast$) auch \emph{reduziert} und definiert die \emph{Länge von $\sigma$ bezüglich} $\Delta$ als $\ell(\sigma) := t$.
+\end{defn}
+
+\begin{lem}
+  Sei $\Phi$ ein Wurzelsystem in $E$ und $\W$ die zugehörige \weyl\hyp{}Gruppe.
+  Es bezeichne $n(\sigma)$ die Anzahl der positiven Wurzeln $\alpha$ mit negativem Bild $\sigma(\alpha)$.
+  Für alle $\sigma \in \W$ gilt dann $\ell(\sigma) = n(\sigma)$.
+\end{lem}
+
+\begin{proof}
+  Wir führen den Beweis mittels Induktion über $\ell(\sigma)$.
+  Ist $\ell(\sigma)=0$, so gilt $\sigma = \mathds{1}$, was wiederum $n(\sigma)=0$ zur Folge hat.
+
+  Angenommen, die Behauptung gelte für alle $\tau \in \W$ mit $\ell(\tau) < \ell(\sigma)$.
+  Wir schreiben nun $\sigma$ in der reduzierten Form $\sigma = \sigma_{\alpha_1} \dots \sigma_{\alpha_t}$ und definieren $\alpha := \alpha_t$.
+  Mit Korollar \ref{cor:minimalReflection} folgt damit die Negativität von $\sigma(\alpha)$.
+  Lemma \ref{lem:permute} impliziert nun, dass $\sigma_\alpha$ alle von $\alpha$ verschiedenen positiven Wurzeln permutiert, es enthält somit $\sigma(\Phi^+ \setminus \{\alpha\})$ genauso viele negative Wurzeln wie $\sigma(\sigma_\alpha(\Phi^+ \setminus \{\alpha\}))$.
+  Andererseits ist jedoch $\sigma \sigma_\alpha (\alpha) = -\sigma(\alpha)$ positiv.
+  Daraus können wir $n(\sigma\sigma_\alpha) = \ell(\sigma) - 1$ folgern.
+  
+  Andererseits gilt $\ell(\sigma\sigma_\alpha) = \ell(\sigma_{\alpha_1} \dots \sigma_{\alpha_{t -1}}) = \ell(\sigma) - 1 < \ell(\sigma)$.
+  Nach der Induktionsvoraussetzung gilt somit $\ell(\sigma\sigma_\alpha) = n(\sigma\sigma_\alpha)$, also $\ell(\sigma) - 1 = n(\sigma) - 1$, woraus die Behauptung folgt.
+\end{proof}
+
+
