@@ -1,7 +1,8 @@
 \section{Irreduzible Wurzelsysteme}
+\label{sec:irreduc}
 
 In diesem Abschnitt beschäftigen wir uns mit den Eigenschaften der kleinsten ``Bausteine'' aus denen Wurzelsysteme zusammengesetzt sind.
-Es sei wieder $\Phi$ ein festgewähltes Wurzelsystem im \textsc{euklid}ischen Vektorraum $E$ mit Fundamentalsystem $\Delta$ und zugehöriger \weyl\hyp{}Gruppe $\W$.
+Es sei wieder $\Phi$ ein fest gewähltes Wurzelsystem im \textsc{euklid}ischen Vektorraum $E$ mit Fundamentalsystem $\Delta$ und zugehöriger \weyl\hyp{}Gruppe $\W$.
 
 \begin{defn}
   Ein Wurzelsystem $\Phi$ in einem \textsc{euklid}ischen Vektorraum $E$ heißt \emph{irreduzibel} wenn keine Zerlegung von $\Phi$ in zwei nichtleere disjunkte Mengen existiert, sodass die Elemente aus unterschiedlichen Mengen paarweise orthogonal sind.
@@ -18,7 +19,7 @@ Es sei wieder $\Phi$ ein festgewähltes Wurzelsystem im \textsc{euklid}ischen Ve
   ``$\Rightarrow$'':
   Angenommen, es existiere eine Zerlegung $\Phi = \Phi_1 \cup \Phi_2$ mit $(\Phi_1, \Phi_2)$ = 0.
   Falls $\Delta \not\subseteq \Phi_i$ gilt für ein $i \in \{1,2\}$, so ist $\Delta = (\Phi_1 \cap \Delta) \cup (\Phi_2 \cap \Delta)$ eine entsprechende Zerlegung des Fundamentalsystems.
-  Anderfalls ist ohne Beschränkung der Allgemeinheit $\Delta \subseteq \Phi_1$ und damit $(\Delta, \Phi_2) = 0$.
+  Andernfalls ist ohne Beschränkung der Allgemeinheit $\Delta \subseteq \Phi_1$ und damit $(\Delta, \Phi_2) = 0$.
   Da nach \hyperref[it:B1]{(B1)} das Fundamentalsystem eine Vektorraumbasis ist, folgt mit der Linearität des Skalarproduktes sogleich $(E, \Phi_2) = 0$ und da Skalarprodukte nicht ausgeartet sind letztlich $\Phi_2 = {0}$ im Widerspruch zu \hyperref[it:B1](B1).
 
   ``$\Leftarrow$'':
@@ -59,13 +60,13 @@ Das nächste Lemma beschäftigt sich mit bezüglich der Halbordnung $\succeq$ au
   Sei $\beta = \sum_{\alpha \in \Delta} k_\alpha \alpha$ eine maximale Wurzel bezüglich $\succeq$.
   Da jede einfache Wurzel bereits positiv ist, gilt zunächst auch $\beta \succeq 0$.
   Wir definieren $\Delta_1 = \{\alpha \in \Delta \mid k_\alpha > 0\}$ und $\Delta_2 = \{\alpha \in \Delta \mid k_\alpha = 0\}$.
-  Aufgrund der Positivität von $\beta$ ist damit $\Delta = \Delta_1 \cup \Delta_2$ eine disjunkte vereinigung.
+  Aufgrund der Positivität von $\beta$ ist damit $\Delta = \Delta_1 \cup \Delta_2$ eine disjunkte Vereinigung.
 
   Wir wollen nun zeigen dass $\Delta_2$ leer ist.
   Angenommen, $\Delta_2$ sei nicht leer.
   Es gilt dann $(\alpha', \alpha) \leq 0$ für alle $\alpha' \in \Delta_2$ und $\alpha \in \Delta$, denn sonst wäre $\alpha' - \alpha$ eine Wurzel, was jedoch \hyperref[it:B2]{(B2)} widerspricht.
   Damit folgt sogleich $(\alpha', \beta) = \sum_{\alpha \in \Delta} k_\alpha (\alpha', \alpha) \leq 0 $ ($\ast$).
-  Da $\Phi$ nach Voraussetzung irreduzibel ist, muss ein $\alpha' \in \Delta_2$ existieren, weches nicht orthogonal zu $\Delta_1$ ist.
+  Da $\Phi$ nach Voraussetzung irreduzibel ist, muss ein $\alpha' \in \Delta_2$ existieren, welches nicht orthogonal zu $\Delta_1$ ist.
   Ansonsten folgt nämlich aus der Zerlegung in $\Delta_1$ und $\Delta_2$ die Reduzibilität von $\Delta$, also nach Lemma \ref{lem:irreducibleRoot} auch die Reduzibilität von $\Phi$, was jedoch der Voraussetzung widerspricht.
 
   Sei also $\alpha' \in \Delta_2$ mit $(\alpha, \alpha') < 0$ gegeben.
@@ -95,7 +96,7 @@ Das nächste Lemma beschäftigt sich mit bezüglich der Halbordnung $\succeq$ au
 \begin{lem}
   \label{lem:irreducibleGroupOp}
   Sei $\Phi$ ein irreduzibel.
-  Dann ist auch die Gruppenoperation von $\W$ irreduzibel über $E$, es existieren also außer $\{0\}$ und $E$ keine weiteren $\W$\hyp{}invarianten Unterrräume von $E$.
+  Dann ist auch die Gruppenoperation von $\W$ irreduzibel über $E$, es existieren also außer $\{0\}$ und $E$ keine weiteren $\W$\hyp{}invarianten Unterräume von $E$.
   Insbesondere erzeugt die $\W$\hyp{}Bahn einer beliebigen Wurzel $\alpha$ den gesamten Vektorraum $E$.
 \end{lem}
 
@@ -106,17 +107,17 @@ Das nächste Lemma beschäftigt sich mit bezüglich der Halbordnung $\succeq$ au
   $\langle \alpha, \sigma(\beta) \rangle = \langle \sigma^{-1}(\alpha), \beta \rangle = 0$, da $\sigma^{-1}(\alpha) \in E'$ gilt.
   Es folgt also auch $\sigma(\beta) \in (E')^\perp$ und damit die $\W$\hyp{}Invarianz von $(E')^\perp$.
 
-  Zudem gilt die für orhtogonale Komplemente gültige Identität $E = E' \oplus (E')^\perp$.
+  Zudem gilt die für orthogonale Komplemente gültige Identität $E = E' \oplus (E')^\perp$.
 
   Dann ist aber auch $\Phi = (\Phi \cap E') \cup (\Phi \cap (E')^\perp$ eine Zerlegung von $\Phi$ in zueinander orthogonale Teilmengen.
-  Da aber $\Phi$ als irreduzibles Wurzelsystem vorausgesetzt wurde mus eine der beteiligten Teilmengen leer sein.
+  Da aber $\Phi$ als irreduzibles Wurzelsystem vorausgesetzt wurde muss eine der beteiligten Teilmengen leer sein.
   Angenommen $\Phi \subseteq E'$. 
   Da nach \hyperref[it:W1]{(W1)} Wurzelsysteme den Vektorraum erzeugen, gilt $E = E'$. 
   Ebenso folgt im Falle $\Phi \subseteq (E')^\perp$ die Aussage $E = (E')^\perp$.
   Damit haben wir den ersten Teil der Behauptung bewiesen.
 
   Es ist der Spann einer $\W$\hyp{}Bahn einer Wurzel $\alpha$ ein nicht trivialer $\W$\hyp{}invarianter Untervektorraum von $E$.
-  Mit dem vorangehenden Beweis musss $\spn(\W\alpha) = E$ gelten.
+  Mit dem vorangehenden Beweis muss $\spn(\W\alpha) = E$ gelten.
   Damit ist die Behauptung vollständig bewiesen.
 \end{proof}
 
@@ -187,7 +188,7 @@ Das nächste Lemma beschäftigt sich mit bezüglich der Halbordnung $\succeq$ au
     = (\alpha, \beta) - (\alpha, \alpha) \geq 0
   \end{displaymath}
   führt.
-  Beide ungleichungen zusammen ergeben folglich
+  Beide Ungleichungen zusammen ergeben folglich
   \begin{displaymath}
     (\beta, \beta) \geq (\beta, \alpha) \geq (\alpha, \alpha),
   \end{displaymath}
