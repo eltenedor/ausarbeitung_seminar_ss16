@@ -44,7 +44,7 @@ Das folgende Lemma demonstriert, wie sich aus einer positiven Wurzel neue positi
 \begin{proof}
   Wir wollen zeigen, dass ein $\beta \in \Delta$ existiert mit $(\alpha, \beta) > 0$.
   Angenommen, für alle $\beta \in \Delta$ gelte $(\alpha, \beta) \leq 0$.
-  Zudem gilt für alle $\beta, \beta' \in \Delta$ immer $(\beta, \beta') \leq 0$, denn sonst wäre nach Lemma \ref{lem:sumDiffRoot} auch $\beta - \beta'$ eine Wurzel, was jedoch (B2) widerspricht.
+  Zudem gilt für alle $\beta, \beta' \in \Delta$ immer $(\beta, \beta') \leq 0$, denn sonst wäre nach Lemma \ref{lem:sumDiffRoot} auch $\beta - \beta'$ eine Wurzel, was jedoch \hyperref[it:B2]{(B2)} widerspricht.
   Damit sind die Voraussetzungen für Lemma \ref{lem:independentSet} erfüllt und es ist $\Delta \cup \{\alpha\}$ eine linear unabhängige Menge.
   Dies widerspricht jedoch der Voraussetzung, dass $\Delta$ ein Fundamentalsystem ist.
 
@@ -53,9 +53,9 @@ Das folgende Lemma demonstriert, wie sich aus einer positiven Wurzel neue positi
   Unter Verwendung von Lemma \ref{lem:sumDiffRoot} folgt somit, dass $\alpha - \beta$ eine Wurzel ist.
   
   Bezüglich $\Delta$ lässt sich $\alpha$ auch schreiben als $\alpha = \sum_{\gamma \in \Delta} k_\gamma \gamma$, wobei aufgrund der Positivität von $\alpha$ alle $k_\gamma$ größer oder gleich $0$ sind und darüber hinaus auch mindestens ein $k_\gamma$ mit $\gamma \neq \beta$ echt größer als $0$ existiert.
-  Ansonsten wäre nämlich $\alpha$ proportional zu $\beta$, und damit nach (R2) entweder gleich $\beta$, was der Voraussetzung, dass $\alpha$ nicht einfach ist, widerspricht, oder $\alpha = -\beta$, was der vorausgesetzten Positivität von $\alpha$ widerspricht.
+  Ansonsten wäre nämlich $\alpha$ proportional zu $\beta$, und damit nach \hyperref[it:R2]{(R2)} entweder gleich $\beta$, was der Voraussetzung, dass $\alpha$ nicht einfach ist, widerspricht, oder $\alpha = -\beta$, was der vorausgesetzten Positivität von $\alpha$ widerspricht.
 
-  Die Eigenschaft (B2) erzwingt nun die Positivität aller restlichen Linearfaktoren und folglich ist auch $\alpha - \beta$ eine positive Wurzel.
+  Die Eigenschaft \hyperref[it:B2]{(B2)} erzwingt nun die Positivität aller restlichen Linearfaktoren und folglich ist auch $\alpha - \beta$ eine positive Wurzel.
 \end{proof}
  
 \begin{cor}
@@ -68,7 +68,7 @@ Das folgende Lemma demonstriert, wie sich aus einer positiven Wurzel neue positi
 
   Angenommen die Behauptung gelte für ein $k-1 \in \N$.
   Sei nun $\hgt(\beta) = k$ und damit $\beta$ positiv aber nicht einfach.
-  Nach (B2) lässt sich dann 
+  Nach \hyperref[it:B2]{(B2)} lässt sich dann 
   \begin{displaymath}
     \beta = \alpha_1 + \dots + \alpha_k \tag{$\ast$}
   \end{displaymath}
@@ -90,10 +90,10 @@ Das folgende Lemma demonstriert, wie sich aus einer positiven Wurzel neue positi
 \begin{proof}
   Sei $\beta \in \Phi^+ \setminus \{\alpha\}$. 
   Dann existiert eine Darstellung der Form $\beta = \sum_{\gamma \in \Delta} k_\gamma \gamma$ mit positiven Koeffizienten $k_\gamma$.
-  Es kann $\beta$ nicht proportional zu $\alpha$ sein, da sonst nach (R2) und unter der Voraussetzung $\beta \neq \alpha$ ein Wiederspruch zur Voraussetzung dass $\beta$ positiv ist entsteht.
+  Es kann $\beta$ nicht proportional zu $\alpha$ sein, da sonst nach \hyperref[it:R2]{(R2)} und unter der Voraussetzung $\beta \neq \alpha$ ein Wiederspruch zur Voraussetzung dass $\beta$ positiv ist entsteht.
   Daher muss ein $k_\gamma > 0$ für $\gamma \neq \beta$ existieren.
 
-  Aufgrund der Linearität von $\sigma_\alpha$ besitzt dann auch $\sigma_\alpha(\beta)$ mindestens eine positiven Linearfaktor, damit ist nach (B2) auch $\sigma_\alpha(\beta)$ positiv.
+  Aufgrund der Linearität von $\sigma_\alpha$ besitzt dann auch $\sigma_\alpha(\beta)$ mindestens eine positiven Linearfaktor, damit ist nach \hyperref[it:B2]{(B2)} auch $\sigma_\alpha(\beta)$ positiv.
   Des Weiteren ist $\sigma_\alpha(\beta)$ nicht proportional zu $\alpha$, da sonst $\beta = -\alpha$ gelten würde, was ja im vorangehenden Absatz bereits ausgeschlossen wurde.
   Hieraus folgt die Behauptung.
 \end{proof}

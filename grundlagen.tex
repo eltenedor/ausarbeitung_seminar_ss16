@@ -39,15 +39,15 @@ Es gilt jedoch $\sign \langle \alpha, \beta \rangle = \sign (\alpha, \beta)$ fü
 \begin{defn}
   Eine Teilmenge $\Phi$ des euklidischen Vektorraums $E$ heißt \emph{Wurzelsystem in} $E$, falls folgende Bedingungen erfüllt sind:
   \begin{enumerate}[(R1)]
-    \item Die Menge $\Phi$ ist endlich, sie spannt $E$ auf und sie enthält nicht die $0$.
-    \item Falls $\alpha \in \Phi$, so sind $\pm \alpha$ die einzigen Vielfachen von $\alpha$ in $\Phi$.
-    \item Falls $\alpha \in \Phi$, so lässt die Spiegelung $\sigma_\alpha$ die Menge $\Phi$ invariant, also $\sigma_\alpha(\Phi) = \Phi$.
-    \item Falls $\alpha, \beta \in \Phi$, dann ist $\langle \beta, \alpha \rangle \in \Z$.
+    \item\label{it:R1} Die Menge $\Phi$ ist endlich, sie spannt $E$ auf und sie enthält nicht die $0$.
+    \item\label{it:R2} Falls $\alpha \in \Phi$, so sind $\pm \alpha$ die einzigen Vielfachen von $\alpha$ in $\Phi$.
+    \item\label{it:R3} Falls $\alpha \in \Phi$, so lässt die Spiegelung $\sigma_\alpha$ die Menge $\Phi$ invariant, also $\sigma_\alpha(\Phi) = \Phi$.
+    \item\label{it:R4} Falls $\alpha, \beta \in \Phi$, dann ist $\langle \beta, \alpha \rangle \in \Z$.
   \end{enumerate}
 \end{defn}
 
 Wurzelsysteme sind im Allgemeinen nicht abgeschlossen unter Addition. 
-Das nachfolgende Lemma beschreibt, unter welchen Bedingungen die Summe oder Differenz zweier Wurzeln wieder eine Wurzel ergibt. Der Beweis hierzu findet sich in \cite[S.45]{humphreys1972introduction}.
+Das nachfolgende Lemma beschreibt, unter welchen Bedingungen die Summe oder Differenz zweier Wurzeln wieder eine Wurzel ergibt. Ein Beweis hierzu befindet sich in \cite[S.45]{humphreys1972introduction}.
 
 \begin{lem}
   \label{lem:sumDiffRoot}
@@ -61,15 +61,15 @@ Oft lassen sich Eigenschaften von Wurzelsystemen, bereits anhand der Eigenschaft
 \begin{defn}
   Eine Teilmenge $\Delta$ von $\Phi$ heißt \emph{Fundamentalsystem}, falls die folgenden Bedingungen erfüllt sind:
   \begin{enumerate}[(B1)]
-    \item Es ist $\Delta$ eine Vektorraumbasis von $E$.
-    \item Jede Wurzel $\beta \in \Phi$ lässt sich schreiben als $\beta = \sum_{\alpha \in \Delta} k_\alpha \alpha$ mit ganzzahligen Linearfaktoren $k_\alpha$ die alle dasselbe Vorzeichen besitzen.
+    \item\label{it:B1} Es ist $\Delta$ eine Vektorraumbasis von $E$.
+    \item\label{it:B2} Jede Wurzel $\beta \in \Phi$ lässt sich schreiben als $\beta = \sum_{\alpha \in \Delta} k_\alpha \alpha$ mit ganzzahligen Linearfaktoren $k_\alpha$ die alle dasselbe Vorzeichen besitzen.
   \end{enumerate}
   Die Elemente von $\Delta$ bezeichnet man auch als $\emph{einfache}$ Wurzeln.
 \end{defn}
 
 \begin{bem}
   Einen Beweis dafür, dass jedes Wurzelsystem eine Fundamentalsystem besitzt, findet man zum Beispiel in \cite[S.48]{humphreys1972introduction} oder \cite[S.116]{erdmann2006introduction}.
-  Aus Eigenschaft (B1) von Fundamentalsystemen folgt sofort, dass die Linearfaktoren in (B2) eindeutig bestimmt sind. 
+  Aus Eigenschaft \hyperref[it:B1]{(B1)} von Fundamentalsystemen folgt sofort, dass die Linearfaktoren in \hyperref[it:B1]{(B2)} eindeutig bestimmt sind. 
   Es lässt sich daher die Höhenfunktion 
   \begin{displaymath}
     \hgt(\beta) := \sum_{\alpha \in \Delta} k_\alpha 
@@ -207,7 +207,7 @@ Mit weiteren Eigenschaften dieser Gruppenoperationen werden wir uns in Abschnitt
   Wie schon gezeigt, folgt daraus unter Betrachtung von Bildern unter $\sigma^{-1} = \sigma$ sofort $\mathfrak{C}(x) = \mathfrak{C}(\sigma(\gamma))$, also insbesondere $x \in \mathfrak{C}(\sigma(\gamma))$.
 
   (c): 
-  Da $\sigma$ als orthogonale Abbildung insbesondere injektiv ist, folgt, dass $\sigma(\Delta)$ wieder ein System linear unabhängiger Vektoren und damit aufgrund von (B1) wieder eine Basis von $E$ ist.
+  Da $\sigma$ als orthogonale Abbildung insbesondere injektiv ist, folgt, dass $\sigma(\Delta)$ wieder ein System linear unabhängiger Vektoren und damit aufgrund von \hyperref[it:B1]{(B1)} wieder eine Basis von $E$ ist.
   
   Ist nun $\beta \in \Phi$ gegeben, so gilt
   \begin{displaymath}
@@ -217,7 +217,7 @@ Mit weiteren Eigenschaften dieser Gruppenoperationen werden wir uns in Abschnitt
     = \sum_{\sigma(\alpha) \in \sigma(\Delta)} k_\alpha \sigma(\alpha)
   \end{displaymath}
   aufgrund der Linearität von $\sigma$.
-  Die Vorzeichen der Linearfaktoren $k_\alpha$ bleiben zudem unverändert, womit (B2) folgt.
+  Die Vorzeichen der Linearfaktoren $k_\alpha$ bleiben zudem unverändert, womit \hyperref[it:B2]{(B2)} folgt.
   Damit ist auch $\sigma(\Delta)$ ein Fundamentalsystem.
 
   (d):
