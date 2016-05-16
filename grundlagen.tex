@@ -16,12 +16,12 @@ Definiert man nun $\langle \beta, \alpha \rangle := \tfrac{2 (\beta, \alpha)}{(\
   = \beta - \langle \beta, \alpha \rangle \alpha,
 \end{displaymath}
 denn $\sigma_\alpha(\alpha) = -\alpha$ und $\sigma_\alpha(\beta) = \beta$ für alle $\beta \in P_\alpha$.
-Man beachte, dass im Gegensatz zum Skalarprodukt, der Ausdruck $\langle \alpha, \beta \rangle$ nur linear in der ersten Variablen ist.
+Man beachte, dass im Gegensatz zum Skalarprodukt, der Ausdruck $\langle \beta, \alpha \rangle$ nur linear in der ersten Variablen ist.
 Es gilt jedoch $\sign \langle \alpha, \beta \rangle = \sign (\alpha, \beta)$ für alle $\alpha, \beta \in E$.
 
 \begin{lem}
   \label{lem:orthogonalRoots}
-  Es sei $E$ ein \textsc{euklid}ischer Vektorraum.
+  %Es sei $E$ ein \textsc{euklid}ischer Vektorraum.
   Falls $(\alpha, \beta) = 0$ für $\alpha, \beta \in E$ gilt, so kommutieren die korrespondierenden Spiegelungen $\sigma_\alpha$ und $\sigma_\beta$.
 \end{lem}
 
@@ -29,11 +29,14 @@ Es gilt jedoch $\sign \langle \alpha, \beta \rangle = \sign (\alpha, \beta)$ fü
   Für $\gamma \in E$ gilt $\sigma_\alpha(\gamma) = \gamma - \langle \gamma, \alpha \rangle \alpha$. Da aus $(\alpha, \beta) = 0$ sofort $\langle \alpha, \beta \rangle = 0$ folgt, gilt also auch
   \begin{align*}
     \sigma_\beta \sigma_\alpha(\gamma) 
-    &= \gamma - \langle \gamma, \beta \rangle \beta - \langle \gamma, \alpha \rangle (\alpha - \langle \alpha, \beta \rangle \beta) \\
-    &= \gamma - \langle \gamma, \beta \rangle \beta - \langle \gamma, \alpha \rangle \alpha \\
-    &= \dots \\
-    &= \sigma_\alpha \sigma_\alpha(\gamma).\qedhere
+    &= \sigma_\alpha(\gamma) - \langle \sigma_\alpha(\gamma), \beta \rangle \beta \\
+    &= \gamma - \langle \gamma, \alpha \rangle \alpha 
+              - \langle \gamma- \langle \gamma, \alpha\rangle \alpha, \beta \rangle \beta \\
+    &= \gamma - \langle \gamma, \alpha \rangle \alpha 
+              - \langle \gamma, \beta \rangle \beta - \langle \gamma, \alpha \rangle \langle \alpha, \beta \rangle \beta \\
+    &= \gamma - \langle \gamma, \alpha \rangle \alpha - \langle \gamma, \beta \rangle \beta.
   \end{align*} 
+  Da dieser Ausdruck symmetrisch in $\alpha$ und $\beta$ ist, folgt $\sigma_\beta \sigma_\alpha = \sigma_\alpha \sigma_\beta$.
 \end{proof}
 
 \begin{defn}
@@ -62,25 +65,25 @@ Oft lassen sich Eigenschaften von Wurzelsystemen, bereits anhand der Eigenschaft
   Eine Teilmenge $\Delta$ von $\Phi$ heißt \emph{Fundamentalsystem}, falls die folgenden Bedingungen erfüllt sind:
   \begin{enumerate}[(B1)]
     \item\label{it:B1} Es ist $\Delta$ eine Vektorraumbasis von $E$.
-    \item\label{it:B2} Jede Wurzel $\beta \in \Phi$ lässt sich schreiben als $\beta = \sum_{\alpha \in \Delta} k_\alpha \alpha$ mit ganzzahligen Linearfaktoren $k_\alpha$ die alle dasselbe Vorzeichen besitzen.
+    \item\label{it:B2} Jede Wurzel $\beta \in \Phi$ lässt sich schreiben als $\beta = \sum_{\alpha \in \Delta} k_\alpha \alpha$ mit ganzzahligen Linearfaktoren $k_\alpha$, die alle dasselbe Vorzeichen besitzen.
   \end{enumerate}
   Die Elemente von $\Delta$ bezeichnet man auch als $\emph{einfache}$ Wurzeln.
+  Eine \emph{einfache} Spiegelung ist eine von einer einfachen Wurzel induzierte Spiegelung.
 \end{defn}
 
 \begin{bem}
   Einen Beweis dafür, dass jedes Wurzelsystem eine Fundamentalsystem besitzt, findet man zum Beispiel in \cite[S.48]{humphreys1972introduction} oder \cite[S.116]{erdmann2006introduction}.
   Aus Eigenschaft \hyperref[it:B1]{(B1)} von Fundamentalsystemen folgt sofort, dass die Linearfaktoren in \hyperref[it:B1]{(B2)} eindeutig bestimmt sind. 
-  Es lässt sich daher die Höhenfunktion 
+  Daher ist auch die Höhenfunktion 
   \begin{displaymath}
     \hgt(\beta) := \sum_{\alpha \in \Delta} k_\alpha 
   \end{displaymath}
-  definieren.
+  wohldefiniert.
+
   Entsprechend des Vorzeichens der Höhenfunktion bezeichnet man Wurzeln auch als \emph{positiv} oder \emph{negativ}.
   Wir schreiben hierfür abkürzend $\alpha \succeq 0$ beziehungsweise $\alpha \preceq 0$.
   Die Menge der positiven Wurzeln bezeichnen wir im Folgenden auch mit $\Phi^+$, die der negativen Wurzeln entsprechend mit $\Phi^-$.
-
   Einfache Wurzeln sind stets positiv.
-  Die von einer einfachen Wurzel induzierte Spiegelung, nennen wir auch einfache Spiegelung.
  Zudem induziert jedes Fundamentalsystem $\Delta$ eine Halbordnung auf $\Phi$ durch
  \begin{displaymath}
    \beta \preceq \alpha \quad \text{gilt genau dann, wenn} \quad \alpha - \beta \succeq 0 \text{ oder } \alpha = \beta \text{ gilt}.
@@ -92,17 +95,17 @@ Bezüglich eines Wurzelsystems $\Phi$ lassen sich auch Vektoren des umfassenden 
 \begin{defn}
   Sei $\Phi$ ein Wurzelsystem in $E$.
   Ein Vektor $\gamma \in E$ heißt \emph{regulär}, falls $\gamma \in E \setminus \bigcup_{\alpha \in \Phi} P_\alpha$.
-  Die Familie $(P_\alpha)_{\alpha \in \Phi}$ liefert eine Partition von $E$ in maximal zusammenhängende Mengen, die sogenannten \emph{\weyl\hyp{}Kammern}.
+  Die Familie $(P_\alpha)_{\alpha \in \Phi}$ liefert eine Partition von $E\setminus \bigcup_{\alpha \in \Phi} P_\alpha$ in maximal zusammenhängende Mengen, die sogenannten \emph{\weyl\hyp{}Kammern}.
   Die jedem $\gamma \in E$ eindeutig zugeordnete \weyl\hyp{}Kammer, werde mit $\mathfrak{C}(\gamma)$ bezeichnet.
 \end{defn}
 
-Liegen zwei reguläre Wurzeln $\gamma, \gamma'$ in derselben \weyl\hyp{}Kammer, so liegen sie bezüglich allen Hyperebenen $P_\alpha$ auf derselben Seite, was bedeutet, dass $\sign (\gamma, \alpha) = \sign( \gamma', \alpha)$ gilt, für alle $\alpha \in \Phi$.
+Liegen zwei reguläre Wurzeln $\gamma, \gamma'$ in derselben \weyl\hyp{}Kammer, so liegen sie bezüglich aller Hyperebenen $P_\alpha$ auf derselben Seite, was bedeutet, dass $\sign (\gamma, \alpha) = \sign( \gamma', \alpha)$ gilt, für alle $\alpha \in \Phi$.
 Bezeichnet man mit
 \begin{displaymath}
   \Phi^+(\gamma) := \{ \alpha \in \Phi \mid (\gamma, \alpha) > 0 \}
 \end{displaymath}
 die Menge aller Wurzeln, die mit $\gamma$ einen spitzen Winkel einschließen, so gilt in diesem Falle $\Phi^+(\gamma) = \Phi^+(\gamma')$.
-Bezeichnet man zudem mit $\Delta(\gamma)$ das Fundamentalsystem aller Wurzeln $\alpha \in \Phi^+(\gamma)$, die sich als Summe $\alpha = \beta_1 + \beta_2$ zweier positiver Wurzeln $\beta_1, \beta_2 \in \Phi^+(\gamma)$ schreiben lassen, so gilt zusätzlich $\Delta(\gamma) = \Delta(\gamma')$. 
+Bezeichnet man zudem mit $\Delta(\gamma)$ das Fundamentalsystem aller Wurzeln $\alpha \in \Phi^+(\gamma)$, die sich nicht als Summe $\alpha = \beta_1 + \beta_2$ zweier positiver Wurzeln $\beta_1, \beta_2 \in \Phi^+(\gamma)$ schreiben lassen, so gilt zusätzlich $\Delta(\gamma) = \Delta(\gamma')$. 
 Wurzeln, die sich in der oben genannten Weise ausdrücken lassen, bezeichnet man auch als \emph{zerlegbar}.
 
 Das folgende Lemma fasst nochmals die vorangehenden Überlegungen zusammen.
@@ -131,7 +134,7 @@ Die soeben eingeführten Begriffe veranschaulicht Abbildung \ref{fig:fundamental
 
 \begin{defn}
   Sei $\Phi$ ein Wurzelsystem in $E$ mit Fundamentalsystem $\Delta$.
-  Gilt für ein reguläres $\gamma \in E$, dass $\Delta = \Delta(\gamma)$, so bezeichnet man $\mathfrak{C}(\Delta) := \mathfrak{C}(\gamma)$ als \emph{Fundamentalkammer bezüglich} $\Delta$.
+  Gilt $\Delta = \Delta(\gamma)$ für ein reguläres $\gamma \in E$, so bezeichnet man $\mathfrak{C}(\Delta) := \mathfrak{C}(\gamma)$ als \emph{Fundamentalkammer bezüglich} $\Delta$.
 \end{defn}
 
 Wir betrachten nun einen Spezialfall von Spiegelungsgruppen. Allgemeine Spiegelungsgruppen werden in \cite{humphreys1992reflection} behandelt.
@@ -153,8 +156,6 @@ Der Beweis dieses Lemmas findet sich in \cite[S.43]{humphreys1972introduction}.
   Sei $\Phi$ ein Wurzelsystem in $E$ mit \weyl\hyp{}Gruppe $\W$ und $\sigma \in \W$.
   Dann gilt $\sigma \sigma_\alpha \sigma^{-1} = \sigma_{\sigma(\alpha)}$ für alle $\alpha \in \Phi$. \qed
 \end{lem}
-
-Mit weiteren Eigenschaften dieser Gruppenoperationen werden wir uns in Abschnitt \ref{sec:weylgroup} beschäftigen.
 
 \begin{prop}
   \label{prop:groupOp}
@@ -184,8 +185,8 @@ Mit weiteren Eigenschaften dieser Gruppenoperationen werden wir uns in Abschnitt
   Angenommen $\sigma(\gamma)$ sei nicht regulär, dann existiert ein $\alpha \in \Phi$, sodass $\sigma(\gamma) \in P_\alpha$.
   Damit folgt $\sigma(\gamma) = \sigma_\alpha \sigma(\gamma)$, da $\sigma_\alpha$ Elemente aus $P_\alpha$ fixiert.
   Hieraus folgt mit Lemma \ref{lem:conjReflection} nun $\gamma = \sigma^{-1} \sigma_\alpha \sigma(\gamma) = \sigma_{\sigma(\alpha)}(\gamma)$, was wiederum $\gamma \in P_{\sigma(\alpha)}$ impliziert.
-  Zu Beginn wurde jedoch $\gamma$ als regulär vorausgesetzt.
-  Es muss also auch $\sigma(\gamma)$ regulär sein.
+  Nach \hyperref[it:R3]{(R3)} gilt $\sigma(\alpha) \in \Phi$, also ist $\gamma$ im Widerspruch zur Voraussetzung nicht regulär.
+  Die Annahme, dass $\sigma(\gamma)$ nicht regulär sei, muss also verworfen werden.
   
   Die Umkehrung der Aussage folgt aus der gezeigten Implikationsrichtung durch Anwendung der Spiegelung $\sigma^{-1}$ auf $\sigma(\gamma)$.
 
@@ -196,7 +197,7 @@ Mit weiteren Eigenschaften dieser Gruppenoperationen werden wir uns in Abschnitt
   Wir betrachten nun die Abbildung $x \mapsto  (\sigma(x), \alpha)$.
   Diese ist als Linearform auf einem endlichdimensionalen Vektorraum stetig bezüglich der \textsc{euklid}ischen Topologie auf $E$.
   Da $\mathfrak{C}(\gamma)$ eine zusammenhängende Menge ist, folgt mit dem Zwischenwertsatz \cite[S.232]{bartsch2015allgemeine}, dass ein reguläres $x \in \mathfrak{C}(\gamma)$ existiert mit $(\sigma(x), \alpha) = 0$.
-  Dies bedeutet jedoch gerade, dass $\sigma(x) \in P_\alpha$ und damit wäre $\sigma(x)$ nicht regulär im Widerspruch zu (1). Es muss also auch $\mathfrak{C}(\sigma(\gamma)) = \mathfrak{C}(\sigma(\gamma'))$ gelten.
+  Dies bedeutet jedoch gerade, dass $\sigma(x) \in P_\alpha$ und damit wäre $\sigma(x)$ nicht regulär im Widerspruch zu (a). Es muss also auch $\mathfrak{C}(\sigma(\gamma)) = \mathfrak{C}(\sigma(\gamma'))$ gelten.
   
   Sei nun für den zweiten Teil der zu beweisenden Aussage $x \in \mathfrak{C}(\sigma(\gamma))$.
   Daraus folgt $\mathfrak{C}(x) = \mathfrak{C}(\sigma(\gamma))$.
@@ -209,7 +210,7 @@ Mit weiteren Eigenschaften dieser Gruppenoperationen werden wir uns in Abschnitt
   (c): 
   Da $\sigma$ als orthogonale Abbildung insbesondere injektiv ist, folgt, dass $\sigma(\Delta)$ wieder ein System linear unabhängiger Vektoren und damit aufgrund von \hyperref[it:B1]{(B1)} wieder eine Basis von $E$ ist.
   
-  Ist nun $\beta \in \Phi$ gegeben, so gilt
+  Ist nun $\beta \in \Phi$ mit der nach \hyperref[it:B2]{(B2)} existierenden Darstellung $\beta = \sum_{\alpha \in \Delta} k_\alpha \alpha$ gegeben, so gilt
   \begin{displaymath}
   \sigma(\beta) 
     = \sigma(\sum_{\alpha \in \Delta} k_\alpha \alpha)
@@ -224,14 +225,16 @@ Mit weiteren Eigenschaften dieser Gruppenoperationen werden wir uns in Abschnitt
   Wir stellen zunächst fest, dass aufgrund der Aussage (c), die zu zeigende Gleichheit in dem Sinne wohldefiniert ist, dass $\sigma(\Delta(\gamma))$ als Bild eines Fundamentalsystems wieder ein Fundamentalsystem darstellt.
 
   Sei nun $\sigma(\alpha) \in \sigma(\Delta(\gamma))$.
-  Da $\alpha \in \Delta(\gamma)$, gilt definitionsgemäß $(\alpha, \gamma) > 0$.
+  Mit $\alpha \in \Delta(\gamma)$ gilt definitionsgemäß $(\alpha, \gamma) > 0$.
   Spiegelungen erhalten als Isometrien das Skalarprodukt, es gilt also auch $(\sigma(\alpha), \sigma(\gamma)) > 0$.
   Dies wiederum impliziert $\sigma(\alpha) \in \Phi^+(\sigma(\gamma))$.
   Angenommen $\sigma(\alpha)$ wäre eine zerlegbare Wurzel.
   Dann ist auch $\alpha$ zerlegbar, da $\sigma$ bijektiv ist.
   Dies steht jedoch im Widerspruch dazu, dass mit $\alpha \in \Delta$ die Wurzel $\alpha$ als einfach vorausgesetzt wurde.
-  Also muss $\sigma(\alpha)$ auch einfach sein, womit $\sigma(\alpha) \in \sigma(\Delta(\gamma))$ folgt.
+  Also muss $\sigma(\alpha)$ auch einfach sein, womit $\sigma(\alpha) \in \Delta(\sigma(\gamma))$ folgt.
   Das bedeutet, dass $\sigma(\Delta(\gamma)) \subseteq \Delta(\sigma(\gamma))$.
   
   Da $\sigma$ bijektiv ist und beide Mengen als Teilmengen des endlichen Wurzelsystems $\Phi$ auch endlich sind, folgt hiermit bereits die Gleichheit.
 \end{proof}
+
+Mit weiteren Eigenschaften dieser Gruppenoperationen werden wir uns in Abschnitt \ref{sec:weylgroup} beschäftigen.

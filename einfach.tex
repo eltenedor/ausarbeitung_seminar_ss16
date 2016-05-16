@@ -15,7 +15,7 @@ Im Folgenden bezeichne $\Delta$ ein fest gewähltes Fundamentalsystem des Wurzel
   Wir betrachten die Gleichung $\sum_{\alpha \in M} k_\alpha \alpha = 0$ und definieren die disjunkten Mengen $A := \{\alpha \in M \mid k_\alpha < 0\}$ und  $B := \{\beta \in M \mid k_\beta > 0\}$. 
   Damit gilt 
   \begin{displaymath}
-    \sum_{\alpha \in A} k_\alpha \alpha = \sum_{\beta \in B} k_\beta \beta.
+    \sum_{\alpha \in A} k_\alpha \alpha = \sum_{\beta \in B} k_\beta \beta \tag{$\ast$}.
   \end{displaymath}
   Daraus folgt mit $\varepsilon := \sum_{\alpha \in A} k_\alpha \alpha$ dann
   \begin{displaymath}
@@ -25,13 +25,13 @@ Im Folgenden bezeichne $\Delta$ ein fest gewähltes Fundamentalsystem des Wurzel
     = \sum_{\alpha \in A, \beta \in B} k_\alpha k_\beta \; (\alpha, \beta) 
     \leq 0,
   \end{displaymath}
-  aufgrund der Eigenschaften des Skalarprodukts und der Voraussetzung, dass $(\alpha, \beta) \leq 0$ für alle paarweise verschiedenen $\alpha, \beta$.
+  aufgrund der Eigenschaften des Skalarprodukts und der Voraussetzung $(\alpha, \beta) \leq 0$ für alle paarweise verschiedenen $\alpha, \beta$.
   Dies impliziert $\varepsilon = 0$, womit auch 
   \begin{displaymath}
     0 = (\varepsilon, \gamma) = \sum_{\alpha \in A} k_\alpha (\alpha, \gamma)
   \end{displaymath}
   folgt. Da voraussetzungsgemäß $(\alpha, \gamma) > 0$ gilt, müssen alle $k_\alpha$ mit $\alpha \in A$ bereits $0$ sein.
-  Analog folgert man, dass alle $k_\beta$ mit $\beta \in B$ gleich $0$ sein müssen.
+  Analog folgert man unter Verwendung der Identität ($\ast$), dass alle $k_\beta$ mit $\beta \in B$ gleich $0$ sein müssen.
 \end{proof}
 
 Das folgende Lemma demonstriert, wie sich aus einer positiven Wurzel neue positive Wurzeln gewinnen lassen.
