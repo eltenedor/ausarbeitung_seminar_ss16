@@ -1,10 +1,10 @@
 \section{Grundlagen zu Wurzelsystemen}
 \label{sec:grundlagen}
 
-Dieser Abschnitt beinhaltet die für diese Arbeit benötigten Grundlagen zu Wurzelsystemen.
-
+Dieser Abschnitt beinhaltet die für diese Arbeit benötigten Grundlagen zu Wurzelsystemen.  
 Im Folgenden bezeichne $E$ stets einen \emph{\textsc{euklid}ischen} Vektorraum, also einen $\R$\hyp{}Vektorraum mit Skalarprodukt $(\cdot,\cdot)$.
-Unter einer \emph{Spiegelung} $\sigma$ versteht man eine orthogonale Abbildung, welche eine \emph{Hyperebene}, also einen Unterraum der Kodimension $1$, punktweise fixiert und jeden Vektor des orthogonalen Komplements der Hyperebene auf sein Negatives abbildet.
+
+Einer \emph{Spiegelung} $\sigma$ ist eine orthogonale Abbildung auf $E$, welche eine \emph{Hyperebene}, also einen Unterraum der Kodimension $1$, punktweise fixiert und jeden Vektor des orthogonalen Komplements der Hyperebene auf sein Negatives abbildet.
 Jeder Vektor $\alpha \in E \setminus \{0\}$ induziert eine \emph{Spiegelung} $\sigma_\alpha$ an der Hyperebene 
 \begin{displaymath}
   P_\alpha := \spn(\{\alpha\})^\perp = \{\beta \in E \mid (\beta, \alpha) = 0\}.
@@ -42,15 +42,15 @@ Es gilt jedoch $\sign \langle \alpha, \beta \rangle = \sign (\alpha, \beta)$ fü
 \begin{defn}
   Eine Teilmenge $\Phi$ des euklidischen Vektorraums $E$ heißt \emph{Wurzelsystem in} $E$, falls folgende Bedingungen erfüllt sind:
   \begin{enumerate}[(R1)]
-    \item\label{it:R1} Die Menge $\Phi$ ist endlich, sie spannt $E$ auf und sie enthält nicht die $0$.
-    \item\label{it:R2} Falls $\alpha \in \Phi$, so sind $\pm \alpha$ die einzigen Vielfachen von $\alpha$ in $\Phi$.
-    \item\label{it:R3} Falls $\alpha \in \Phi$, so lässt die Spiegelung $\sigma_\alpha$ die Menge $\Phi$ invariant, also $\sigma_\alpha(\Phi) = \Phi$.
-    \item\label{it:R4} Falls $\alpha, \beta \in \Phi$, dann ist $\langle \beta, \alpha \rangle \in \Z$.
+    \item\label{it:R1} Die Menge $\Phi$ ist endlich, sie erzeugt den Vektorraum $E$ auf und sie enthält nicht die $0$.
+    \item\label{it:R2} Für alle $\alpha \in \Phi$ sind $\pm \alpha$ die einzigen Vielfachen von $\alpha$ in $\Phi$.
+    \item\label{it:R3} Für alle $\alpha \in \Phi$ ist die Menge $\Phi$ invariant unter der Spiegelung $\sigma_\alpha$.
+    \item\label{it:R4} Für alle $\alpha, \beta \in \Phi$ gilt $\langle \alpha, \beta \rangle \in \Z$.
   \end{enumerate}
 \end{defn}
 
 Wurzelsysteme sind im Allgemeinen nicht abgeschlossen unter Addition. 
-Das nachfolgende Lemma beschreibt, unter welchen Bedingungen die Summe oder Differenz zweier Wurzeln wieder eine Wurzel ergibt. Ein Beweis hierzu befindet sich in \cite[S.45]{humphreys1972introduction}.
+Das nachfolgende Lemma beschreibt, unter welchen Bedingungen die Summe oder die Differenz zweier Wurzeln wieder eine Wurzel ergibt. Ein Beweis hierzu befindet sich in \cite[S.45]{humphreys1972introduction}.
 
 \begin{lem}
   \label{lem:sumDiffRoot}
@@ -74,7 +74,7 @@ Oft lassen sich Eigenschaften von Wurzelsystemen, bereits anhand der Eigenschaft
 \begin{bem}
   Einen Beweis dafür, dass jedes Wurzelsystem eine Fundamentalsystem besitzt, findet man zum Beispiel in \cite[S.48]{humphreys1972introduction} oder \cite[S.116]{erdmann2006introduction}.
   Aus Eigenschaft \hyperref[it:B1]{(B1)} von Fundamentalsystemen folgt sofort, dass die Linearfaktoren in \hyperref[it:B1]{(B2)} eindeutig bestimmt sind. 
-  Daher ist auch die Höhenfunktion 
+  Daher ist auch die \emph{Höhenfunktion}
   \begin{displaymath}
     \hgt(\beta) := \sum_{\alpha \in \Delta} k_\alpha 
   \end{displaymath}
@@ -106,13 +106,14 @@ Bezeichnet man mit
 \end{displaymath}
 die Menge aller Wurzeln, die mit $\gamma$ einen spitzen Winkel einschließen, so gilt in diesem Falle $\Phi^+(\gamma) = \Phi^+(\gamma')$.
 Bezeichnet man zudem mit $\Delta(\gamma)$ das Fundamentalsystem aller Wurzeln $\alpha \in \Phi^+(\gamma)$, die sich nicht als Summe $\alpha = \beta_1 + \beta_2$ zweier positiver Wurzeln $\beta_1, \beta_2 \in \Phi^+(\gamma)$ schreiben lassen, so gilt zusätzlich $\Delta(\gamma) = \Delta(\gamma')$. 
-Wurzeln, die sich in der oben genannten Weise ausdrücken lassen, bezeichnet man auch als \emph{zerlegbar}.
+Wurzeln, die sich in der oben genannten Weise additiv zerlegen lassen, bezeichnet man als \emph{zerlegbar}. 
+Ist dies nicht der Fall so bezeichnet man die Wurzel als \emph{unzerlegbar}
 
 Das folgende Lemma fasst nochmals die vorangehenden Überlegungen zusammen.
 
 \begin{lem}
   Seien $\gamma, \gamma' \in E$ regulär bezüglich des Wurzelsystems $\Phi$.
-  Dann folgt aus $\mathfrak{C}(\gamma) = \mathfrak{C}(\gamma')$, dass $\Phi^+(\gamma) = \Phi^+(\gamma')$. 
+  Dann folgt aus $\mathfrak{C}(\gamma) = \mathfrak{C}(\gamma')$ die Identität $\Phi^+(\gamma) = \Phi^+(\gamma')$. 
   Dies ist wiederum genau dann der Fall, wenn $\Delta(\gamma) = \Delta(\gamma')$ gilt.
   Jeder \weyl\hyp{}Kammer $\mathfrak{C}(\gamma)$ entspricht also genau ein Fundamentalsystem $\Delta(\gamma)$. \qed
 \end{lem}
@@ -149,12 +150,16 @@ Wir betrachten nun einen Spezialfall von Spiegelungsgruppen. Allgemeine Spiegelu
 Es lassen sich nun unterschiedliche von $\W$ induzierte Gruppenoperationen betrachten. Über deren Wohldefiniertheit gibt die nachfolgende Proposition Auskunft. 
 
 Für den Beweis benötigen wir ein Lemma, welches das Verhalten von Spiegelungen aus der \weyl\hyp{}Gruppe unter Konjugation mit Vektorraumautomorphismen beschreibt. 
-Der Beweis dieses Lemmas findet sich in \cite[S.43]{humphreys1972introduction}.
+Der Beweis einer Verallgemeinerung dieses Lemmas findet sich in \cite[S.43]{humphreys1972introduction}.
 
 \begin{lem}
   \label{lem:conjReflection}
-  Sei $\Phi$ ein Wurzelsystem in $E$ mit \weyl\hyp{}Gruppe $\W$ und $\sigma \in \W$.
-  Dann gilt $\sigma \sigma_\alpha \sigma^{-1} = \sigma_{\sigma(\alpha)}$ für alle $\alpha \in \Phi$. \qed
+  Sei $\Phi$ ein Wurzelsystem über $E$ mit \weyl\hyp{}Gruppe $\W$.
+  Dann gilt 
+  \begin{displaymath}
+    \sigma \sigma_\alpha \sigma^{-1} = \sigma_{\sigma(\alpha)} 
+  \end{displaymath}
+  für alle $\sigma \in \W$ und alle $\alpha \in \Phi$. \qed
 \end{lem}
 
 \begin{prop}
@@ -162,15 +167,15 @@ Der Beweis dieses Lemmas findet sich in \cite[S.43]{humphreys1972introduction}.
   Sei $\Phi$ ein Wurzelsystem über $E$ mit \weyl\hyp{}Gruppe $\W$.
   Dann gelten für alle $\gamma, \gamma' \in E$ und $\sigma \in \W$ die folgenden Aussagen:
   \begin{enumerate}[(a)]
-    \item $\W$ operiert auf der Menge der regulären Elemente: 
+    \item Es operiert $\W$ auf der Menge der regulären Elemente: 
       \begin{addmargin}[2em]{2em}
         Es ist $\sigma(\gamma)$ genau dann regulär, wenn $\gamma$ regulär ist.
       \end{addmargin}
       
-    \item Aus $\mathfrak{C}(\gamma) = \mathfrak{C}(\gamma')$ folgt, dass auch $\mathfrak{C}(\sigma(\gamma)) = \mathfrak{C}(\sigma(\gamma'))$. 
+    \item Aus $\mathfrak{C}(\gamma) = \mathfrak{C}(\gamma')$ folgt, dass auch $\mathfrak{C}(\sigma(\gamma)) = \mathfrak{C}(\sigma(\gamma'))$. \\
       Es operiert $\W$ auf der Menge der \weyl\hyp{}Kammern $\{\mathfrak{C}(\gamma) \mid \gamma \text{ regulär}\}$ durch $\mathfrak{C}(\sigma(\gamma)) = \sigma(\mathfrak{C}(\gamma))$.
 
-    \item $\W$ operiert auf der Menge der Fundamentalsysteme $\{\Delta(\gamma) \mid \gamma \text{ regulär}\}$: 
+    \item Es operiert $\W$ auf der Menge der Fundamentalsysteme $\{\Delta(\gamma) \mid \gamma \text{ regulär}\}$: 
       \begin{addmargin}[2em]{2em}
         Ist $\Delta$ ein Fundamentalsystem für $\Phi$, so auch $\sigma(\Delta)$. 
       \end{addmargin}
@@ -182,7 +187,7 @@ Der Beweis dieses Lemmas findet sich in \cite[S.43]{humphreys1972introduction}.
 
 \begin{proof}
   (a): 
-  Angenommen $\sigma(\gamma)$ sei nicht regulär, dann existiert ein $\alpha \in \Phi$, sodass $\sigma(\gamma) \in P_\alpha$.
+  Angenommen, $\sigma(\gamma)$ sei nicht regulär, dann existiert ein $\alpha \in \Phi$, sodass $\sigma(\gamma) \in P_\alpha$.
   Damit folgt $\sigma(\gamma) = \sigma_\alpha \sigma(\gamma)$, da $\sigma_\alpha$ Elemente aus $P_\alpha$ fixiert.
   Hieraus folgt mit Lemma \ref{lem:conjReflection} nun $\gamma = \sigma^{-1} \sigma_\alpha \sigma(\gamma) = \sigma_{\sigma(\alpha)}(\gamma)$, was wiederum $\gamma \in P_{\sigma(\alpha)}$ impliziert.
   Nach \hyperref[it:R3]{(R3)} gilt $\sigma(\alpha) \in \Phi$, also ist $\gamma$ im Widerspruch zur Voraussetzung nicht regulär.
@@ -192,23 +197,26 @@ Der Beweis dieses Lemmas findet sich in \cite[S.43]{humphreys1972introduction}.
 
   (b): 
   Es gelte $\mathfrak{C}(\gamma) = \mathfrak{C}(\gamma')$.
-  Angenommen $\mathfrak{C}(\sigma(\gamma)) \neq \mathfrak{C}(\sigma(\gamma'))$.
-  Dann existiert ein $\alpha \in \Phi$, sodass $(\sigma(\gamma), \alpha) > 0$ während andererseits $(\sigma(\gamma'), \alpha) < 0$.
+  Angenommen, es sei $\mathfrak{C}(\sigma(\gamma)) \neq \mathfrak{C}(\sigma(\gamma'))$.
+  Dann existiert ein $\alpha \in \Phi$, sodass einerseits $(\sigma(\gamma), \alpha) > 0$ und andererseits $(\sigma(\gamma'), \alpha) < 0$ gelten.
   Wir betrachten nun die Abbildung $x \mapsto  (\sigma(x), \alpha)$.
   Diese ist als Linearform auf einem endlichdimensionalen Vektorraum stetig bezüglich der \textsc{euklid}ischen Topologie auf $E$.
+
   Da $\mathfrak{C}(\gamma)$ eine zusammenhängende Menge ist, folgt mit dem Zwischenwertsatz \cite[S.232]{bartsch2015allgemeine}, dass ein reguläres $x \in \mathfrak{C}(\gamma)$ existiert mit $(\sigma(x), \alpha) = 0$.
-  Dies bedeutet jedoch gerade, dass $\sigma(x) \in P_\alpha$ und damit wäre $\sigma(x)$ nicht regulär im Widerspruch zu (a). Es muss also auch $\mathfrak{C}(\sigma(\gamma)) = \mathfrak{C}(\sigma(\gamma'))$ gelten.
+  Das bedeutet jedoch gerade, dass $\sigma(x)$ ein Element von $P_\alpha$ ist und damit wäre $\sigma(x)$ nicht regulär.
+  Dies steht jedoch im Widerspruch zu (a). 
+  Es muss also auch $\mathfrak{C}(\sigma(\gamma)) = \mathfrak{C}(\sigma(\gamma'))$ gelten.
   
   Sei nun für den zweiten Teil der zu beweisenden Aussage $x \in \mathfrak{C}(\sigma(\gamma))$.
   Daraus folgt $\mathfrak{C}(x) = \mathfrak{C}(\sigma(\gamma))$.
   Dann gilt nach der soeben bewiesenen Aussage auch $\mathfrak{C}(\sigma^{-1}(x)) = \mathfrak{C}(\gamma)$.
   Insbesondere gilt also $\sigma^{-1}(x) \in \mathfrak{C}(\gamma)$ und damit auch $x \in \sigma(\mathfrak{C}(\gamma))$
   
-  Die umgekehrte Ungleichung folgt analog: Ist $x \in \sigma(\mathfrak{C}(\gamma))$, so ist $\sigma(x) \in \mathfrak{C}(\gamma)$, also $\mathfrak{C}(\sigma(x)) = \mathfrak{C}(\gamma)$. 
-  Wie schon gezeigt, folgt daraus unter Betrachtung von Bildern unter $\sigma^{-1} = \sigma$ sofort $\mathfrak{C}(x) = \mathfrak{C}(\sigma(\gamma))$, also insbesondere $x \in \mathfrak{C}(\sigma(\gamma))$.
+  Die umgekehrte Inklusion folgt analog: Ist $x \in \sigma(\mathfrak{C}(\gamma))$, so ist $\sigma(x) \in \mathfrak{C}(\gamma)$ und damit gilt $\mathfrak{C}(\sigma(x)) = \mathfrak{C}(\gamma)$. 
+  Wie schon gezeigt, folgt daraus aus der Betrachtung von Bildern unter $\sigma^{-1} = \sigma$ sofort $\mathfrak{C}(x) = \mathfrak{C}(\sigma(\gamma))$, also insbesondere $x \in \mathfrak{C}(\sigma(\gamma))$.
 
   (c): 
-  Da $\sigma$ als orthogonale Abbildung insbesondere injektiv ist, folgt, dass $\sigma(\Delta)$ wieder ein System linear unabhängiger Vektoren und damit aufgrund von \hyperref[it:B1]{(B1)} wieder eine Basis von $E$ ist.
+  Da $\sigma$ als orthogonale Abbildung insbesondere injektiv ist, folgt, dass $\sigma(\Delta)$ wieder ein System linear unabhängiger Vektoren und damit aufgrund von \hyperref[it:B1]{(B1)} wieder eine Vektorraumbasis von $E$ ist.
   
   Ist nun $\beta \in \Phi$ mit der nach \hyperref[it:B2]{(B2)} existierenden Darstellung $\beta = \sum_{\alpha \in \Delta} k_\alpha \alpha$ gegeben, so gilt
   \begin{displaymath}
@@ -228,11 +236,11 @@ Der Beweis dieses Lemmas findet sich in \cite[S.43]{humphreys1972introduction}.
   Mit $\alpha \in \Delta(\gamma)$ gilt definitionsgemäß $(\alpha, \gamma) > 0$.
   Spiegelungen erhalten als Isometrien das Skalarprodukt, es gilt also auch $(\sigma(\alpha), \sigma(\gamma)) > 0$.
   Dies wiederum impliziert $\sigma(\alpha) \in \Phi^+(\sigma(\gamma))$.
-  Angenommen $\sigma(\alpha)$ wäre eine zerlegbare Wurzel.
+  Angenommen, $\sigma(\alpha)$ wäre eine zerlegbare Wurzel.
   Dann ist auch $\alpha$ zerlegbar, da $\sigma$ bijektiv ist.
   Dies steht jedoch im Widerspruch dazu, dass mit $\alpha \in \Delta$ die Wurzel $\alpha$ als einfach vorausgesetzt wurde.
   Also muss $\sigma(\alpha)$ auch einfach sein, womit $\sigma(\alpha) \in \Delta(\sigma(\gamma))$ folgt.
-  Das bedeutet, dass $\sigma(\Delta(\gamma)) \subseteq \Delta(\sigma(\gamma))$.
+  Das impliziert die Gültigkeit der Inklusion $\sigma(\Delta(\gamma)) \subseteq \Delta(\sigma(\gamma))$.
   
   Da $\sigma$ bijektiv ist und beide Mengen als Teilmengen des endlichen Wurzelsystems $\Phi$ auch endlich sind, folgt hiermit bereits die Gleichheit.
 \end{proof}

@@ -5,59 +5,59 @@ In diesem Abschnitt beschäftigen wir uns mit den Eigenschaften der kleinsten ``
 Es sei wieder $\Phi$ ein fest gewähltes Wurzelsystem im \textsc{euklid}ischen Vektorraum $E$ mit Fundamentalsystem $\Delta$ und zugehöriger \weyl\hyp{}Gruppe $\W$.
 
 \begin{defn}
-  Ein Wurzelsystem $\Phi$ in einem \textsc{euklid}ischen Vektorraum $E$ heißt \emph{irreduzibel} wenn keine Zerlegung von $\Phi$ in zwei nichtleere disjunkte Mengen existiert, sodass die Elemente aus unterschiedlichen Mengen paarweise orthogonal sind.
+  Ein Wurzelsystem $\Phi$ heißt \emph{irreduzibel} wenn keine Zerlegung von $\Phi$ in zwei nichtleere disjunkte Mengen existiert, sodass die Elemente aus unterschiedlichen Mengen paarweise orthogonal sind.
   Ebenso bezeichne man ein Fundamentalsystem eines Wurzelsystems als irreduzibel, falls keine disjunkte Zerlegung im obigen Sinne existiert.
 \end{defn}
 
 \begin{lem}
   \label{lem:irreducibleRoot}
-  Sei $\Delta$ ein Fundamentalsystem eines Wurzelsystems $\Phi$ in $E$.
-  Dann ist $\Phi$ genau dann irreduzibel, wenn $\Delta$ irreduzibel ist.
+  Das Wurzelsystem $\Phi$ ist genau dann irreduzibel, wenn $\Delta$ irreduzibel ist.
 \end{lem}
 
 \begin{proof}
   ``$\Rightarrow$'':
   Angenommen, es existiere eine Zerlegung $\Phi = \Phi_1 \cup \Phi_2$ mit $(\Phi_1, \Phi_2)$ = 0.
-  Falls $\Delta \not\subseteq \Phi_i$ gilt für ein $i \in \{1,2\}$, so ist $\Delta = (\Phi_1 \cap \Delta) \cup (\Phi_2 \cap \Delta)$ eine entsprechende Zerlegung des Fundamentalsystems.
+  Falls für ein $i \in \{1,2\}$ die Relation $\Delta \not\subseteq \Phi_i$ gilt, ist $\Delta = (\Phi_1 \cap \Delta) \cup (\Phi_2 \cap \Delta)$ eine entsprechende Zerlegung des Fundamentalsystems.
   Andernfalls ist ohne Beschränkung der Allgemeinheit $\Delta \subseteq \Phi_1$ und damit $(\Delta, \Phi_2) = 0$.
   Da nach \hyperref[it:B1]{(B1)} das Fundamentalsystem eine Vektorraumbasis ist, folgt mit der Linearität des Skalarproduktes sogleich $(E, \Phi_2) = 0$ und da Skalarprodukte nicht ausgeartet sind letztlich $\Phi_2 = {0}$ im Widerspruch zu \hyperref[it:B1](B1).
 
   ``$\Leftarrow$'':
-  Angenommen, $\Phi$ sei irreduzibel aber es existiere eine Zerlegung $\Delta = \Delta_1 \cup \Delta_2$ mit $(\Delta_1, \Delta_2) = 0$.
-  Wir definieren für $i \in \{1,2\}$ die Mengen $\Phi_i$ aller Wurzeln, die in der $\W$\hyp{}Bahn einer einfachen Wurzel liegen. 
-  Nach Satz \ref{thm:simplyTransitive}(c) gilt $\Phi = \Phi_1 \cup \Phi_2$.
+  Angenommen, $\Phi$ sei irreduzibel und es existiere eine Zerlegung $\Delta = \Delta_1 \cup \Delta_2$ in nichtleere Teilmengen $\Delta_1$ und $\Delta_2$ mit $(\Delta_1, \Delta_2) = 0$.
+  Wir definieren für alle $i \in \{1,2\}$ die Mengen $\Phi_i$ aller Wurzeln, die in der $\W$\hyp{}Bahn einer Wurzel aus $\Delta_i$ liegen. 
+  Nach Satz \ref{thm:simplyTransitive}(c) liegt jede Wurzel in der $\W$\hyp{}Bahn einer einfachen Wurzel, womit $\Phi = \Phi_1 \cup \Phi_2$ gilt.
 
   Sei $\gamma$ eine Wurzel in $\Phi$.
   Wegen Satz \ref{thm:simplyTransitive}(c) existieren ein $\sigma \in \W$ und ein $\alpha \in \Delta$, sodass $\sigma(\alpha) = \gamma$ gilt.
   Nehmen wir zunächst an, dass $\alpha$ in $\Delta_1$ liegt.
 
   Es existiert eine Darstellung $\sigma = \sigma_{\alpha_1} \dots \sigma_{\alpha_t}$ ($\ast$) mit $\alpha_i \in \Delta$.
-  Wir können ohne Beschränkung der Allgemeinheit $\alpha_i \in \Delta_1$ für alle $i$ annehmen.
+  Wir können ohne Beschränkung der Allgemeinheit $\alpha_1,\dots,\alpha_t \in \Delta_1$ annehmen.
   Denn da nach Voraussetzung $(\Delta_1, \Delta_2) = 0$ gilt, folgt mit Lemma \ref{lem:orthogonalRoots} für die Darstellung ($\ast$), dass sich die Faktoren umordnen lassen zu
   \begin{displaymath}
     \sigma = \sigma_{\alpha_1} \dots \sigma_{\alpha_j} \sigma_{\alpha_j+1} \dots \sigma_{\alpha_t},
   \end{displaymath}
   wobei $1 \leq j \leq t$ und $\alpha_k \in \Delta_2$ für alle $k > j$.
   Da $\alpha$ aus $\Delta_1$ stammt und für $\alpha_k \in \Delta_2$ die Identität $\sigma_{\alpha_k}(\alpha) = \alpha - \langle \alpha, \alpha_k \rangle \alpha_k = \alpha$ gilt, folgt sogleich $\sigma = \sigma_{\alpha_1} \dots \sigma_{\alpha_j}$. 
-  Damit ergibt sich schließlich $\gamma = \sigma(\alpha) = \sigma_{\alpha_1} \dots \sigma_{\alpha_k}(\alpha)$.
+  Damit ergibt sich schließlich $\gamma = \sigma(\alpha) = \sigma_{\alpha_1} \dots \sigma_{\alpha_j}(\alpha)$.
 
   Aus der Darstellung der Spiegelung an einer einfachen Wurzel folgt, dass $\gamma$ im Spann $E_1$ von $\Delta_1$ liegt.
-  Dann gilt aber $\Phi \subseteq E_1$ und folglich $E = E_1$
+  Dann gilt aber $\Phi \subseteq E_1$ und folglich gilt auch $E = E_1$.
   Damit wäre dann aber $\Delta_2$ leer im Widerspruch zur Voraussetzung.
 \end{proof}
 
-Das nächste Lemma beschäftigt sich mit bezüglich der Halbordnung $\succeq$ auf $\Phi$ maximalen Wurzeln, deren Existenz aufgrund der in \hyperref[it:R1]{(R1)} vorausgesetzten Endlichkeit von $\Phi$ immer gewährleistet ist. 
+Das nächste Lemma beschäftigt sich mit, bezüglich der Halbordnung $\succeq$ auf $\Phi$, maximalen Wurzeln. 
+Ihre Existenz ist aufgrund der in \hyperref[it:R1]{(R1)} vorausgesetzten Endlichkeit von $\Phi$ immer gewährleistet. 
 
 \begin{lem}
   \label{lem:maximalRoot}
-  Sei $\Phi$ ein irreduzibles Wurzelsystem in $E$ mit Fundamentalsystem $\Delta$.
+  Sei $\Phi$ ein irreduzibles Wurzelsystem.
   Bezüglich der Halbordnung $\succeq$ auf $\Phi$ existiert genau eine maximale Wurzel $\beta$.
   Insbesondere folgt aus $\alpha \neq \beta$ auch $\hgt \alpha < \hgt \beta$ und $(\beta, \alpha) \geq 0$ für alle $\alpha \in \Delta$.
   In der Darstellung $\beta = \sum_{\alpha \in \Delta} k_\alpha \alpha$ sind alle Koeffizienten $k_\alpha$ strikt positiv.
 \end{lem}
 
 \begin{proof}
-  Sei $\beta = \sum_{\alpha \in \Delta} k_\alpha \alpha$ eine maximale Wurzel bezüglich $\succeq$.
+  Sei $\beta = \sum_{\alpha \in \Delta} k_\alpha \alpha$ eine maximale Wurzel bezüglich der Relation $\succeq$.
   Da jede einfache Wurzel bereits positiv ist, gilt zunächst auch $\beta \succeq 0$.
   Wir definieren $\Delta_1 = \{\alpha \in \Delta \mid k_\alpha > 0\}$ und $\Delta_2 = \{\alpha \in \Delta \mid k_\alpha = 0\}$.
   Aufgrund der Positivität von $\beta$ ist damit $\Delta = \Delta_1 \cup \Delta_2$ eine disjunkte Vereinigung.
@@ -87,7 +87,7 @@ Das nächste Lemma beschäftigt sich mit bezüglich der Halbordnung $\succeq$ au
     (\beta, \beta') = \sum_{\alpha \in \Delta} k_\alpha (\alpha, \beta') \geq k_{\alpha'} (\alpha', \beta') > 0.
   \end{displaymath}
   Mit Lemma \ref{lem:sumDiffRoot} ergibt sich nun, dass auch $\beta - \beta'$ eine Wurzel ist außer $\beta$ und $\beta'$ sind proportional, also $\beta = \beta'$, da beide Wurzeln voraussetzungsgemäß positiv sind.
-  Angenommen $\beta \neq \beta'$ und $\beta - \beta' \succeq 0$
+  Angenommen, $\beta \neq \beta'$ und $\beta - \beta' \succeq 0$
   Dann wäre auch $\beta \succeq \beta'$ im Widerspruch zur Maximalität von $\beta$.
   Umgekehrt zeigt man, das auch die Annahme $\beta' \succeq \beta$ verworfen werden muss.
   Also gilt $\beta = \beta'$ und die maximale Wurzel ist eindeutig.
@@ -111,7 +111,7 @@ Das nächste Lemma beschäftigt sich mit bezüglich der Halbordnung $\succeq$ au
 
   Dann ist aber auch $\Phi = (\Phi \cap E') \cup (\Phi \cap (E')^\perp$ eine Zerlegung von $\Phi$ in zueinander orthogonale Teilmengen.
   Da aber $\Phi$ als irreduzibles Wurzelsystem vorausgesetzt wurde muss eine der beteiligten Teilmengen leer sein.
-  Angenommen $\Phi \subseteq E'$. 
+  Angenommen, $\Phi \subseteq E'$. 
   Da nach \hyperref[it:W1]{(W1)} Wurzelsysteme den Vektorraum erzeugen, gilt $E = E'$. 
   Ebenso folgt im Falle $\Phi \subseteq (E')^\perp$ die Aussage $E = (E')^\perp$.
   Damit haben wir den ersten Teil der Behauptung bewiesen.
