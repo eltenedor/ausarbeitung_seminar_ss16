@@ -78,13 +78,35 @@ Ein Lemma stellt zuvor noch sicher, dass es sich bei $\W$ um eine endliche Grupp
   Also bildet die einfache Spiegelung $\sigma$ entsprechend Proposition \ref{prop:groupOp} die \weyl\hyp{}Kammer $\mathfrak{C}(\gamma)$ auf $\mathfrak{C}(\Delta)$ ab. 
   Somit gilt, dass alle \weyl\hyp{}Kammern mit der Fundamentalkammer verbunden sind, die Menge der \weyl\hyp{}Kammern ist also eine $\W'$\hyp{}Bahn und die Gruppenoperation damit transitiv.
 
-
   (b):
   Da nach dem vorangehenden Beweis $\W'$ die \weyl\hyp{}Kammern transitiv permutiert, gilt dies nach Proposition \ref{prop:groupOp} auch für die korrespondierende Gruppenoperation auf Fundamentalsystemen.
 
   (c):
   Da nach (b) die Untergruppe $\W'$ transitiv auf der Menge der Fundamentalsysteme operiert, genügt es nachzuweisen, dass jede Wurzel in einem Fundamentalsystem enthalten ist.
-  UNVOLLSTÄNDIG
+  Aufgrund von Axiom \hyperref[it:R2]{(R2)} sind $\pm \alpha$ die einzigen zu $\alpha$ proportionalen Wurzeln .
+  Somit unterscheiden sich alle Hyperebenen $P_\beta$ von $P_\alpha = P_{-\alpha}$.
+  Nach Proposition \ref{prop:unterraumAusschoepfung} lässt sich $P_\alpha$ nicht von den Unterräumen $P_\alpha \cap P_\beta$ mit $\alpha \neq \beta$ ausschöpfen.
+  Es existiert daher ein $\gamma \in P_\alpha$ mit $\gamma \not\in P_\beta$ für alle $\beta \neq \alpha$.
+
+  Wir wählen nun ein $\varepsilon > 0$ und $\gamma' \in E$ möglichst nahe bei $\gamma$, sodass $(\gamma', \alpha) = \varepsilon > 0$ ist und $|(\gamma', \beta)| > \varepsilon$ ($\ast$) für alle $\beta \neq \pm \alpha$ gilt.
+  Dies ist möglich, da nach Konstruktion $(\gamma, \beta) \neq 0$ für alle $\beta \neq \pm \alpha$ gilt.
+  Damit existiert aufgrund der Stetigkeit des Skalarproduktes und der Betragsfunktion ein $\delta > 0$, sodass für alle $\gamma' \in B_\delta(\gamma)$ auch $\varepsilon < |(\gamma', \beta)|$ gilt, falls man $\varepsilon = \tfrac{1}{2} \min_{\beta \neq \pm\alpha}{|(\gamma,\beta)|}$ wählt.
+  Da die Hyperebene $P_\alpha$ nicht offen ist, existiert also auch ein $\gamma' \in P_\alpha \setminus B_\delta(\gamma)$ und wir können durch Verkleinerung von $\varepsilon$ und eventuelle Multiplikation von $\gamma'$ mit $-1$ annehmen, dass $(\gamma', \alpha) = \varepsilon$ gilt.
+
+  Nach Konstruktion $\gamma'$ regulär.
+  Zudem ist $\alpha$ unzerlegbar.
+  Angenommen, $\alpha$ wäre zerlegbar.
+  Dann existieren $\beta_1, \beta_2 \in \Phi^+(\gamma')$ mit $\alpha = \beta_1 + \beta_2$.
+  Mit der Bilinerität des Skalarproduktes folgt dann jedoch unter Berücksichtigung von ($\ast$)
+  \begin{displaymath}
+    \varepsilon 
+    = (\gamma', \alpha) 
+    = (\gamma', \beta_1 + \beta_2) 
+    = (\gamma', \beta_1) + (\gamma', \beta_2)
+    \geq \varepsilon + \varepsilon,
+  \end{displaymath}
+  also ein Widerspruch.
+  Folglich ist $\alpha$ unzerlegbar, was $\alpha \in \Delta(\gamma')$ impliziert.
 
   (d):
   Da nach Konstruktion $\W'$ eine Untergruppe von $\W$ ist, reicht es zu zeigen, dass jede Spiegelung $\sigma_\alpha$ mit $\alpha \in \Phi$ ein Element von $\W'$ ist.
