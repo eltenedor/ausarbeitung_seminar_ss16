@@ -2,7 +2,7 @@
 \label{sec:einfach}
 
 In diesem Abschnitt sollen einige Eigenschaften einfacher Wurzeln bewiesen werden.  
-Im Folgenden bezeichne $\Delta$ ein fest gewähltes Fundamentalsystem des Wurzelsystems $\Phi$ im \euklid ischen Vektorraum $E$.
+Im Folgenden bezeichne $\Delta$ ein fest gewähltes Fundamentalsystem des Wurzelsystems $\Phi$ über dem \euklid ischen Vektorraum $E$.
 
 \begin{lem}
   \label{lem:independentSet}
@@ -56,6 +56,7 @@ Das folgende Lemma demonstriert, wie sich aus einer positiven Wurzel neue positi
   Ansonsten wäre nämlich $\alpha$ proportional zu $\beta$. 
   Damit würde jedoch nach \hyperref[it:R2]{(R2)} entweder $\alpha = \beta$ gelten, was der Voraussetzung, dass $\alpha$ nicht einfach ist, widerspricht, oder es würde $\alpha = -\beta$ gelten, was der vorausgesetzten Positivität von $\alpha$ widerspricht.
 
+  Betrachtet man nun die Darstellung $\alpha - \beta = \sum_{\gamma \in \Delta \setminus \{\beta\}} k_\gamma \gamma + (- \beta)$, so besitzt diese Summe zumindest einen strikt positiven Linearfaktor.
   Die Eigenschaft \hyperref[it:B2]{(B2)} erzwingt nun die Positivität aller restlichen Linearfaktoren und folglich ist auch $\alpha - \beta$ eine positive Wurzel.
 \end{proof}
  
@@ -77,8 +78,8 @@ Das folgende Lemma demonstriert, wie sich aus einer positiven Wurzel neue positi
   Mit Lemma \ref{lem:posRootNewRoot} folgt dann, dass ein $\alpha \in \Delta$ existiert, sodass $\beta - \alpha$ eine positive Wurzel ist.
   Aufgrund der Eindeutigkeit der Darstellung ($\ast$) bis auf Reihenfolge der Summanden, lässt sich ohne Beschränkung der Allgemeinheit $\alpha = \alpha_k$ annehmen.
 
-  Es gilt $\hgt(\beta - \alpha_{k}) = k - 1$ und nach Induktionsvoraussetzung folgt $\alpha_1 + \dots + \alpha_{k-1} \in \Phi^+$ für alle $i \in \{1,\dots,k-1\}$.
-  Der Fall $i = k$ folgt jedoch bereits mit ($\ast$), womit die Behauptung für $k$ vollständig bewiesen ist.
+  Es gilt $\hgt(\beta - \alpha_{k}) = k - 1$ und nach Induktionsvoraussetzung folgt $\alpha_1 + \dots + \alpha_{i} \in \Phi^+$ für alle $i \in \{1,\dots,k-1\}$.
+  Der Fall $i = k$ folgt bereits mit ($\ast$), womit die Behauptung für $k$ vollständig bewiesen ist.
 \end{proof}
 
 \begin{lem}
@@ -91,10 +92,10 @@ Das folgende Lemma demonstriert, wie sich aus einer positiven Wurzel neue positi
   Sei $\beta \in \Phi^+ \setminus \{\alpha\}$. 
   Dann existiert eine Darstellung der Form $\beta = \sum_{\gamma \in \Delta} k_\gamma \gamma$ mit positiven Koeffizienten $k_\gamma$.
   Es kann $\beta$ nicht proportional zu $\alpha$ sein, da sonst nach \hyperref[it:R2]{(R2)} und unter der Voraussetzung $\beta \neq \alpha$ ein Widerspruch zur Voraussetzung entsteht, dass $\beta$ positiv ist.
-  Daher existiert ein $\gamma \neq \beta$ mit $k_\gamma > 0$.
+  Daher existiert ein $\gamma \neq \alpha$ mit $k_\gamma > 0$.
 
-  Aufgrund der Linearität von $\sigma_\alpha$ besitzt dann auch $\sigma_\alpha(\beta)$ mindestens einen positiven Linearfaktor und damit ist nach \hyperref[it:B2]{(B2)} auch $\sigma_\alpha(\beta)$ positiv.
-  Des Weiteren ist $\sigma_\alpha(\beta)$ nicht proportional zu $\alpha$, da sonst $\beta = -\alpha$ gelten würde, was im vorangehenden Absatz bereits ausgeschlossen wurde.
+  Aufgrund der Linearität von $\sigma_\alpha$ besitzt dann auch die Wurzel $\sigma_\alpha(\beta)$ mindestens einen positiven Linearfaktor und damit ist nach \hyperref[it:B2]{(B2)} auch $\sigma_\alpha(\beta)$ positiv.
+  Des Weiteren ist $\sigma_\alpha(\beta)$ nicht proportional zu $\alpha$, da nach \hyperref[it:R2]{(R2)} sonst $\beta = -\alpha$ gelten würde, was im vorangehenden Absatz bereits ausgeschlossen wurde.
   Hieraus folgt die Behauptung.
 \end{proof}
 
@@ -137,7 +138,7 @@ Das folgende Lemma liefert ein Kriterium dafür, wann man entsprechende Darstell
   Sei $\beta_i := \sigma_{i + 1} \dots \sigma_{t-1}(\alpha_t)$, für alle $0 \leq i \leq t - 2$ und $\beta_{t - 1} := \alpha_t$.
   Nach Voraussetzung ist $\beta_0$ negativ und $\beta_{t - 1}$ als einfache Wurzel positiv.
   Es existiert also aufgrund der Endlichkeit der Folge der $\beta_i$ ein minimaler Index $s$, sodass jeweils $\beta_s$ positiv und $\sigma_s(\beta_s) = \beta_{s - 1}$ negativ sind.
-  Wiederum impliziert \ref{lem:permute} die Gleichung $\beta_s = \alpha_s$, da sonst andernfalls $\sigma_s\beta_s$ positiv sein müsste.
+  Wiederum impliziert Lemma \ref{lem:permute} die Gleichung $\beta_s = \alpha_s$, da sonst andernfalls $\sigma_s\beta_s$ positiv sein müsste.
   Mit Lemma \ref{lem:conjReflection} folgt sodann
   \begin{displaymath}
     \sigma_s 

@@ -10,13 +10,13 @@ Wir beginnen mit einer für beliebige Gruppenoperationen definierten Eigenschaft
   Die Gruppenoperation $\circ \colon G \times X \to X$ heißt \emph{scharf transitiv}, wenn für alle $x,y \in X$ genau ein $g \in G$ existiert, sodass $g \circ x = y$ gilt. 
 \end{defn}
 
-Ziel dieses Abschnittes ist es nun zu beweisen, dass die durch die Gruppe $\W$ auf der Menge der Fundamentalsysteme induzierte Gruppenoperation scharf transitiv ist.
+Ziel dieses Abschnittes ist es zu beweisen, dass die durch die Gruppe $\W$ auf der Menge der Fundamentalsysteme induzierte Gruppenoperation scharf transitiv ist.
 Dies wird unter anderem auch durch den nachfolgenden Satz bewiesen.
 Ein Lemma stellt zuvor noch sicher, dass es sich bei $\W$ um eine endliche Gruppe handelt.
 
 \begin{lem}
   \label{lem:weylFinite}
-  Sei $\Phi$ ein Wurzelsystem in $E$. Dann ist die entsprechende \weyl\hyp{}Gruppe endlich. 
+  Sei $\Phi$ ein Wurzelsystem über $E$. Dann ist die entsprechende \weyl\hyp{}Gruppe endlich. 
 \end{lem}
 
 \begin{proof}
@@ -33,7 +33,7 @@ Ein Lemma stellt zuvor noch sicher, dass es sich bei $\W$ um eine endliche Grupp
 
 \begin{thm}
   \label{thm:simplyTransitive}
-  Es sei $\Delta$ ein Fundamentalsystem des Wurzelsystems $\Phi$ in $E$ und zugehöriger \weyl\hyp{}Gruppe $\W$.
+  Es sei $\Delta$ ein Fundamentalsystem des Wurzelsystems $\Phi$ über $E$ und zugehöriger \weyl\hyp{}Gruppe $\W$.
   Dann gelten die folgenden Aussagen:
   \begin{enumerate}[(a)]
 
@@ -48,7 +48,7 @@ Ein Lemma stellt zuvor noch sicher, dass es sich bei $\W$ um eine endliche Grupp
     \item Die \weyl\hyp{}Gruppe $\W$ wird erzeugt von den Spiegelungen $\sigma_\alpha$ für $\alpha \in \Delta$.
 
     \item Ist $\sigma \in \W$ und gilt $\sigma(\Delta) = \Delta$, so folgt $\sigma = \mathds{1}$.
-      Also operiert $\W$ einfach transitiv auf der Menge der Fundamentalsysteme.
+      Also operiert $\W$ scharf transitiv auf der Menge der Fundamentalsysteme.
   \end{enumerate}
 \end{thm}
 
@@ -63,7 +63,7 @@ Ein Lemma stellt zuvor noch sicher, dass es sich bei $\W$ um eine endliche Grupp
   Daraus folgt
   \begin{align*}
     (\sigma(\gamma), \delta) 
-    &\geq (\sigma_\alpha \sigma(\gamma), \delta) &&\text{aufgrund der Maximalität von $(\sigma(\gamma),\delta)$} \\
+    &\geq (\sigma_\alpha \sigma(\gamma), \delta) &&\text{aufgrund der Maximalitätseigenschaft von $(\sigma(\gamma),\delta)$} \\
     &= (\sigma(\gamma), \sigma_\alpha(\delta)) &&\text{da $\sigma_\alpha$ eine Isometrie und zudem selbstinvers ist} \\
     &= (\sigma(\gamma), \delta - \alpha) &&\text{nach Korollar \ref{cor:sigmaDelta}} \\
     &= (\sigma(\gamma), \delta) - (\sigma(\gamma), \alpha) &&\text{aufgrund der Bilinearität des Skalarproduktes.}
@@ -82,22 +82,23 @@ Ein Lemma stellt zuvor noch sicher, dass es sich bei $\W$ um eine endliche Grupp
   Da nach dem vorangehenden Beweis $\W'$ die \weyl\hyp{}Kammern transitiv permutiert, gilt dies nach Proposition \ref{prop:groupOp} auch für die korrespondierende Gruppenoperation auf Fundamentalsystemen.
 
   (c):
-  Da nach (b) die Untergruppe $\W'$ transitiv auf der Menge der Fundamentalsysteme operiert, genügt es nachzuweisen, dass jede Wurzel in einem Fundamentalsystem enthalten ist.
+  Da nach (b) die Untergruppe $\W'$ transitiv auf der Menge der Fundamentalsysteme operiert, genügt es nachzuweisen, dass jede Wurzel $\alpha \in \Phi$ in einem Fundamentalsystem enthalten ist.
   Aufgrund von Axiom \hyperref[it:R2]{(R2)} sind $\pm \alpha$ die einzigen zu $\alpha$ proportionalen Wurzeln .
   Somit unterscheiden sich alle Hyperebenen $P_\beta$ von $P_\alpha = P_{-\alpha}$.
   Nach Proposition \ref{prop:unterraumAusschoepfung} lässt sich $P_\alpha$ nicht von den Unterräumen $P_\alpha \cap P_\beta$ mit $\alpha \neq \beta$ ausschöpfen.
   Es existiert daher ein $\gamma \in P_\alpha$ mit $\gamma \not\in P_\beta$ für alle $\beta \neq \alpha$.
 
-  Wir wählen nun ein $\varepsilon > 0$ und $\gamma' \in E$ möglichst nahe bei $\gamma$, sodass $(\gamma', \alpha) = \varepsilon > 0$ ist und $|(\gamma', \beta)| > \varepsilon$ ($\ast$) für alle $\beta \neq \pm \alpha$ gilt.
+  Entsprechend Satz \ref{thm:base} korrespondiert zu jedem regulären Element ein Fundamentalsystem. Es gilt nun in der Nähe von $\gamma$ ein geeignetes reguläres Element zu finden und nachzuweisen, dass $\alpha$ in dem entsprechenden Fundamentalsystem enthalten ist.
+
+  Wir wählen nun ein $\varepsilon > 0$ und $\gamma' \in E$ möglichst nahe bei $\gamma$, sodass $(\gamma', \alpha) = \varepsilon > 0$ ist und $|(\gamma', \beta)| > \varepsilon$ für alle $\beta \neq \pm \alpha$ gilt ($\ast$).
   Dies ist möglich, da nach Konstruktion $(\gamma, \beta) \neq 0$ für alle $\beta \neq \pm \alpha$ gilt.
   Damit existiert aufgrund der Stetigkeit des Skalarproduktes und der Betragsfunktion ein $\delta > 0$, sodass für alle $\gamma' \in B_\delta(\gamma)$ auch $\varepsilon < |(\gamma', \beta)|$ gilt, falls man $\varepsilon = \tfrac{1}{2} \min_{\beta \neq \pm\alpha}{|(\gamma,\beta)|}$ wählt.
   Da die Hyperebene $P_\alpha$ nicht offen ist, existiert also auch ein $\gamma' \in P_\alpha \setminus B_\delta(\gamma)$ und wir können durch Verkleinerung von $\varepsilon$ und eventuelle Multiplikation von $\gamma'$ mit $-1$ annehmen, dass $(\gamma', \alpha) = \varepsilon$ gilt.
 
   Nach Konstruktion ist $\gamma'$ regulär.
   Zudem ist $\alpha$ unzerlegbar.
-  Angenommen, $\alpha$ wäre zerlegbar.
-  Dann existieren $\beta_1, \beta_2 \in \Phi^+(\gamma')$ mit $\alpha = \beta_1 + \beta_2$.
-  Mit der Bilinerität des Skalarproduktes folgt dann jedoch unter Berücksichtigung von ($\ast$)
+  Denn wäre $\alpha$ zerlegbar, so existieren $\beta_1, \beta_2 \in \Phi^+(\gamma')$ mit $\alpha = \beta_1 + \beta_2$.
+  Mit der Bilinearität des Skalarproduktes folgt dann jedoch unter Berücksichtigung von ($\ast$)
   \begin{displaymath}
     \varepsilon 
     = (\gamma', \alpha) 
@@ -123,7 +124,7 @@ Ein Lemma stellt zuvor noch sicher, dass es sich bei $\W$ um eine endliche Grupp
   Die Annahme muss also verworfen werden und es folgt $\sigma = \mathds{1}$.
 \end{proof}
 
-ÜBERLEITUNG
+Aus der Tatsache, dass $\W$ von einfachen Spiegelungen erzeugt wird, lassen sich nun weitere Aussagen folgern.
 
 \begin{defn}
   Sei $\Phi$ ein Wurzelsystem mit Fundamentalsystem $\Delta$ und \weyl\hyp{}Gruppe $\W$. 
@@ -145,9 +146,11 @@ Ein Lemma stellt zuvor noch sicher, dass es sich bei $\W$ um eine endliche Grupp
 \begin{proof}
   (1):
   Sei $\sigma(\alpha)$ negativ.
-  Dann folgt mi Lemma \ref{lem:permute}, dass $\sigma_\alpha$ alle von $\alpha$ verschiedenen positiven Wurzeln permutiert.
+  Aus Lemma \ref{lem:permute} folgt, dass $\sigma_\alpha$ alle von $\alpha$ verschiedenen positiven Wurzeln permutiert.
   Einerseits enthält $\sigma(\Phi^+ \setminus \{\alpha\})$ somit genauso viele negative Wurzeln wie $\sigma(\sigma_\alpha(\Phi^+ \setminus \{\alpha\}))$.
-  Andererseits ist jedoch $\sigma \sigma_\alpha (\alpha) = -\sigma(\alpha)$ positiv.
+  Andererseits ist jedoch 
+  $\sigma \sigma_\alpha (\alpha) = \sigma(-\alpha) = -\sigma(\alpha)$ 
+  positiv.
   Daraus können wir $n(\sigma\sigma_\alpha) = n(\sigma) - 1$ folgern.
 
   (2):
