@@ -30,6 +30,38 @@ Ein Lemma stellt zuvor noch sicher, dass es sich bei $\W$ um eine endliche Grupp
   Also ist die Gruppenoperation treu und $\W$ damit endlich.
 \end{proof}
 
+\begin{bem}
+  Im allgemeinen wird die \weyl\hyp{}Gruppe nicht der Symmetriegruppe des zugrundeliegenden Wurzelsystems entsprechen.
+  So sind beispielsweise die \weyl\hyp{}Gruppen zweidimensionaler Wurzelsysteme entsprechend des auftretenden Minimalwinkels $\theta = \tfrac{2\pi}{n}$ für $n = 4,6,8,12$ isomorph zu den Diedergruppen $\mathbf{D_2}, \mathbf{D_3}, \mathbf{D_4}, \mathbf{D_6}$.
+  Einen Beweis dieser Aussage findet man in \cite[S.203f.]{hall2015lie}.
+  Abbildung \ref{fig:symmetry} veranschaulicht beispielhaft den Zusammenhang zwischen Wurzelsystem und \weyl\hyp{}Gruppe am Beispiel des Wurzelsystems $\mathbf{A_2}$.
+\end{bem}
+
+\begin{figure}
+  \centering
+  \label{fig:symmetry}
+  \begin{tikzpicture}[
+    % arrow heads for all lines (with narrower arrow head width)
+    %-{Straight Barb[bend,
+       %width=\the\dimexpr10\pgflinewidth\relax,
+       %length=\the\dimexpr12\pgflinewidth\relax]},
+  ]
+    %coordinate system
+    %\draw[black] (-6,0) -- (6,0);
+    %\draw[black] (0,-6) -- (0,6);
+    % straight arrows
+    \foreach \i in {0, 1, ..., 5} {
+      \draw[->,thick, black] (0, 0) -- (\i*60:3);
+    }
+    \foreach \i in {0, 1, ..., 5} {
+      \draw[dashed, gray] (0, 0) -- (30 + \i*60:2.5);
+    }
+    \foreach \i in {0, 2, 4 } {
+      \draw[thin] (30:1.5 ) -- (150:1.5) -- (270:1.5) -- (30:1.5);
+    }
+  \end{tikzpicture}
+  \caption{Die \weyl\hyp{}Gruppe des Wurzelsystems $\mathbf{A_2}$ bildet gerade die Symmetriegruppe $\mathbf{D_3}$ des eingezeichneten Dreiecks. Die gestrichelten Linien stellen gerade die von den Wurzeln erzeugten Spiegelungsebenen dar.}
+\end{figure}
 
 \begin{thm}
   \label{thm:simplyTransitive}

@@ -5,9 +5,19 @@ In diesem Abschnitt beschäftigen wir uns mit den Eigenschaften der kleinsten ``
 Es sei wieder $\Phi$ ein fest gewähltes Wurzelsystem über dem \euklid ischen Vektorraum $E$ mit Fundamentalsystem $\Delta$ und zugehöriger \weyl\hyp{}Gruppe $\W$.
 
 \begin{defn}
-  Ein Wurzelsystem $\Phi$ heißt \emph{irreduzibel}, wenn keine Zerlegung von $\Phi$ in zwei nichtleere disjunkte Mengen existiert, sodass die Elemente aus unterschiedlichen Mengen paarweise orthogonal sind.
-  Ebenso bezeichne man ein Fundamentalsystem eines Wurzelsystems als \emph{irreduzibel}, falls keine disjunkte Zerlegung im obigen Sinne existiert.
+  \label{def:irreducibleRoot}
+  Ein Wurzelsystem $\Phi$ heißt \emph{reduzibel}, wenn eine Zerlegung $\Phi = \Phi_1 \dot{\cup} \Phi_2$ in zwei nichtleere disjunkte Mengen existiert, sodass die Elemente aus unterschiedlichen Mengen paarweise orthogonal sind.
+  Ein Wurzelsystem, welches sich nicht orthogonal zerlegen lässt bezeichnet man als \emph{irreduzibel}.
+  Entsprechend bezeichnet man auch ein Fundamentalsystem eines Wurzelsystems als \emph{irreduzibel}, falls keine disjunkte Zerlegung im obigen Sinne existiert.
 \end{defn}
+
+\begin{bem}
+  Sind $(E,\Phi)$ und $(F,\Psi)$ zwei Wurzelsysteme, so ist auch die äußere direkte Summe $E \oplus F$ auf natürliche Weise ein \euklid ischer Vektorraum.
+  Ebenso ist die Menge $(R \times \{0\}) \cup (\{0\} \times S)$ ein Wurzelsystem dieses Produktraumes, welches ebenso als \emph{direkte Summe} der Wurzelsysteme bezeichnet wird.
+  Ein Beweis hierzu findet sich in \cite[S.199]{hall2015lie}.
+  Ist nun im Sinne von Definition \ref{def:irreducibleRoot} ein Wurzelsystem reduzibel, so liefert die orthogonale Zerlegung des Wurzelsystems eine orthogonale Zerlegung $E = E_1 \oplus E_2$ des Vektorraumes.
+  Damit ist ein Wurzelsystem genau dann irreduzibel, wenn es nicht als direkte Summe von zwei Wurzelsystemen geschrieben werden kann.
+\end{bem}
 
 \begin{lem}
   \label{lem:irreducibleRoot}
