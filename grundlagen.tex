@@ -40,6 +40,16 @@ Es gilt jedoch $\sign \langle \alpha, \beta \rangle = \sign (\alpha, \beta)$ fü
   Da dieser Ausdruck symmetrisch in $\alpha$ und $\beta$ ist, folgt $\sigma_\beta \sigma_\alpha = \sigma_\alpha \sigma_\beta$.
 \end{proof}
 
+Wir halten nun ein Resultat fest, dass sich im späteren als nützlich erweisen wird. Einen Beweis hierzu findet sich in \cite[S.123 und S.242]{erdmann2006introduction}.
+
+\begin{prop}
+  \label{prop:unterraumAusschoepfung} 
+  Sei $E$ ein endlich dimensionaler Vektorraum über einem unendlichen Körper $\K$ und $U_1, U_2, \dots, U_n$ echte Teilräume von $E$, welche alle dieselbe Dimension besitzen.
+  Dann ist die Vereinigung $\bigcup_{i=1}^n U_i$ kein Untervektorraum.
+  Insbesondere lässt sich also $E$ nicht durch endlich viele echte Untervektorräume ausschöpfen.
+  \qed
+\end{prop}
+
 Wir definieren nun das für diese Arbeit zentrale mathematische Objekt.
 
 \begin{defn}
@@ -63,7 +73,7 @@ Wir definieren nun das für diese Arbeit zentrale mathematische Objekt.
       Betrachtet man die Formel \hyperref[eq:RF]{\hyperref[it:RF]{(RF)}} für $\sigma_\alpha(\beta)$, so ist Eigenschaft (R4) einerseits äquivalent dazu, dass sich $\sigma_\alpha(\beta)$ von $\beta$ nur um ein ganzzahliges Vielfaches von $\alpha$ unterscheidet.
 
       Andererseits ist die \emph{orthogonale Projektion} von $\beta$ auf den von $\alpha$ aufgespannten Untervektorraum gerade durch $\tfrac{\beta,\alpha}{\alpha,\alpha}\alpha$ gegeben.
-      Eigenschaft \hyperref[it:R4]{(R4)} ist also auch äquivalent dazu, dass die orthogonale Projektion ein einganzzahliges oder halbzahliges Vielfaches von $\alpha$ ist.
+      Eigenschaft \hyperref[it:R4]{(R4)} ist also auch äquivalent dazu, dass die orthogonale Projektion ein ganzzahliges oder halbzahliges Vielfaches von $\alpha$ ist.
   \end{enumerate}
 \end{bem}
 
@@ -115,6 +125,8 @@ Bezüglich eines Wurzelsystems $\Phi$ lassen sich auch Vektoren des umfassenden 
 \end{defn}
 
 Liegen zwei reguläre Wurzeln $\gamma, \gamma'$ in derselben \weyl\hyp{}Kammer, so liegen sie bezüglich aller Hyperebenen $P_\alpha$ auf derselben Seite, was bedeutet, dass $\sign (\gamma, \alpha) = \sign( \gamma', \alpha)$ gilt, für alle $\alpha \in \Phi$.
+Man kann also \weyl\hyp{}Kammern nicht nur als Äquivalenzklassen im topologischen Sinne der Zusammenhangskomponenten betrachten, sondern auch geometrisch interpretieren.
+
 Bezeichnet man mit
 \begin{displaymath}
   \Phi^+(\gamma) := \{ \alpha \in \Phi \mid (\gamma, \alpha) > 0 \}
@@ -137,6 +149,7 @@ Die soeben eingeführten Begriffe werden in Abbildung \ref{fig:fundamentalWeylCh
 
 \begin{figure}
   \label{fig:fundamentalWeylChamber}
+  \centering
   \begin{tikzpicture}[
     scale=0.95
     % arrow heads for all lines (with narrower arrow head width)
@@ -149,7 +162,7 @@ Die soeben eingeführten Begriffe werden in Abbildung \ref{fig:fundamentalWeylCh
     %\draw[black] (0,-6) -- (0,6);
     % straight arrows
     \foreach \i in {0, 1, ..., 5} {
-      \filldraw[fill=gray!40!white, draw=white] (0,0) -- (\i*60:4) -- (\i*60+60:4) -- (0,0) ;
+      \filldraw[fill=gray!40!white, draw=white] (0,0) -- (30+\i*60:4) -- (\i*60+90:4) -- (0,0) ;
     }
     \foreach \i in {0, 1, ..., 5} {
       \draw[->,thick, black] (0, 0) -- (\i*60:3);
@@ -162,7 +175,7 @@ Die soeben eingeführten Begriffe werden in Abbildung \ref{fig:fundamentalWeylCh
     %\node[below] at (4*60:3) {$-\alpha - \beta$};
     %\node[below] at (5*60:3) {$- \beta$};
     \foreach \i in {1, 2, ..., 6} {
-      \node at (-30+\i*60:2) {$\mathfrak{C}_\i$};
+      \node at (-50+\i*60:2) {$\mathfrak{C}_\i$};
     }
   \end{tikzpicture}
   \begin{tikzpicture}[
@@ -177,7 +190,7 @@ Die soeben eingeführten Begriffe werden in Abbildung \ref{fig:fundamentalWeylCh
     %\draw[black] (0,-6) -- (0,6);
     % straight arrows
     \foreach \i in {0, 1, ..., 5} {
-      \filldraw[fill=gray!00!white, draw=white] (0,0) -- (\i*60:4) -- (\i*60+60:4) -- (0,0) ;
+      \filldraw[fill=gray!00!white, draw=white] (0,0) -- (30+\i*60:4) -- (\i*60+90:4) -- (0,0) ;
     }
     \filldraw[fill=gray!40!white, draw=white] (0,0) -- (30:4) -- (90:4) -- (0,0) ;
     \foreach \i in {0, 1, ..., 5} {
@@ -245,9 +258,9 @@ Der Beweis einer Verallgemeinerung dieses Lemmas findet sich in \cite[S.43]{hump
       \end{addmargin}
       
     \item Aus $\mathfrak{C}(\gamma) = \mathfrak{C}(\gamma')$ folgt, dass auch $\mathfrak{C}(\sigma(\gamma)) = \mathfrak{C}(\sigma(\gamma'))$. \\
-      Es operiert $\W$ auf der Menge der \weyl\hyp{}Kammern $\{\mathfrak{C}(\gamma) \mid \gamma \text{ regulär}\}$. Die Gruppeoperation lässt sich durch $ \sigma(\mathfrak{C}(\gamma)) = \mathfrak{C}(\sigma(\gamma))$ definieren.
+      Es operiert $\W$ auf der Menge der \weyl\hyp{}Kammern $\{\mathfrak{C}(\omega) \mid \omega \text{ regulär}\}$. Die Gruppeoperation lässt sich durch $ \sigma(\mathfrak{C}(\gamma)) = \mathfrak{C}(\sigma(\gamma))$ definieren.
 
-    \item Es operiert $\W$ auf der Menge der Fundamentalsysteme $\{\Delta(\gamma) \mid \gamma \text{ regulär}\}$: 
+    \item Es operiert $\W$ auf der Menge der Fundamentalsysteme $\{\Delta(\omega) \mid \omega \text{ regulär}\}$: 
       \begin{addmargin}[2em]{2em}
         Ist $\Delta$ ein Fundamentalsystem für $\Phi$, so auch $\sigma(\Delta)$. 
       \end{addmargin}
@@ -281,15 +294,9 @@ Der Beweis einer Verallgemeinerung dieses Lemmas findet sich in \cite[S.43]{hump
   Das bedeutet jedoch gerade, dass $\sigma(x)$ ein Element von $P_\alpha$ ist und damit wäre $\sigma(x)$ nicht regulär.
   Dies steht jedoch im Widerspruch zu (a). 
   Es muss also auch $\mathfrak{C}(\sigma(\gamma)) = \mathfrak{C}(\sigma(\gamma'))$ gelten.
-  
-  Sei nun für den zweiten Teil der zu beweisenden Aussage $x \in \mathfrak{C}(\sigma(\gamma))$.
-  Daraus folgt $\mathfrak{C}(x) = \mathfrak{C}(\sigma(\gamma))$.
-  Dann gilt nach der soeben bewiesenen Aussage auch $\mathfrak{C}(\sigma^{-1}(x)) = \mathfrak{C}(\gamma)$.
-  Insbesondere gilt also $\sigma^{-1}(x) \in \mathfrak{C}(\gamma)$ und damit auch $x \in \sigma(\mathfrak{C}(\gamma))$
-  
-  Die umgekehrte Inklusion folgt analog: Ist $x \in \sigma(\mathfrak{C}(\gamma))$, so ist $\sigma(x) \in \mathfrak{C}(\gamma)$ und damit gilt $\mathfrak{C}(\sigma(x)) = \mathfrak{C}(\gamma)$. 
-  Wie schon gezeigt, folgt aus der Betrachtung von Bildern unter $\sigma^{-1} = \sigma$ sofort $\mathfrak{C}(x) = \mathfrak{C}(\sigma(\gamma))$, also insbesondere $x \in \mathfrak{C}(\sigma(\gamma))$.
 
+  Also lässt sich die Gruppenoperation auf den \weyl\hyp{}Kammern repräsentantenunabhängig definieren und die Behauptung folgt.
+  
   (c): 
   Da $\sigma$ als orthogonale Abbildung insbesondere injektiv ist, folgt, dass $\sigma(\Delta)$ wieder ein System linear unabhängiger Vektoren und damit aufgrund von \hyperref[it:B1]{(B1)} wieder eine Vektorraumbasis von $E$ ist.
   
