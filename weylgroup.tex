@@ -1,3 +1,4 @@
+\newpage
 \section{Die Weyl-Gruppe}
 \label{sec:weylgroup}
 
@@ -63,6 +64,7 @@ Ein Lemma stellt zuvor noch sicher, dass es sich bei $\W$ um eine endliche Grupp
   \caption{Die \weyl\hyp{}Gruppe des Wurzelsystems $\mathbf{A_2}$ bildet gerade die Symmetriegruppe $\mathbf{D_3}$ des eingezeichneten Dreiecks. Die gestrichelten Linien stellen gerade die von den Wurzeln erzeugten Spiegelungsebenen dar.}
 \end{figure}
 
+\begin{samepage}
 \begin{thm}
   \label{thm:simplyTransitive}
   Es sei $\Delta$ ein Fundamentalsystem des Wurzelsystems $\Phi$ über $E$ und zugehöriger \weyl\hyp{}Gruppe $\W$.
@@ -84,9 +86,10 @@ Ein Lemma stellt zuvor noch sicher, dass es sich bei $\W$ um eine endliche Grupp
       Also operiert $\W$ scharf transitiv auf der Menge der Fundamentalsysteme.
   \end{enumerate}
 \end{thm}
+\end{samepage}
 
 \begin{proof}
-  Wir führen die Beweise für (a) bis (c) zunächst für die von den einfachen Spiegelungen erzeugte Untergruppe $\W'$ von $\W$.
+  Wir führen die Beweise für (a) bis (c) zunächst für die von den einfachen Spiegelungen erzeugte Untergruppe $\W'$ von $\W$ und beweisen damit auf den ersten Blick schwächere Aussagen.
   Nach dem Beweis von (d) folgt $\W' = \W$.
 
   (a):
@@ -112,24 +115,28 @@ Ein Lemma stellt zuvor noch sicher, dass es sich bei $\W$ um eine endliche Grupp
   Somit gilt, dass alle \weyl\hyp{}Kammern mit der Fundamentalkammer verbunden sind, die Menge der \weyl\hyp{}Kammern ist also eine $\W'$\hyp{}Bahn und die Gruppenoperation damit transitiv.
 
   (b):
-  Da nach dem vorangehenden Beweis $\W'$ die \weyl\hyp{}Kammern transitiv permutiert, gilt dies nach Proposition \ref{prop:groupOp} auch für die korrespondierende Gruppenoperation auf Fundamentalsystemen.
-
+  Nach Satz \ref{thm:base} korrespondieren Fundamentalsysteme zu regulären Elementen.
+  Sind also $\gamma, \gamma'$ reguläre Elemente und $\Delta(\gamma)$, $\Delta(\gamma')$ zwei Fundamentalsysteme, so entsprechen diesen nach Lemma \ref{lem:correspondenceOfChambers} in eindeutiger Weise auch \weyl\hyp{}Kammern $\mathfrak{C}(\gamma), \mathfrak{C}(\gamma')$.
+  Da nach dem vorangehenden Beweis die Untergruppe $\W'$ die \weyl\hyp{}Kammern transitiv permutiert, auch für die korrespondierende Gruppenoperation auf Fundamentalsystemen aus Proposition \ref{prop:groupOp}.
+  
   (c):
   Da nach (b) die Untergruppe $\W'$ transitiv auf der Menge der Fundamentalsysteme operiert, genügt es nachzuweisen, dass jede Wurzel $\alpha \in \Phi$ in einem Fundamentalsystem enthalten ist.
-  Aufgrund von Axiom \hyperref[it:R2]{(R2)} sind $\pm \alpha$ die einzigen zu $\alpha$ proportionalen Wurzeln .
+  Aufgrund von Axiom \hyperref[it:R2]{(R2)} sind $\pm \alpha$ die einzigen zu $\alpha$ proportionalen Wurzeln in $\Phi$.
   Somit unterscheiden sich alle Hyperebenen $P_\beta$ von $P_\alpha = P_{-\alpha}$.
-  Nach Proposition \ref{prop:unterraumAusschoepfung} lässt sich $P_\alpha$ nicht von den Unterräumen $P_\alpha \cap P_\beta$ mit $\alpha \neq \beta$ ausschöpfen.
+  Nach Proposition \ref{prop:unterraumAusschoepfung} lässt sich $P_\alpha$ nicht von den echten Unterräumen $P_\alpha \cap P_\beta$ mit $\alpha \neq \beta$ ausschöpfen.
   Es existiert daher ein $\gamma \in P_\alpha$ mit $\gamma \not\in P_\beta$ für alle $\beta \neq \alpha$.
 
-  Entsprechend Satz \ref{thm:base} korrespondiert zu jedem regulären Element ein Fundamentalsystem. Es gilt nun in der Nähe von $\gamma$ ein geeignetes reguläres Element zu finden und nachzuweisen, dass $\alpha$ in dem entsprechenden Fundamentalsystem enthalten ist.
+  Entsprechend Satz \ref{thm:base} korrespondiert zu jedem regulären Element ein Fundamentalsystem. 
+  Es gilt nun in der Nähe von $\gamma$ ein geeignetes reguläres Element zu finden und nachzuweisen, dass $\alpha$ in dem entsprechenden Fundamentalsystem enthalten ist.
 
   Wir wählen nun ein $\varepsilon > 0$ und $\gamma' \in E$ möglichst nahe bei $\gamma$, sodass $(\gamma', \alpha) = \varepsilon > 0$ ist und $|(\gamma', \beta)| > \varepsilon$ für alle $\beta \neq \pm \alpha$ gilt ($\ast$).
   Dies ist möglich, da nach Konstruktion $(\gamma, \beta) \neq 0$ für alle $\beta \neq \pm \alpha$ gilt.
   Damit existiert aufgrund der Stetigkeit des Skalarproduktes und der Betragsfunktion ein $\delta > 0$, sodass für alle $\gamma' \in B_\delta(\gamma)$ auch $\varepsilon < |(\gamma', \beta)|$ gilt, falls man $\varepsilon = \tfrac{1}{2} \min_{\beta \neq \pm\alpha}{|(\gamma,\beta)|}$ wählt.
-  Da die Hyperebene $P_\alpha$ nicht offen ist, existiert also auch ein $\gamma' \in P_\alpha \setminus B_\delta(\gamma)$ und wir können durch Verkleinerung von $\varepsilon$ und eventuelle Multiplikation von $\gamma'$ mit $-1$ annehmen, dass $(\gamma', \alpha) = \varepsilon$ gilt.
+  Das Komplement der Hyperebene $P_\alpha$ liegt dicht in $E$ und folglich besitzt $P_\alpha$ keine inneren Punkte.
+  Also existiert ein $\gamma' \in B_\delta(\gamma) \setminus P_\alpha$ und wir können durch Verkleinerung von $\varepsilon$ und eventuelle Multiplikation von $\gamma'$ mit $-1$ annehmen, dass $(\gamma', \alpha) = \varepsilon$ gilt.
 
   Nach Konstruktion ist $\gamma'$ regulär.
-  Zudem ist $\alpha$ unzerlegbar.
+  Zudem ist $\alpha$ bezüglich $\Phi^+(\gamma')$ unzerlegbar.
   Denn wäre $\alpha$ zerlegbar, so existieren $\beta_1, \beta_2 \in \Phi^+(\gamma')$ mit $\alpha = \beta_1 + \beta_2$.
   Mit der Bilinearität des Skalarproduktes folgt dann jedoch unter Berücksichtigung von ($\ast$)
   \begin{displaymath}
@@ -137,7 +144,8 @@ Ein Lemma stellt zuvor noch sicher, dass es sich bei $\W$ um eine endliche Grupp
     = (\gamma', \alpha) 
     = (\gamma', \beta_1 + \beta_2) 
     = (\gamma', \beta_1) + (\gamma', \beta_2)
-    \geq \varepsilon + \varepsilon,
+    > \varepsilon + \varepsilon
+    = 2\varepsilon,
   \end{displaymath}
   also ein Widerspruch.
   Folglich ist $\alpha$ unzerlegbar, was $\alpha \in \Delta(\gamma')$ impliziert.
@@ -151,8 +159,8 @@ Ein Lemma stellt zuvor noch sicher, dass es sich bei $\W$ um eine endliche Grupp
 
   (e):
   Sei $\sigma \in \W$ mit $\sigma(\Delta) = \Delta$.
-  Nehmen wir $\sigma \neq \mathds{1}$ an so lässt sich nach (d) die Abbildung $\sigma$ als Produkt einfacher Spiegelungen schreiben, es gilt also $\sigma = \sigma_1\dots\sigma_t$ und $\sigma_1 \dots \sigma_t(\alpha_t) \preceq 0$. 
-  Unter Berücksichtigung von Lemma \ref{lem:simplify} kann man annehmen, dass die multiplikative Darstellung nicht mehr verkürzt werden kann.
+  Nehmen wir $\sigma \neq \mathds{1}$ an, so lässt sich nach (d) die Abbildung $\sigma$ als Produkt $\sigma = \sigma_1\dots\sigma_t$ schreiben, wobei $sigma_1,\dots,sigma_t$ einfache Spiegelungen seien. 
+  Nach der konstruktiven Definition des Hüllenoperators für Gruppen können wir zusätzlich annehmen, dass $t$ minimal gewählt sei.
   Dann ist nach Korollar \ref{cor:minimalReflection} das Bild $\sigma(\alpha_t)$ negativ, also gilt insbesondere $\sigma(\alpha_t) \not\in \Delta$ im Widerspruch zur Voraussetzung.
   Die Annahme muss also verworfen werden und es folgt $\sigma = \mathds{1}$.
 \end{proof}
