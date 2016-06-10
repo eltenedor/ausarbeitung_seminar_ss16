@@ -1,19 +1,19 @@
-\newpage
+%\newpage
 \section{Die Weyl-Gruppe}
 \label{sec:weylgroup}
 
-Nach der in den bisherigen Abschnitten geleisteten Vorarbeit, wenden wir uns in diesem Abschnitt nun wieder der Gruppenoperation der \weyl\hyp{}Gruppe auf der Menge der \weyl\hyp{}Kammern beziehungsweise auf der Menge der Fundamentalsysteme eines Wurzelsystems $\Phi$ aus Proposition \ref{prop:groupOp} zu.
-
-Wir beginnen mit einer für beliebige Gruppenoperationen definierten Eigenschaft.
+Nach der in den bisherigen Abschnitten geleisteten Vorarbeit, wenden wir uns in diesem Abschnitt nun einem speziellen Typ von Spiegelungsgruppen auf einem \euklid ischen Vektorraum $E$ zu: der \weyl\hyp{}Gruppe $\W$ eines Wurzelsystems $\Phi$. 
+Allgemeine Spiegelungsgruppen werden in \cite{humphreys1992reflection} behandelt.
+Wir interessieren uns insbesondere für die von $\W$ auf der Menge der \weyl\hyp{}Kammern beziehungsweise auf der Menge der Fundamentalsysteme eines Wurzelsystems induzierten Gruppenoperation.
 
 \begin{defn}
-  Eine Gruppe $G$ operiere auf einer Menge $X$.
-  Die Gruppenoperation $\circ \colon G \times X \to X$ heißt \emph{scharf transitiv}, wenn für alle $x,y \in X$ genau ein $g \in G$ existiert, sodass $g \circ x = y$ gilt. 
+  \label{def:weylgroup}
+  Sei $\Phi$ ein Wurzelsystem über $E$. 
+  Dann bezeichnet $\W$ die für alle $\alpha \in \Phi$ von den Spiegelungen $\sigma_\alpha$, erzeugte Untergruppe der allgemeinen linearen Gruppe $\GL(E)$. 
+  Man nennt $\W$ die \emph{\weyl\hyp{}Gruppe} von $\Phi$.
 \end{defn}
 
-Ziel dieses Abschnittes ist es zu beweisen, dass die durch die Gruppe $\W$ auf der Menge der Fundamentalsysteme induzierte Gruppenoperation scharf transitiv ist.
-Dies wird unter anderem auch durch den nachfolgenden Satz bewiesen.
-Ein Lemma stellt zuvor noch sicher, dass es sich bei $\W$ um eine endliche Gruppe handelt.
+Ein Lemma stellt sicher, dass es sich bei $\W$ um eine endliche Gruppe handelt.
 
 \begin{lem}
   \label{lem:weylFinite}
@@ -35,7 +35,7 @@ Ein Lemma stellt zuvor noch sicher, dass es sich bei $\W$ um eine endliche Grupp
   Im Allgemeinen wird die \weyl\hyp{}Gruppe nicht der Symmetriegruppe des zugrundeliegenden Wurzelsystems entsprechen.
   So sind beispielsweise die \weyl\hyp{}Gruppen zweidimensionaler Wurzelsysteme entsprechend des auftretenden Minimalwinkels $\theta = \tfrac{2\pi}{n}$ für $n = 4,6,8,12$ isomorph zu den Diedergruppen $\mathbf{D_2}, \mathbf{D_3}, \mathbf{D_4}, \mathbf{D_6}$.
   Einen Beweis dieser Aussage findet man in \cite[S.203f.]{hall2015lie}.
-  Abbildung \ref{fig:symmetry} veranschaulicht beispielhaft den Zusammenhang zwischen Wurzelsystem und \weyl\hyp{}Gruppe am Beispiel des Wurzelsystems $\mathbf{A_2}$.
+  Abbildung \ref{fig:symmetry} veranschaulicht beispielhaft den Zusammenhang zwischen Wurzelsystem und \weyl\hyp{}Gruppe am Beispiel der Wurzelsysteme $\mathbf{A_2}$ und $\mathbf{B_2}$.
 \end{bem}
 
 \begin{figure}
@@ -61,8 +61,123 @@ Ein Lemma stellt zuvor noch sicher, dass es sich bei $\W$ um eine endliche Grupp
       \draw[thin] (30:1.5 ) -- (150:1.5) -- (270:1.5) -- (30:1.5);
     }
   \end{tikzpicture}
-  \caption{Die \weyl\hyp{}Gruppe des Wurzelsystems $\mathbf{A_2}$ bildet gerade die Symmetriegruppe $\mathbf{D_3}$ des eingezeichneten Dreiecks. Die gestrichelten Linien stellen gerade die von den Wurzeln erzeugten Spiegelungsebenen dar.}
+  \hspace{1cm}
+  \begin{tikzpicture}[
+    scale=0.87,
+    % arrow heads for all lines (with narrower arrow head width)
+    %-{Straight Barb[bend,
+       %width=\the\dimexpr10\pgflinewidth\relax,
+       %length=\the\dimexpr12\pgflinewidth\relax]},
+  ]
+    %coordinate system
+    %\draw[black] (-6,0) -- (6,0);
+    %\draw[black] (0,-6) -- (0,6);
+    % straight arrows
+    \foreach \i in {0, 1, ..., 3} {
+      \draw[->,thick, black] (0, 0) -- (\i*90:3);
+    }
+    \draw[->,thick, black] (0, 0) -- (3,3);
+    \draw[->,thick, black] (0, 0) -- (-3,3);
+    \draw[->,thick, black] (0, 0) -- (-3,-3);
+    \draw[->,thick, black] (0, 0) -- (-3,3);
+    \draw[->,thick, black] (0, 0) -- (3,-3);
+    \draw[thin] (2.0,0) -- (0,2.0) -- (-2.0,0) -- (0,-2.0) -- cycle;
+  \end{tikzpicture}
+  \caption{Die \weyl\hyp{}Gruppe des Wurzelsystems $\mathbf{A_2}$ (links) bildet gerade die Symmetriegruppe $\mathbf{D_3}$ des eingezeichneten Dreiecks. Die gestrichelten Linien stellen gerade die von den Wurzeln erzeugten Spiegelungsebenen dar. Im Falle des Wurzelsystems $\mathbf{B_2}$ (rechts) bildet die \weyl\hyp{}Gruppe gerade die Symmetriegruppe $\mathbf{D_4}$ des Quadrats.}
 \end{figure}
+
+Es lassen sich nun unterschiedliche von $\W$ induzierte Gruppenoperationen betrachten. 
+Wir beginnen mit einer für beliebige Gruppenoperationen definierten Eigenschaft.
+
+\begin{defn}
+  Eine Gruppe $G$ operiere auf einer Menge $X$.
+  Die Gruppenoperation $\circ \colon G \times X \to X$ heißt \emph{scharf transitiv}, wenn für alle $x,y \in X$ genau ein $g \in G$ existiert, sodass $g \circ x = y$ gilt. 
+\end{defn}
+
+Ziel dieses Abschnittes ist es zu beweisen, dass die durch die Gruppe $\W$ auf der Menge der Fundamentalsysteme induzierte Gruppenoperation scharf transitiv ist.
+Folgende Proposition gibt über die Wohldefiniertheit der von uns zu betrachtenden Gruppenoperationen Auskunft.
+
+\begin{prop}
+  \label{prop:groupOp}
+  Sei $\Phi$ ein Wurzelsystem über $E$ mit \weyl\hyp{}Gruppe $\W$.
+  Dann gelten für alle $\gamma, \gamma' \in E$ und $\sigma \in \W$ die folgenden Aussagen:
+  \begin{enumerate}[(a)]
+    \item Es operiert $\W$ auf der Menge der regulären Elemente: 
+      \begin{addmargin}[2em]{2em}
+        Es ist $\sigma(\gamma)$ genau dann regulär, wenn $\gamma$ regulär ist.
+      \end{addmargin}
+      
+    \item Aus $\mathfrak{C}(\gamma) = \mathfrak{C}(\gamma')$ folgt, dass auch $\mathfrak{C}(\sigma(\gamma)) = \mathfrak{C}(\sigma(\gamma'))$. \\
+      Es operiert $\W$ auf der Menge der \weyl\hyp{}Kammern $\{\mathfrak{C}(\omega) \mid \omega \text{ regulär}\}$. Die Gruppenoperation lässt sich durch $ \sigma(\mathfrak{C}(\gamma)) = \mathfrak{C}(\sigma(\gamma))$ definieren.
+
+    \item Es operiert $\W$ auf der Menge der Fundamentalsysteme $\{\Delta(\omega) \mid \omega \text{ regulär}\}$: 
+      \begin{addmargin}[2em]{2em}
+        Ist $\Delta$ ein Fundamentalsystem für $\Phi$, so auch $\sigma(\Delta)$. 
+      \end{addmargin}
+
+    \item Die unter (b) und (c) beschriebenen Gruppenoperationen sind kompatibel in dem Sinne, dass 
+      $\sigma(\Delta(\gamma)) = \Delta(\sigma(\gamma))$
+      und damit auch
+      $\sigma(\mathfrak{C}(\Delta)) = \mathfrak{C}(\sigma(\Delta))$
+      gilt.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  (a): 
+  Angenommen, $\sigma(\gamma)$ sei nicht regulär, dann existiert ein $\alpha \in \Phi$ mit $\sigma(\gamma) \in P_\alpha$.
+  Damit folgt $\sigma(\gamma) = \sigma_\alpha \sigma(\gamma)$, da $\sigma_\alpha$ Elemente aus $P_\alpha$ fixiert.
+  Hieraus ergibt sich mit Lemma \ref{lem:conjReflection} nun $\gamma = \sigma^{-1} \sigma_\alpha \sigma(\gamma) = \sigma_{\sigma(\alpha)}(\gamma)$, was wiederum $\gamma \in P_{\sigma(\alpha)}$ impliziert.
+  Nach \hyperref[it:R3]{(R3)} gilt $\sigma(\alpha) \in \Phi$, also ist $\gamma$ im Widerspruch zur Voraussetzung nicht regulär.
+  Die Annahme, dass $\sigma(\gamma)$ nicht regulär sei, muss also verworfen werden.
+  
+  Die Umkehrung der Aussage folgt aus der gezeigten Implikationsrichtung durch Anwendung der Spiegelung $\sigma^{-1}$ auf $\sigma(\gamma)$.
+
+  (b): 
+  Seien $\gamma, \gamma'$ regulär mit $\mathfrak{C}(\gamma) = \mathfrak{C}(\gamma')$.
+  Angenommen, es sei $\mathfrak{C}(\sigma(\gamma)) \neq \mathfrak{C}(\sigma(\gamma'))$.
+  Dann existiert ein $\alpha \in \Phi$, sodass einerseits $(\sigma(\gamma), \alpha) > 0$ und andererseits $(\sigma(\gamma'), \alpha) < 0$ gelten.
+  Wir betrachten nun die Abbildung $x \mapsto  (\sigma(x), \alpha)$.
+  Diese ist als Linearform auf dem endlichdimensionalen Vektorraum $E$ stetig bezüglich \euklid ischer Topologie.
+
+  Da $\mathfrak{C}(\gamma)$ eine zusammenhängende Menge ist, folgt mit dem Zwischenwertsatz \cite[S.232]{bartsch2015allgemeine}, dass ein reguläres $x \in \mathfrak{C}(\gamma)$ existiert mit $(\sigma(x), \alpha) = 0$.
+  Das bedeutet jedoch gerade, dass $\sigma(x)$ ein Element von $P_\alpha$ ist und damit wäre $\sigma(x)$ nicht regulär.
+  Dies steht jedoch im Widerspruch zu (a). 
+  Es muss also auch $\mathfrak{C}(\sigma(\gamma)) = \mathfrak{C}(\sigma(\gamma'))$ gelten.
+
+  Also lässt sich die Gruppenoperation auf den \weyl\hyp{}Kammern repräsentantenunabhängig definieren und die Behauptung folgt.
+  
+  (c): 
+  Da $\sigma$ als orthogonale Abbildung insbesondere injektiv ist, folgt, dass $\sigma(\Delta)$ wieder ein System linear unabhängiger Vektoren und damit aufgrund von \hyperref[it:B1]{(B1)} wieder eine Vektorraumbasis von $E$ ist.
+  
+  Ist nun $\beta \in \Phi$ mit der nach \hyperref[it:B2]{(B2)} existierenden Darstellung $\beta = \sum_{\alpha \in \Delta} k_\alpha \alpha$ gegeben, so gilt
+  \begin{displaymath}
+  \sigma(\beta) 
+    = \sigma(\sum_{\alpha \in \Delta} k_\alpha \alpha)
+    = \sum_{\alpha \in \Delta} k_\alpha \sigma(\alpha)
+    = \sum_{\sigma(\alpha) \in \sigma(\Delta)} k_\alpha \sigma(\alpha)
+  \end{displaymath}
+  aufgrund der Linearität von $\sigma$.
+  Die Vorzeichen der Linearfaktoren $k_\alpha$ bleiben zudem unverändert, womit \hyperref[it:B2]{(B2)} folgt.
+  Damit ist auch $\sigma(\Delta)$ ein Fundamentalsystem.
+
+  (d):
+  Wir stellen zunächst fest, dass aufgrund der Aussage (c), die zu zeigende Gleichheit in dem Sinne wohldefiniert ist, dass $\sigma(\Delta(\gamma))$ als Bild eines Fundamentalsystems wieder ein Fundamentalsystem darstellt.
+
+  Sei nun $\sigma(\alpha) \in \sigma(\Delta(\gamma))$.
+  Mit $\alpha \in \Delta(\gamma)$ gilt definitionsgemäß $(\alpha, \gamma) > 0$.
+  Spiegelungen erhalten als Isometrien das Skalarprodukt, es gilt also auch $(\sigma(\alpha), \sigma(\gamma)) > 0$.
+  Dies wiederum impliziert $\sigma(\alpha) \in \Phi^+(\sigma(\gamma))$.
+  Angenommen, $\sigma(\alpha)$ wäre eine zerlegbare Wurzel.
+  Dann ist auch $\alpha$ zerlegbar, da $\sigma$ bijektiv ist.
+  Dies steht jedoch im Widerspruch dazu, dass mit $\alpha \in \Delta$ die Wurzel $\alpha$ als einfach vorausgesetzt wurde.
+  Also muss $\sigma(\alpha)$ auch einfach sein, womit $\sigma(\alpha) \in \Delta(\sigma(\gamma))$ folgt.
+  Das impliziert die Gültigkeit der Inklusion $\sigma(\Delta(\gamma)) \subseteq \Delta(\sigma(\gamma))$.
+  
+  Da $\sigma$ bijektiv ist und beide Mengen als Teilmengen des endlichen Wurzelsystems $\Phi$ auch endlich sind, folgt hiermit bereits die Gleichheit.
+\end{proof}
+
+Nun zu dem Zentralen Satz dieser Ausarbeitung.
 
 \begin{samepage}
 \begin{thm}
