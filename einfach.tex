@@ -7,8 +7,7 @@ Im Folgenden bezeichne $\Delta$ ein fest gewähltes Fundamentalsystem des Wurzel
 \begin{lem}
   \label{lem:independentSet}
   Sei $M \subseteq E$ eine Teilmenge von Vektoren und $P_\gamma$ eine Hyperebene.
-  Es gelte $(\alpha, \gamma) > 0$ für alle $\alpha \in M$ und zudem $(\alpha, \beta) \leq 0$ für alle paarweise verschiedenen $\alpha, \beta \in M$.
-  Dann ist $M$ linear unabhängig.
+  Liegen alle Elemente von $M$ auf derselben Seite von $P_\gamma$ und gilt zudem $(\alpha, \beta) \leq 0$ für alle paarweise verschiedenen $\alpha, \beta \in M$, dann ist $M$ linear unabhängig.
 \end{lem}
 
 \begin{proof}
@@ -28,9 +27,12 @@ Im Folgenden bezeichne $\Delta$ ein fest gewähltes Fundamentalsystem des Wurzel
   aufgrund der Eigenschaften des Skalarprodukts und der Voraussetzung $(\alpha, \beta) \leq 0$ für alle paarweise verschiedenen $\alpha, \beta$.
   Dies impliziert $\varepsilon = 0$, womit auch 
   \begin{displaymath}
-    0 = (\varepsilon, \gamma) = \sum_{\alpha \in A} k_\alpha (\alpha, \gamma)
+    0 = (\varepsilon, \gamma) = \sum_{\alpha \in A} k_\alpha (\alpha, \gamma) \tag{$\ast\ast$}
   \end{displaymath}
-  folgt. Da voraussetzungsgemäß $(\alpha, \gamma) > 0$ gilt, müssen alle $k_\alpha$ mit $\alpha \in A$ bereits $0$ sein.
+  folgt. 
+  Nach Voraussetzung liegen alle Elemente aus $M$ auf derselben Seite von $P_\gamma$. 
+  Das bedeutet, dass $(\alpha, \gamma) \geq 0$ oder $(\alpha, \gamma) \leq 0$ für alle $\alpha \in M$ gilt.
+  Dann müssen in ($\ast\ast$) aber alle $k_\alpha$ mit $\alpha \in A$ bereits $0$ sein.
   Analog folgert man unter Verwendung der Identität ($\ast$), dass alle $k_\beta$ mit $\beta \in B$ gleich $0$ sein müssen.
 \end{proof}
 
@@ -42,19 +44,17 @@ Das folgende Lemma demonstriert, wie sich aus einer positiven Wurzel neue positi
 \end{lem}
 
 \begin{proof}
-  Wir wollen zeigen, dass ein $\beta \in \Delta$ existiert mit $(\alpha, \beta) > 0$.
+  Wir wollen zeigen, dass ein $\beta \in \Delta$ mit $(\alpha, \beta) > 0$ existiert.
   Angenommen, für alle $\beta \in \Delta$ gelte $(\alpha, \beta) \leq 0$.
-  Zudem gilt für alle $\beta, \beta' \in \Delta$ immer $(\beta, \beta') \leq 0$, denn sonst wäre nach Lemma \ref{lem:sumDiffRoot} auch $\beta - \beta'$ eine Wurzel, was jedoch \hyperref[it:B2]{(B2)} widerspricht.
-  Damit sind die Voraussetzungen für Lemma \ref{lem:independentSet} erfüllt und es ist $\Delta \cup \{\alpha\}$ eine linear unabhängige Menge.
+  Zudem gilt für alle paarweise verschiedenen $\beta, \beta' \in \Delta$ immer $(\beta, \beta') \leq 0$, denn sonst wäre nach Lemma \ref{lem:sumDiffRoot} auch $\beta - \beta'$ eine Wurzel, was jedoch \hyperref[it:B2]{(B2)} widerspricht.
+  Damit liegen also alle Elemente aus $M := \Delta \cup \{\alpha\}$ auf derselben Seite der Hyperebene $P_\alpha$ und mit Lemma \ref{lem:independentSet} folgt, dass $M$ linear unabhängig ist.
   Dies widerspricht jedoch der Voraussetzung, dass $\Delta$ ein Fundamentalsystem ist.
 
   Also muss ein $\beta \in \Delta$ existieren mit $(\alpha, \beta) > 0$.
-  Zudem kann $\beta$ nicht proportional zu $\alpha$ sein, da sonst $\alpha$ nicht positiv sein könnte.
+  Zudem kann $\beta$ nicht proportional zu $\alpha$ sein, denn sonst würde nach \hyperref[it:R2]{(R2)} entweder $\alpha = \beta$ gelten, was der Voraussetzung, dass $\alpha$ nicht einfach ist, widerspricht, oder es würde $\alpha = -\beta$ gelten, was der vorausgesetzten Positivität von $\alpha$ widerspricht.
   Unter Verwendung von Lemma \ref{lem:sumDiffRoot} folgt somit, dass $\alpha - \beta$ eine Wurzel ist.
-  
   Bezüglich $\Delta$ lässt sich $\alpha$ auch schreiben als $\alpha = \sum_{\gamma \in \Delta} k_\gamma \gamma$, wobei aufgrund der Positivität von $\alpha$ alle $k_\gamma \geq 0$ sind und darüber hinaus auch mindestens ein $\gamma \neq \beta$ mit  $k_\gamma > 0$ existiert.
-  Ansonsten wäre nämlich $\alpha$ proportional zu $\beta$. 
-  Damit würde jedoch nach \hyperref[it:R2]{(R2)} entweder $\alpha = \beta$ gelten, was der Voraussetzung, dass $\alpha$ nicht einfach ist, widerspricht, oder es würde $\alpha = -\beta$ gelten, was der vorausgesetzten Positivität von $\alpha$ widerspricht.
+  Ansonsten wäre nämlich $\alpha$ proportional zu $\beta$, was bereits ausgeschlossen wurde.
 
   Betrachtet man nun die Darstellung $\alpha - \beta = \sum_{\gamma \in \Delta \setminus \{\beta\}} k_\gamma \gamma + (- \beta)$, so besitzt diese Summe zumindest einen strikt positiven Linearfaktor.
   Die Eigenschaft \hyperref[it:B2]{(B2)} erzwingt nun die Positivität aller restlichen Linearfaktoren und folglich ist auch $\alpha - \beta$ eine positive Wurzel.
@@ -107,26 +107,19 @@ Das folgende Lemma demonstriert, wie sich aus einer positiven Wurzel neue positi
 
 \begin{proof}
   Es gilt mit Lemma \ref{lem:permute}
-  \begin{displaymath}
-    \frac{1}{2} \sum_{\substack{\beta \in \Phi^+\\ \beta \neq \alpha}} \sigma_\alpha(\beta) + \frac{1}{2}\alpha 
-  = \frac{1}{2} \sum_{\substack{\beta \in \Phi^+\\ \beta \neq \alpha}} \beta + \frac{1}{2}\alpha
-  = \frac{1}{2} \sum_{\beta \in \Phi^+} \beta
-  = \delta.
-  \end{displaymath}
-  Daraus folgt 
   \begin{align*}
     \sigma_\alpha(\delta) 
-    &= \sigma_\alpha(\frac{1}{2} \sum_{\substack{\beta \in \Phi^+\\ \beta \neq \alpha}} \sigma_\alpha(\beta) + \frac{1}{2}\alpha ) \\
+    &= \sigma_\alpha(\frac{1}{2} \sum_{\beta \in \Phi^+} \beta )\\
+    &= \sigma_\alpha(\frac{1}{2} \sum_{\substack{\beta \in \Phi^+\\ \beta \neq \alpha}} \beta + \frac{1}{2}\alpha ) \\
     &= \frac{1}{2} \sum_{\substack{\beta \in \Phi^+\\ \beta \neq \alpha}} \sigma_\alpha(\beta) + \frac{1}{2} \sigma_\alpha(\alpha) \\
-    &= \frac{1}{2} \sum_{\substack{\beta \in \Phi^+\\ \beta \neq \alpha}} \sigma_\alpha(\beta) + \frac{1}{2} \sigma_\alpha(\alpha) + \frac{1}{2} \alpha - \frac{1}{2} \alpha \\
-    &= \frac{1}{2} \sum_{\substack{\beta \in \Phi^+\\ \beta \neq \alpha}} \beta + \frac{1}{2} \alpha - \alpha \\
+    &= \frac{1}{2} \sum_{\substack{\beta \in \Phi^+\\ \beta \neq \alpha}} \beta - \frac{1}{2} \alpha \\
+    &= \frac{1}{2} \sum_{\substack{\beta \in \Phi^+\\ \beta \neq \alpha}} \beta + \frac{1}{2} \alpha  - \frac{1}{2} \alpha - \frac{1}{2} \alpha \\
     &= \frac{1}{2} \sum_{\beta \in \Phi^+} \beta - \alpha \\
     &= \delta - \alpha. \qedhere
   \end{align*}
 \end{proof}
 
-Nach Definition \ref{def:weylgroup} wird die \weyl\hyp{}Gruppe $\W$ von den Spiegelungen an den zu Wurzeln orthogonalen Hyperebenen erzeugt.
-Das folgende Lemma liefert ein Kriterium dafür, wann man entsprechende Darstellungen von Elementen aus $\W$ vereinfachen kann.
+Das folgende Lemma liefert ein Kriterium dafür, wann sich Verknüpfungen von Spiegelungen vereinfachen lassen.
 
 \begin{lem}
   \label{lem:simplify}
