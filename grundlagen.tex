@@ -2,7 +2,7 @@
 \label{sec:grundlagen}
 
 Dieser Abschnitt beinhaltet die für diese Arbeit benötigten Grundlagen zu Wurzelsystemen.  
-Im Folgenden bezeichne $E$ stets einen \emph{\euklid ischen} Vektorraum, also einen $\R$\hyp{}Vektorraum mit Skalarprodukt $(\cdot,\cdot)$.
+Im Folgenden bezeichne $E$ stets einen \euklid ischen Vektorraum, also einen $\R$\hyp{}Vektorraum mit Skalarprodukt $(\cdot,\cdot)$.
 
 Einer \emph{Spiegelung} $\sigma$ ist eine orthogonale Abbildung auf $E$, welche eine \emph{Hyperebene}, also einen Unterraum der Kodimension $1$, punktweise fixiert und jeden Vektor des orthogonalen Komplements der Hyperebene auf sein Negatives abbildet.
 Jeder Vektor $\alpha \in E \setminus \{0\}$ induziert eine \emph{Spiegelung} $\sigma_\alpha$ an der Hyperebene 
@@ -40,11 +40,11 @@ Es gilt jedoch $\sign \langle \alpha, \beta \rangle = \sign (\alpha, \beta)$ fü
   Da dieser Ausdruck symmetrisch in $\alpha$ und $\beta$ ist, folgt $\sigma_\beta \sigma_\alpha = \sigma_\alpha \sigma_\beta$.
 \end{proof}
 
-Wir halten nun ein Resultat fest, das sich im späteren als nützlich erweisen wird. Einen Beweis hierzu findet sich in \cite[S.123 und S.242]{erdmann2006introduction}.
+Wir halten nun ein Resultat fest, welches sich später als nützlich erweisen wird. Ein Beweis hierzu findet sich in \cite[S.123 und S.242]{erdmann2006introduction}.
 
 \begin{prop}
   \label{prop:unterraumAusschoepfung} 
-  Sei $E$ ein endlich dimensionaler Vektorraum über einem unendlichen Körper $\K$ und $U_1, U_2, \dots, U_n$ echte Teilräume von $E$, welche alle dieselbe Dimension besitzen.
+  Sei $E$ ein endlich dimensionaler Vektorraum über einem unendlichen Körper $\K$ und $U_1, U_2, \dots, U_n$ echte lineare Unterräume von $E$, welche alle dieselbe Dimension besitzen.
   Dann ist die Vereinigung $\bigcup_{i=1}^n U_i$ kein Untervektorraum.
   Insbesondere lässt sich also $E$ nicht durch endlich viele echte Untervektorräume ausschöpfen.
   \qed
@@ -126,15 +126,26 @@ Bezüglich eines Wurzelsystems $\Phi$ lassen sich auch Vektoren des umfassenden 
 
 Liegen zwei reguläre Wurzeln $\gamma, \gamma'$ in derselben \weyl\hyp{}Kammer, so liegen sie bezüglich aller Hyperebenen $P_\alpha$ auf derselben Seite, was bedeutet, dass $\sign (\gamma, \alpha) = \sign( \gamma', \alpha)$ gilt, für alle $\alpha \in \Phi$.
 Man kann also \weyl\hyp{}Kammern nicht nur als Äquivalenzklassen im topologischen Sinne der Zusammenhangskomponenten betrachten, sondern auch geometrisch interpretieren.
+Die Repräsentanten bilden jeweils die regulären Elemente.
 
 Bezeichnet man mit
 \begin{displaymath}
   \Phi^+(\gamma) := \{ \alpha \in \Phi \mid (\gamma, \alpha) > 0 \}
 \end{displaymath}
 die Menge aller Wurzeln, die mit $\gamma$ einen spitzen Winkel einschließen, so gilt in diesem Falle $\Phi^+(\gamma) = \Phi^+(\gamma')$.
-Bezeichnet man zudem mit $\Delta(\gamma)$ die Menge aller Wurzeln $\alpha \in \Phi^+(\gamma)$, die sich nicht als Summe $\alpha = \beta_1 + \beta_2$ zweier positiver Wurzeln $\beta_1, \beta_2 \in \Phi^+(\gamma)$ schreiben lassen, so gilt zusätzlich $\Delta(\gamma) = \Delta(\gamma')$. 
+Bezeichnet man zudem mit $\Delta(\gamma)$ die Menge aller Wurzeln $\alpha \in \Phi^+(\gamma)$, die sich nicht als Summe $\alpha = \beta_1 + \beta_2$ zweier Wurzeln $\beta_1, \beta_2 \in \Phi^+(\gamma)$ schreiben lassen, so gilt zusätzlich $\Delta(\gamma) = \Delta(\gamma')$. 
 Wurzeln, die sich in der oben genannten Weise additiv zerlegen lassen, bezeichnet man als \emph{zerlegbar}. 
-Ist dies nicht der Fall so bezeichnet man die Wurzel als \emph{unzerlegbar}.
+Ist dies nicht der Fall, so bezeichnet man die Wurzel als \emph{unzerlegbar}.
+
+Dass $\Delta(\gamma)$ sogar ein Fundamentalsystem von $\Phi$ ist, lässt sich in \cite[S.48]{humphreys1972introduction} nachlesen.
+Es gilt nämlich der folgende Satz.
+
+\begin{thm}
+  \label{thm:base}
+  Sei $\Phi$ ein Wurzelsystem und $\gamma \in E$ diesbezüglich regulär.
+  Dann ist die Menge $\Delta(\gamma)$ aller unzerlegbaren Wurzeln aus $\Phi^+(\gamma)$ ein Fundamentalsystem von $\Phi$ und jedes Fundamentalsystem ist von dieser Form. \qed
+\end{thm}
+
 
 Das folgende Lemma fasst nochmals die vorangehenden Überlegungen zusammen.
 
@@ -209,15 +220,6 @@ Die soeben eingeführten Begriffe werden in Abbildung \ref{fig:fundamentalWeylCh
   \caption{Das Wurzelsystem $\mathbf{A_2}$ mit den \weyl\hyp{}Kammern $\mathfrak{C}_1,\dots,\mathfrak{C}_6$ im linken Teil und mit der Fundamentalkammer $\mathfrak{C}(\Delta)$ zu $\Delta := \{\alpha, \beta\}$ im rechten Teil.}
 \end{figure}
 
-
-Dass $\Delta(\gamma)$ sogar ein Fundamentalsystem von $\Phi$ ist, lässt sich in \cite[S.48]{humphreys1972introduction} nachlesen.
-Es gilt nämlich der folgende Satz.
-
-\begin{thm}
-  \label{thm:base}
-  Sei $\Phi$ ein Wurzelsystem und $\gamma \in E$ diesbezüglich regulär.
-  Dann ist die Menge $\Delta(\gamma)$ aller unzerlegbaren Wurzeln aus $\Phi^+(\gamma)$ ein Fundamentalsystem von $\Phi$ und jedes Fundamentalsystem ist von dieser Form. \qed
-\end{thm}
 
 \begin{defn}
   Sei $\Phi$ ein Wurzelsystem über $E$ mit Fundamentalsystem $\Delta$.

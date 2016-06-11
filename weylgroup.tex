@@ -1,4 +1,4 @@
-%\newpage
+\newpage
 \section{Die Weyl-Gruppe}
 \label{sec:weylgroup}
 
@@ -83,7 +83,7 @@ Ein Lemma stellt sicher, dass es sich bei $\W$ um eine endliche Gruppe handelt.
     \draw[->,thick, black] (0, 0) -- (3,-3);
     \draw[thin] (2.0,0) -- (0,2.0) -- (-2.0,0) -- (0,-2.0) -- cycle;
   \end{tikzpicture}
-  \caption{Die \weyl\hyp{}Gruppe des Wurzelsystems $\mathbf{A_2}$ (links) bildet gerade die Symmetriegruppe $\mathbf{D_3}$ des eingezeichneten Dreiecks. Die gestrichelten Linien stellen gerade die von den Wurzeln erzeugten Spiegelungsebenen dar. Im Falle des Wurzelsystems $\mathbf{B_2}$ (rechts) bildet die \weyl\hyp{}Gruppe gerade die Symmetriegruppe $\mathbf{D_4}$ des Quadrats.}
+  \caption{Die \weyl\hyp{}Gruppe des Wurzelsystems $\mathbf{A_2}$ (links) bildet gerade die Symmetriegruppe $\mathbf{D_3}$ des eingezeichneten Dreiecks. Die gestrichelten Linien stellen die von den Wurzeln erzeugten Spiegelungsebenen dar. Im Falle des Wurzelsystems $\mathbf{B_2}$ (rechts) bildet die \weyl\hyp{}Gruppe gerade die Symmetriegruppe $\mathbf{D_4}$ des Quadrats.}
 \end{figure}
 
 Es lassen sich nun unterschiedliche von $\W$ induzierte Gruppenoperationen betrachten. 
@@ -108,7 +108,9 @@ Folgende Proposition gibt über die Wohldefiniertheit der von uns zu betrachtend
       \end{addmargin}
       
     \item Aus $\mathfrak{C}(\gamma) = \mathfrak{C}(\gamma')$ folgt, dass auch $\mathfrak{C}(\sigma(\gamma)) = \mathfrak{C}(\sigma(\gamma'))$. \\
-      Es operiert $\W$ auf der Menge der \weyl\hyp{}Kammern $\{\mathfrak{C}(\omega) \mid \omega \text{ regulär}\}$. Die Gruppenoperation lässt sich durch $ \sigma(\mathfrak{C}(\gamma)) = \mathfrak{C}(\sigma(\gamma))$ definieren.
+      Es operiert $\W$ auf der Menge der \weyl\hyp{}Kammern $\{\mathfrak{C}(\omega) \mid \omega \text{ regulär}\}$. 
+      Die Gruppenoperation lässt sich durch $ \sigma(\mathfrak{C}(\gamma)) = \mathfrak{C}(\sigma(\gamma))$ definieren.
+      Das Bild einer \weyl\hyp{}Kammer ist also bereits durch das Bild eines Repräsentanten festgelegt.
 
     \item Es operiert $\W$ auf der Menge der Fundamentalsysteme $\{\Delta(\omega) \mid \omega \text{ regulär}\}$: 
       \begin{addmargin}[2em]{2em}
@@ -140,7 +142,9 @@ Folgende Proposition gibt über die Wohldefiniertheit der von uns zu betrachtend
   Wir betrachten nun die Abbildung $x \mapsto  (\sigma(x), \alpha)$.
   Diese ist als Linearform auf dem endlichdimensionalen Vektorraum $E$ stetig bezüglich \euklid ischer Topologie.
 
-  Da $\mathfrak{C}(\gamma)$ eine zusammenhängende Menge ist, folgt mit dem Zwischenwertsatz \cite[S.232]{bartsch2015allgemeine}, dass ein reguläres $x \in \mathfrak{C}(\gamma)$ existiert mit $(\sigma(x), \alpha) = 0$.
+  Da $\mathfrak{C}(\gamma)$ eine zusammenhängende Menge ist, folgt mit dem Zwischenwertsatz 
+  %\cite[S.232]{bartsch2015allgemeine}
+  , dass ein reguläres $x \in \mathfrak{C}(\gamma)$ existiert mit $(\sigma(x), \alpha) = 0$.
   Das bedeutet jedoch gerade, dass $\sigma(x)$ ein Element von $P_\alpha$ ist und damit wäre $\sigma(x)$ nicht regulär.
   Dies steht jedoch im Widerspruch zu (a). 
   Es muss also auch $\mathfrak{C}(\sigma(\gamma)) = \mathfrak{C}(\sigma(\gamma'))$ gelten.
@@ -149,11 +153,12 @@ Folgende Proposition gibt über die Wohldefiniertheit der von uns zu betrachtend
   
   (c): 
   Da $\sigma$ als orthogonale Abbildung insbesondere injektiv ist, folgt, dass $\sigma(\Delta)$ wieder ein System linear unabhängiger Vektoren und damit aufgrund von \hyperref[it:B1]{(B1)} wieder eine Vektorraumbasis von $E$ ist.
+  Zudem gilt $\sigma(\Delta) \subseteq \Phi$, da nach \hyperref[it:R3]{(R3)} diese Inklusion bereits für jeden Erzeuger $\sigma_\gamma$ von $\W$ mit $\gamma \in \Phi$ gilt.
   
   Ist nun $\beta \in \Phi$ mit der nach \hyperref[it:B2]{(B2)} existierenden Darstellung $\beta = \sum_{\alpha \in \Delta} k_\alpha \alpha$ gegeben, so gilt
   \begin{displaymath}
   \sigma(\beta) 
-    = \sigma(\sum_{\alpha \in \Delta} k_\alpha \alpha)
+    = \sigma\Big(\,\sum_{\alpha \in \Delta} k_\alpha \alpha\Big)
     = \sum_{\alpha \in \Delta} k_\alpha \sigma(\alpha)
     = \sum_{\sigma(\alpha) \in \sigma(\Delta)} k_\alpha \sigma(\alpha)
   \end{displaymath}
@@ -182,7 +187,7 @@ Nun zu dem Zentralen Satz dieser Ausarbeitung.
 \begin{samepage}
 \begin{thm}
   \label{thm:simplyTransitive}
-  Es sei $\Delta$ ein Fundamentalsystem des Wurzelsystems $\Phi$ über $E$ und zugehöriger \weyl\hyp{}Gruppe $\W$.
+  Es sei $\Delta$ ein Fundamentalsystem des Wurzelsystems $\Phi$ über $E$ mit zugehöriger \weyl\hyp{}Gruppe $\W$.
   Dann gelten die folgenden Aussagen:
   \begin{enumerate}[(a)]
 
@@ -204,13 +209,13 @@ Nun zu dem Zentralen Satz dieser Ausarbeitung.
 \end{samepage}
 
 \begin{proof}
-  Wir führen die Beweise für (a) bis (c) zunächst für die von den einfachen Spiegelungen erzeugte Untergruppe $\W'$ von $\W$ und beweisen damit auf den ersten Blick schwächere Aussagen.
+  Wir führen die Beweise für (a) bis (c) zunächst für die von den einfachen Spiegelungen erzeugte Untergruppe $\W'$ von $\W$ und beweisen damit auf den ersten Blick stärkere Aussagen.
   Nach dem Beweis von (d) folgt $\W' = \W$.
 
   (a):
   Es sei $\gamma \in E$ regulär und $\delta := \tfrac{1}{2} \sum_{\alpha \in \Phi^+} \alpha$.
   Da nach Lemma \ref{lem:weylFinite} die \weyl\hyp{}Gruppe und damit auch die Untergruppe $\W'$ endlich sind, existiert ein $\sigma \in \W'$, sodass $(\sigma(\gamma), \delta)$ maximal wird.
-  Für alle $\alpha \in \Delta$ gilt auch $\sigma_\alpha\sigma \in \W'$ aufgrund der Untergruppeneigenschaft.
+  Für alle $\alpha \in \Delta$ gilt $\sigma_\alpha\sigma \in \W'$ aufgrund der Untergruppeneigenschaft.
   Daraus folgt
   \begin{align*}
     (\sigma(\gamma), \delta) 
@@ -240,16 +245,16 @@ Nun zu dem Zentralen Satz dieser Ausarbeitung.
   Aufgrund von Axiom \hyperref[it:R2]{(R2)} sind $\pm \alpha$ die einzigen zu $\alpha$ proportionalen Wurzeln in $\Phi$.
   Somit unterscheiden sich alle Hyperebenen $P_\beta$ von $P_\alpha = P_{-\alpha}$.
   Nach Proposition \ref{prop:unterraumAusschoepfung} lässt sich $P_\alpha$ nicht von den echten Unterräumen $P_\alpha \cap P_\beta$ mit $\alpha \neq \beta$ ausschöpfen.
-  Es existiert daher ein $\gamma \in P_\alpha$ mit $\gamma \not\in P_\beta$ für alle $\beta \neq \alpha$.
+  Es existiert daher ein $\gamma \in P_\alpha$ mit $\gamma \not\in P_\beta$ für alle $\beta \neq \pm\alpha$.
 
   Entsprechend Satz \ref{thm:base} korrespondiert zu jedem regulären Element ein Fundamentalsystem. 
   Es gilt nun in der Nähe von $\gamma$ ein geeignetes reguläres Element zu finden und nachzuweisen, dass $\alpha$ in dem entsprechenden Fundamentalsystem enthalten ist.
 
-  Wir wählen nun ein $\varepsilon > 0$ und $\gamma' \in E$ möglichst nahe bei $\gamma$, sodass $(\gamma', \alpha) = \varepsilon > 0$ ist und $|(\gamma', \beta)| > \varepsilon$ für alle $\beta \neq \pm \alpha$ gilt ($\ast$).
+  Wir wählen dazu ein $\varepsilon > 0$ und $\gamma' \in E$ möglichst nahe bei $\gamma$, sodass $(\gamma', \alpha) = \varepsilon > 0$ ist und $|(\gamma', \beta)| > \varepsilon$ für alle $\beta \neq \pm \alpha$ gilt ($\ast$).
   Dies ist möglich, da nach Konstruktion $(\gamma, \beta) \neq 0$ für alle $\beta \neq \pm \alpha$ gilt.
   Damit existiert aufgrund der Stetigkeit des Skalarproduktes und der Betragsfunktion ein $\delta > 0$, sodass für alle $\gamma' \in B_\delta(\gamma)$ auch $\varepsilon < |(\gamma', \beta)|$ gilt, falls man $\varepsilon = \tfrac{1}{2} \min_{\beta \neq \pm\alpha}{|(\gamma,\beta)|}$ wählt.
   Das Komplement der Hyperebene $P_\alpha$ liegt dicht in $E$ und folglich besitzt $P_\alpha$ keine inneren Punkte.
-  Also existiert ein $\gamma' \in B_\delta(\gamma) \setminus P_\alpha$ und wir können durch Verkleinerung von $\varepsilon$ und eventuelle Multiplikation von $\gamma'$ mit $-1$ annehmen, dass $(\gamma', \alpha) = \varepsilon$ gilt.
+  Also existiert ein $\gamma' \in B_\delta(\gamma) \setminus P_\alpha$ und wir können durch Verkleinerung von $\varepsilon$ und eventuelle Multiplikation von $\gamma'$ mit $-1$ annehmen, dass $(\gamma', \alpha) = \varepsilon$ gilt, weil $B_\delta(\gamma)$ zusammenhängend ist.
 
   Nach Konstruktion ist $\gamma'$ regulär.
   Zudem ist $\alpha$ bezüglich $\Phi^+(\gamma')$ unzerlegbar.
@@ -260,22 +265,23 @@ Nun zu dem Zentralen Satz dieser Ausarbeitung.
     = (\gamma', \alpha) 
     = (\gamma', \beta_1 + \beta_2) 
     = (\gamma', \beta_1) + (\gamma', \beta_2)
+    = |(\gamma', \beta_1)| + |(\gamma', \beta_2)|
     > \varepsilon + \varepsilon
     = 2\varepsilon,
   \end{displaymath}
   also ein Widerspruch.
-  Folglich ist $\alpha$ unzerlegbar, was $\alpha \in \Delta(\gamma')$ impliziert.
+  Folglich ist $\alpha$ unzerlegbar bezüglich $\Phi^+(\gamma')$, was $\alpha \in \Delta(\gamma')$ impliziert.
 
   (d):
   Da nach Konstruktion $\W'$ eine Untergruppe von $\W$ ist, reicht es zu zeigen, dass jede Spiegelung $\sigma_\alpha$ mit $\alpha \in \Phi$ ein Element von $\W'$ ist.
   Nach (c) existiert ein $\sigma \in \W'$, sodass $\beta := \sigma(\alpha) \in \Delta$.
   Damit gilt insbesondere $\sigma_\beta \in \W'$.
-  Aufgrund von Lemma \ref{lem:conjReflection} ist $\sigma_{\sigma(\alpha)} = \sigma \sigma_\alpha \sigma^{-1}$, also folgt mit der Untergruppeneigenschaft von $\W'$ sodann $\sigma_\alpha = \sigma^{-1} \sigma_\beta \sigma \in \W'$.
+  Aufgrund von Lemma \ref{lem:conjReflection} ist $\sigma_\beta = \sigma_{\sigma(\alpha)} = \sigma \sigma_\alpha \sigma^{-1}$, also folgt mit der Untergruppeneigenschaft von $\W'$ sodann $\sigma_\alpha = \sigma^{-1} \sigma_\beta \sigma \in \W'$.
   Folglich gilt $\W' = \W$ und alle bereits für $\W'$ bewiesenen Aussagen gelten auch für $\W$.
 
   (e):
   Sei $\sigma \in \W$ mit $\sigma(\Delta) = \Delta$.
-  Nehmen wir $\sigma \neq \mathds{1}$ an, so lässt sich nach (d) die Abbildung $\sigma$ als Produkt $\sigma = \sigma_1\dots\sigma_t$ schreiben, wobei $\sigma_1,\dots,\sigma_t$ einfache Spiegelungen seien. 
+  Nehmen wir $\sigma \neq \mathds{1}$ an, so lässt sich nach (d) die Abbildung $\sigma$ als Produkt $\sigma = \sigma_{\alpha_1}\dots\sigma_{\alpha_t}$ schreiben, wobei $\alpha_1,\dots,\alpha_t$ einfache Wurzeln seien. 
   Nach der konstruktiven Definition des Hüllenoperators für Gruppen können wir zusätzlich annehmen, dass $t$ minimal gewählt sei.
   Dann ist nach Korollar \ref{cor:minimalReflection} das Bild $\sigma(\alpha_t)$ negativ, also gilt insbesondere $\sigma(\alpha_t) \not\in \Delta$ im Widerspruch zur Voraussetzung.
   Die Annahme muss also verworfen werden und es folgt $\sigma = \mathds{1}$.
@@ -296,7 +302,7 @@ Aus der Tatsache, dass $\W$ von einfachen Spiegelungen erzeugt wird, lassen sich
 
 \begin{lem}
   \label{lem:lengthAndNegativeRoots}
-  Sei $\Phi$ ein Wurzelsystem in $E$ mit Fundamentalsystem $\Delta$ und $\W$ die zugehörige \weyl\hyp{}Gruppe.
+  Sei $\Phi$ ein Wurzelsystem über $E$ mit Fundamentalsystem $\Delta$ und $\W$ die zugehörige \weyl\hyp{}Gruppe.
   Für $\sigma \in \W$ bezeichne $n(\sigma)$ die Anzahl der positiven Wurzeln $\alpha$ mit negativem Bild $\sigma(\alpha)$.
   Dann gelten die folgenden Aussagen:
   \begin{enumerate}[(1)]
@@ -321,27 +327,32 @@ Aus der Tatsache, dass $\W$ von einfachen Spiegelungen erzeugt wird, lassen sich
   Ist $\ell(\sigma)=0$, so gilt $\sigma = \mathds{1}$, was wiederum $n(\sigma)=0$ zur Folge hat.
 
   Angenommen, die Behauptung gelte für alle $\tau \in \W$ mit $\ell(\tau) < \ell(\sigma)$.
-  Wir schreiben nun $\sigma$ in der reduzierten Form $\sigma = \sigma_{\alpha_1} \dots \sigma_{\alpha_t}$ und definieren $\alpha := \alpha_t$.
+  Wir schreiben nun $\sigma$ als reduzierten Ausdruck $\sigma = \sigma_{\alpha_1} \dots \sigma_{\alpha_t}$ und definieren $\alpha := \alpha_t$.
   Über Korollar \ref{cor:minimalReflection} folgt damit die Negativität von $\sigma(\alpha)$.
   Aufgrund von (1) können wir einerseits $n(\sigma\sigma_\alpha) = n(\sigma) - 1$ folgern.
-  
-  Andererseits gilt $\ell(\sigma\sigma_\alpha) = \ell(\sigma_{\alpha_1} \dots \sigma_{\alpha_{t -1}}) = \ell(\sigma) - 1 < \ell(\sigma)$.
+  Andererseits gilt 
+  \begin{displaymath}
+  \ell(\sigma\sigma_\alpha) 
+  = \ell(\sigma_{\alpha_1} \dots \sigma_{\alpha_{t}} \sigma_{\alpha_t}) 
+  = \ell(\sigma_{\alpha_1} \dots \sigma_{\alpha_{t -1}}) 
+  = \ell(\sigma) - 1 < \ell(\sigma).
+  \end{displaymath}
   Mit der Induktions\-voraussetzung folgt somit $\ell(\sigma\sigma_\alpha) = n(\sigma\sigma_\alpha)$, also $\ell(\sigma) - 1 = n(\sigma) - 1$, woraus sich die Behauptung ergibt.
 \end{proof}
 
 Nun betrachten wir die einfach transitive Operation der \weyl\hyp{}Gruppe auf den \weyl\hyp{}Kammern aus Satz \ref{thm:simplyTransitive}.
-Es soll gezeigt werden, dass der in der \euklid ischen Topologie gebildete Abschluss $\overline{\mathfrak{C}(\Delta)}$ der Fundamentalkammer bezüglich des Fundamentalsystems $\Delta$ ein \emph{Fundamentalbereich} der Gruppenoperation von $\W$ auf $E$ ist.
+Es soll gezeigt werden, dass der in der \euklid ischen Topologie gebildete Abschluss $\overline{\mathfrak{C}(\Delta)}$ der Fundamentalkammer bezüglich des Fundamentalsystems $\Delta$ ein \emph{Fundamentalbereich} der natürlichen Gruppenoperation von $\W$ auf $E$ ist.
 Dies bedeutet, dass für alle Vektoren $x \in E$ genau ein $y \in \overline{\mathfrak{C}(\Delta)}$ existiert mit $x \in \W y = \{\sigma(y) \mid \sigma \in \W\}$.
 
 \begin{lem}
   \label{lem:fundamentalDomain}
-  Sei $\Phi$ ein Wurzelsystem in $E$ mit Fundamentalsystem $\Delta$ und $\W$ die zugehörige \weyl\hyp{}Gruppe.
+  Sei $\Phi$ ein Wurzelsystem über $E$ mit Fundamentalsystem $\Delta$ und $\W$ die zugehörige \weyl\hyp{}Gruppe.
   Dann gelten folgende Aussagen:
   \begin{enumerate}[(1)]
     \item Jeder Punkt aus $E$ liegt in der $\W$\hyp{}Bahn eines Elementes aus  $\overline{\mathfrak{C}(\Delta)}$.
     \item Falls für $\lambda, \mu \in \overline{\mathfrak{C}(\Delta)}$ ein $\sigma \in \W$ existiert mit $\sigma (\lambda) = \mu$, dann ist $\sigma$ das Produkt einfacher Spiegelungen, die $\lambda$ fixieren, und es gilt $\lambda = \mu$.
   \end{enumerate}
-  Insbesondere ist $\overline{\mathfrak{C}(\Delta)}$ ein Fundamentalbereich der Gruppenoperation der Gruppe $\W$ auf dem Vektorraum $E$.
+  Insbesondere ist $\overline{\mathfrak{C}(\Delta)}$ ein Fundamentalbereich der natürlichen Gruppenoperation der Gruppe $\W$ auf dem Vektorraum $E$.
 \end{lem}
 
 Eine Verschärfung von Lemma \ref{lem:fundamentalDomain} findet sich in \cite[S.22]{humphreys1992reflection}.

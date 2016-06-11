@@ -6,7 +6,7 @@ Im Folgenden bezeichne $\Delta$ ein fest gewähltes Fundamentalsystem des Wurzel
 
 \begin{lem}
   \label{lem:independentSet}
-  Sei $M \subseteq E$ eine Teilmenge von Vektoren und $P_\gamma$ eine Hyperebene.
+  Sei $M \subseteq E$ eine Teilmenge von Vektoren und $P_\gamma$ mit $\gamma \in E$ eine Hyperebene.
   Liegen alle Elemente von $M$ auf derselben Seite von $P_\gamma$ und gilt zudem $(\alpha, \beta) \leq 0$ für alle paarweise verschiedenen $\alpha, \beta \in M$, dann ist $M$ linear unabhängig.
 \end{lem}
 
@@ -94,7 +94,7 @@ Das folgende Lemma demonstriert, wie sich aus einer positiven Wurzel neue positi
   Es kann $\beta$ nicht proportional zu $\alpha$ sein, da sonst nach \hyperref[it:R2]{(R2)} und unter der Voraussetzung $\beta \neq \alpha$ ein Widerspruch zur Voraussetzung entsteht, dass $\beta$ positiv ist.
   Daher existiert ein $\gamma \neq \alpha$ mit $k_\gamma > 0$.
 
-  Aufgrund der Linearität von $\sigma_\alpha$ besitzt dann auch die Wurzel $\sigma_\alpha(\beta)$ mindestens einen positiven Linearfaktor und damit ist nach \hyperref[it:B2]{(B2)} auch $\sigma_\alpha(\beta)$ positiv.
+  Aufgrund der Linearität von $\sigma_\alpha$ besitzt dann auch die Wurzel $\sigma_\alpha(\beta)$ mindestens einen positiven Linearfaktor und ist damit nach \hyperref[it:B2]{(B2)} ebenfalls positiv.
   Des Weiteren ist $\sigma_\alpha(\beta)$ nicht proportional zu $\alpha$, da nach \hyperref[it:R2]{(R2)} sonst $\beta = -\alpha$ gelten würde, was im vorangehenden Absatz bereits ausgeschlossen wurde.
   Hieraus folgt die Behauptung.
 \end{proof}
@@ -109,8 +109,8 @@ Das folgende Lemma demonstriert, wie sich aus einer positiven Wurzel neue positi
   Es gilt mit Lemma \ref{lem:permute}
   \begin{align*}
     \sigma_\alpha(\delta) 
-    &= \sigma_\alpha(\frac{1}{2} \sum_{\beta \in \Phi^+} \beta )\\
-    &= \sigma_\alpha(\frac{1}{2} \sum_{\substack{\beta \in \Phi^+\\ \beta \neq \alpha}} \beta + \frac{1}{2}\alpha ) \\
+    &= \sigma_\alpha\bigg(\,\frac{1}{2} \sum_{\beta \in \Phi^+} \beta \bigg)\\
+    &= \sigma_\alpha\bigg(\,\frac{1}{2} \sum_{\substack{\beta \in \Phi^+\\ \beta \neq \alpha}} \beta + \frac{1}{2}\alpha \bigg) \\
     &= \frac{1}{2} \sum_{\substack{\beta \in \Phi^+\\ \beta \neq \alpha}} \sigma_\alpha(\beta) + \frac{1}{2} \sigma_\alpha(\alpha) \\
     &= \frac{1}{2} \sum_{\substack{\beta \in \Phi^+\\ \beta \neq \alpha}} \beta - \frac{1}{2} \alpha \\
     &= \frac{1}{2} \sum_{\substack{\beta \in \Phi^+\\ \beta \neq \alpha}} \beta + \frac{1}{2} \alpha  - \frac{1}{2} \alpha - \frac{1}{2} \alpha \\
@@ -131,11 +131,12 @@ Das folgende Lemma liefert ein Kriterium dafür, wann sich Verknüpfungen von Sp
   Sei $\beta_i := \sigma_{i + 1} \dots \sigma_{t-1}(\alpha_t)$, für alle $0 \leq i \leq t - 2$ und $\beta_{t - 1} := \alpha_t$.
   Nach Voraussetzung ist $\beta_0$ negativ und $\beta_{t - 1}$ als einfache Wurzel positiv.
   Es existiert also aufgrund der Endlichkeit der Folge der $\beta_i$ ein minimaler Index $s$, sodass jeweils $\beta_s$ positiv und $\sigma_s(\beta_s) = \beta_{s - 1}$ negativ sind.
-  Wiederum impliziert Lemma \ref{lem:permute} die Gleichung $\beta_s = \alpha_s$, da sonst andernfalls $\sigma_s\beta_s$ positiv sein müsste.
+  Lemma \ref{lem:permute} impliziert die Gleichheit $\beta_s = \alpha_s$, da sonst andernfalls $\sigma_s(\beta_s)$ positiv sein müsste.
   Mit Lemma \ref{lem:conjReflection} folgt sodann
   \begin{displaymath}
     \sigma_s 
     = \sigma_{\alpha_s} 
+    = \sigma_{\beta_s}
     = \sigma_{\sigma_{s+1} \dots \sigma_{t - 1}(\alpha_t)}
     = (\sigma_{s+1} \dots \sigma_{t - 1}) \sigma_{t} (\sigma_{s+1} \dots \sigma_{t - 1})^{-1}.
   \end{displaymath}
@@ -151,7 +152,7 @@ Das folgende Lemma liefert ein Kriterium dafür, wann sich Verknüpfungen von Sp
 
 \begin{cor}
   \label{cor:minimalReflection}
-  Sei $\sigma = \sigma_1 \dots \sigma_t \in \W$, mit einfachen Spiegelungen $\sigma_i$, wobei $t$ minimal gewählt sei. Dann ist $\sigma(\alpha_t)$ eine negative Wurzel.
+  Sei $\sigma = \sigma_1 \dots \sigma_t \in \W$ mit einfachen Spiegelungen $\sigma_i$, wobei $t$ minimal gewählt sei. Dann ist $\sigma(\alpha_t)$ eine negative Wurzel.
 \end{cor}
 
 \begin{proof}
