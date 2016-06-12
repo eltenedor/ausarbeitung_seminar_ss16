@@ -7,15 +7,15 @@ Es sei wieder $\Phi$ ein fest gewähltes Wurzelsystem über dem \euklid ischen V
 \begin{defn}
   \label{def:irreducibleRoot}
   Ein Wurzelsystem $\Phi$ heißt \emph{reduzibel}, wenn eine Zerlegung $\Phi = \Phi_1 \dot{\cup} \Phi_2$ in zwei nichtleere disjunkte Mengen existiert, sodass die Elemente aus unterschiedlichen Mengen paarweise orthogonal sind.
-  Ein Wurzelsystem, welches sich nicht orthogonal zerlegen lässt bezeichnet man als \emph{irreduzibel}.
+  Ein Wurzelsystem, welches sich nicht orthogonal zerlegen lässt, bezeichnet man als \emph{irreduzibel}.
   Entsprechend bezeichnet man auch ein Fundamentalsystem eines Wurzelsystems als \emph{irreduzibel}, falls keine disjunkte Zerlegung im obigen Sinne existiert.
 \end{defn}
 
 \begin{bem}
   Sind $(E,\Phi)$ und $(F,\Psi)$ zwei Wurzelsysteme, so ist auch die äußere direkte Summe $E \oplus F$ auf natürliche Weise ein \euklid ischer Vektorraum.
-  Ebenso ist die Menge $(R \times \{0_F\}) \cup (\{0_E\} \times S)$ ein Wurzelsystem dieses Produktraumes, welches ebenso als \emph{direkte Summe} der Wurzelsysteme bezeichnet wird.
+  Ebenso ist die Menge $(R \times \{0_F\}) \cup (\{0_E\} \times S)$ ein Wurzelsystem dieses Produktraums, welches ebenso als \emph{direkte Summe} der Wurzelsysteme bezeichnet wird.
   Ein Beweis hierzu findet sich in \cite[S.199]{hall2015lie}.
-  Ist nun im Sinne von Definition \ref{def:irreducibleRoot} ein Wurzelsystem reduzibel, so liefert die orthogonale Zerlegung des Wurzelsystems eine orthogonale Zerlegung $E = E_1 \oplus E_2$ des Vektorraumes.
+  Ist nun im Sinne von Definition \ref{def:irreducibleRoot} ein Wurzelsystem reduzibel, so liefert die orthogonale Zerlegung des Wurzelsystems eine orthogonale Zerlegung $E = E_1 \oplus E_2$ des Vektorraums.
   Damit ist ein Wurzelsystem genau dann irreduzibel, wenn es nicht als direkte Summe von zwei Wurzelsystemen geschrieben werden kann.
 \end{bem}
 
@@ -33,32 +33,34 @@ Es sei wieder $\Phi$ ein fest gewähltes Wurzelsystem über dem \euklid ischen V
 
   ``$\Leftarrow$'':
   Angenommen, $\Phi$ sei irreduzibel und es existiere eine Zerlegung $\Delta = \Delta_1 \cup \Delta_2$ in disjunkte nichtleere Teilmengen $\Delta_1$ und $\Delta_2$ mit $(\Delta_1, \Delta_2) = 0$.
-  Wir definieren für alle $i \in \{1,2\}$ die Mengen $\Phi_i$ aller Wurzeln, die in der $\W$\hyp{}Bahn einer Wurzel aus $\Delta_i$ liegen. 
+  Wir definieren für $i \in \{1,2\}$ die Mengen $\Phi_i$ aller Wurzeln, die in der $\W$\hyp{}Bahn einer Wurzel aus $\Delta_i$ liegen. 
   Nach Satz \ref{thm:simplyTransitive}(c) liegt jede Wurzel in der $\W$\hyp{}Bahn einer einfachen Wurzel, womit $\Phi = \Phi_1 \cup \Phi_2$ gilt.
 
   Sei $\gamma$ eine Wurzel in $\Phi$.
   Wegen Satz \ref{thm:simplyTransitive}(c) existieren ein $\sigma \in \W$ und ein $\alpha \in \Delta$, sodass $\sigma(\alpha) = \gamma$ gilt.
   Aus Symmetriegründen nehmen wir an, dass $\alpha$ in $\Delta_1$ und somit $\gamma$ in $\Phi_1$ liegt.
 
-  Es existiert eine Darstellung $\sigma = \sigma_{\alpha_1} \dots \sigma_{\alpha_t}$ ($\ast$) mit $\alpha_i \in \Delta$.
+  Es existiert nach Satz \ref{thm:simplyTransitive} eine Darstellung $\sigma = \sigma_{\alpha_1} \dots \sigma_{\alpha_t}$ ($\ast$) mit $\alpha_i \in \Delta$.
   Wir können ohne Beschränkung der Allgemeinheit $\alpha_1,\dots,\alpha_t \in \Delta_1$ annehmen.
   Denn, da nach Voraussetzung $(\Delta_1, \Delta_2) = 0$ gilt, folgt mit Lemma \ref{lem:orthogonalRoots} für die Darstellung ($\ast$), dass sich die Faktoren umordnen lassen zu
   \begin{displaymath}
     \sigma = \sigma_{\alpha_1} \dots \sigma_{\alpha_j} \sigma_{\alpha_{j+1}} \dots \sigma_{\alpha_t},
   \end{displaymath}
-  wobei $1 \leq j < t$ und $\alpha_k \in \Delta_2$ für alle $k > j$ gilt.
+  wobei $\alpha_1,\dots,\alpha_j \in \Delta_1$ und $\alpha_{j+1},\dots,\alpha_t \in \Delta_2$ liegen für $1 \leq j \leq t$.
   Da $\alpha$ aus $\Delta_1$ stammt und für $\alpha_k \in \Delta_2$ die Identität $\sigma_{\alpha_k}(\alpha) = \alpha - \langle \alpha, \alpha_k \rangle \alpha_k = \alpha$ gilt, folgt sogleich $\sigma = \sigma_{\alpha_1} \dots \sigma_{\alpha_j}$. 
   Damit ergibt sich schließlich $\gamma = \sigma(\alpha) = \sigma_{\alpha_1} \dots \sigma_{\alpha_j}(\alpha)$.
 
   Aus der Darstellung der Spiegelung an einer einfachen Wurzel folgt, dass $\gamma$ in $E_1 := \spn(\Delta_1)$ liegt.
-  Es gilt also auch $\Phi_1 \subseteq E_1$.
+  Da $\gamma \in \Phi_1$ beliebig gewählt wurde, gilt also auch $\Phi_1 \subseteq E_1$.
   Mit der Bilinearität des Skalarproduktes folgt dann $(\Phi_1, \Phi_2) = 0$.
   Da das Skalarprodukt nicht ausgeartet ist, muss dann $\Phi_1$ oder $\Phi_2$ leer sein.
   Dies impliziert jedoch, dass im Widerspruch zur Voraussetzung $\Delta_1$ oder $\Delta_2$ leer ist.
 \end{proof}
 
+\newpage
 Das nächste Lemma beschäftigt sich mit bezüglich der Halbordnung $\succeq$ auf $\Phi$ maximalen Wurzeln. 
 Ihre Existenz ist aufgrund der in \hyperref[it:R1]{(R1)} vorausgesetzten Endlichkeit von $\Phi$ immer gewährleistet. 
+Über ihre Eindeutigkeit gibt das nachfolgende Lemma Auskunft.
 
 \begin{lem}
   \label{lem:maximalRoot}
@@ -86,11 +88,11 @@ Ihre Existenz ist aufgrund der in \hyperref[it:R1]{(R1)} vorausgesetzten Endlich
   Seien also $\alpha \in \Delta_1$ und $\alpha' \in \Delta_2$ mit $(\alpha, \alpha') < 0$ gegeben.
   Damit folgt dann, dass in ($\ast$) sogar die strikte Ungleichung $(\alpha', \beta) < 0$ gilt.
   Lemma \ref{lem:sumDiffRoot} ergibt, dass $\alpha' +  \beta$ eine positive Wurzel ist.
-  Dies widerspricht aber der vorausgesetzten Maximalität von $\beta$
-  Die anfängliche Annahme $\Delta_2 \neq \emptyset$ muss also verworfen werden.
+  Dies widerspricht aber der vorausgesetzten Maximalität von $\beta$.
+  Die zu Beginn gemachte Annahme $\Delta_2 \neq \emptyset$ muss also verworfen werden.
   Also sind alle Linearfaktoren $k_\alpha$ strikt positiv.
 
-  Zudem zeigt der vorangehende Beweis, dass $(\alpha', \beta) \geq 0$ gilt für alle $\alpha' \in \Delta$ und dass zumindest ein $\alpha' \in \Delta$ existiert mit $(\alpha', \beta) > 0$.
+  Zudem zeigt der vorangehende Beweis, dass für alle $\alpha' \in \Delta$ die Ungleichung $(\alpha', \beta) \geq 0$ gilt und dass zumindest ein $\alpha' \in \Delta$ mit $(\alpha', \beta) > 0$ existiert.
     Denn $\Delta$ ist nach \hyperref[it:B2]{(B2)} eine Vektorraumbasis für $E$ und falls für alle $\alpha' \in \Delta$ die Gleichheit $(\alpha', \beta) = 0$ gilt, folgt $(v, \beta) = 0$ für alle $v \in E$ und damit $\beta = 0$, da Skalarprodukte nicht ausgeartet sind.
 
   Nun wollen wir die Eindeutigkeit der maximalen Wurzel zeigen.
@@ -113,35 +115,36 @@ Ihre Existenz ist aufgrund der in \hyperref[it:R1]{(R1)} vorausgesetzten Endlich
   \label{lem:irreducibleGroupOp}
   Sei $\Phi$ ein irreduzibles Wurzelsystem.
   Dann ist auch die Gruppenoperation von $\W$ irreduzibel über $E$, es existieren also außer $\{0\}$ und $E$ keine weiteren $\W$\hyp{}invarianten Unterräume von $E$.
-  Insbesondere erzeugt die $\W$\hyp{}Bahn einer beliebigen Wurzel $\alpha$ den gesamten Vektorraum $E$.
+  Insbesondere ist der Vektorraum $E$ das lineare Erzeugnis der $\W$\hyp{}Bahn einer beliebigen Wurzel $\alpha$.
 \end{lem}
 
 \begin{proof}
   Sei $E'$ ein nichttrivialer $\W$\hyp{}invarianter Untervektorraum von $E$.
   Dann ist auch das orthogonale Komplement $(E')^\perp$ ein $\W$\hyp{}invarianter Unterraum.
   Ist nämlich $\alpha \in E'$ und $\beta \in (E')^\perp$, so gilt für $\sigma \in \W$ die Gleichung
-  $\langle \alpha, \sigma(\beta) \rangle = \langle \sigma^{-1}(\alpha), \beta \rangle = 0$, da $\sigma^{-1}(\alpha) \in E'$ gilt.
+  $( \alpha, \sigma(\beta) ) = ( \sigma^{-1}(\alpha), \beta ) = 0$, da $\sigma^{-1}(\alpha) \in E'$ gilt.
   Es folgt also auch $\sigma(\beta) \in (E')^\perp$ und damit die $\W$\hyp{}Invarianz des Untervektorraums $(E')^\perp$. 
   Zudem gilt die Identität $E = E' \oplus (E')^\perp$.
 
-  Dann ist aber auch $\Phi = (\Phi \cap E') \cup (\Phi \cap (E')^\perp$ eine Zerlegung von $\Phi$ in zueinander orthogonale Teilmengen.
+  Dann ist aber auch $\Phi = (\Phi \cap E') \cup (\Phi \cap (E')^\perp)$ eine Zerlegung von $\Phi$ in zueinander orthogonale Teilmengen.
   Da aber $\Phi$ als irreduzibles Wurzelsystem vorausgesetzt wurde muss eine der beteiligten Teilmengen leer sein.
   Angenommen, es gelte $\Phi \subseteq E'$. 
   Da Wurzelsysteme nach \hyperref[it:W1]{(W1)} den Vektorraum erzeugen, gilt $E = E'$. 
   Im Fall $\Phi \subseteq (E')^\perp$ folgt $E = (E')^\perp$.
   Damit haben wir den ersten Teil der Behauptung bewiesen.
 
-  Es ist der Spann einer $\W$\hyp{}Bahn einer Wurzel $\alpha$ ein nicht trivialer $\W$\hyp{}invarianter Untervektorraum von $E$.
+  Es ist der Spann der $\W$\hyp{}Bahn einer Wurzel $\alpha$ ein nicht trivialer $\W$\hyp{}invarianter Untervektorraum von $E$.
   Mit dem vorangehenden Beweis muss $\spn(\W\alpha) = E$ gelten.
   Damit ist die Behauptung vollständig bewiesen.
 \end{proof}
 
 \begin{bem}
-  Der Beweis zeigt bereits auf, wie sich reduzible Wurzelsysteme aus irreduziblen Wurzelsystemen zusammensetzen.
+  Der Beweis zeigt bereits auf, wie sich reduzible Wurzelsysteme aus irreduziblen Wurzelsystemen zusammensetzen:
   Zu jeder disjunkten Zerlegung des Wurzelsystems korrespondiert nämlich eine orthogonale Summe $\W$\hyp{}invarianter Untervektorräume.
   Eine Weiterführung dieses Gedankens zur Klassifikation von Wurzelsystemen findet sich in \cite[S.57ff.]{humphreys1972introduction}.
 \end{bem}
 
+\newpage
 \begin{lem}
   \label{lem:rootLength}
   Sei $\Phi$ irreduzibel.
@@ -165,6 +168,7 @@ Ihre Existenz ist aufgrund der in \hyperref[it:R1]{(R1)} vorausgesetzten Endlich
   Da nach Lemma \ref{lem:irreducibleGroupOp} die Bahn $\W\alpha$ den Vektorraum $E$ erzeugt, ist $\beta$ nicht orthogonal zu allen Bahnelementen.
   Wir können daher ohne Beschränkung der Allgemeinheit wir $(\alpha, \beta) \neq 0$ annehmen.
   Ansonsten ersetzen wir $\alpha$ durch ein $\W$\hyp{}Bahnelement $\sigma(\alpha)$ mit $(\sigma(\alpha), \beta) \neq 0$.
+
   Im Falle $\alpha = \beta$ gibt es nichts zu zeigen, daher nehmen wir an, es gelte $\alpha \neq \beta$.
   Nun folgt unter Berücksichtigung von \cite[S.45]{humphreys1972introduction}, dass $\langle \alpha, \beta \rangle = \langle \beta, \alpha \rangle = \pm 1$ gelten muss.
   Aufgrund der im vorigen Ausdruck für $\alpha$ und $\beta$ geltenden Symmetrie ist der im Allgemeinen nur im ersten Argument lineare Term $\langle \alpha, \beta \rangle$ nun sogar bilinear.
@@ -198,8 +202,9 @@ Ihre Existenz ist aufgrund der in \hyperref[it:R1]{(R1)} vorausgesetzten Endlich
   Da die Normabbildung eingeschränkt auf $\Phi$ nur zwei Werte annimmt, reicht es aus $(\beta, \beta) \geq (\alpha, \alpha)$ zu zeigen.
   Dazu ersetzen wir $\alpha$ und $\beta$ durch die nach \ref{lem:fundamentalDomain} eindeutig bestimmten Wurzeln aus $\W\alpha$ beziehungsweise $\W\beta$, die im Abschluss der Fundamentalkammer bezüglich $\Delta$ liegen. 
   Dies ist ohne Einschränkungen möglich, da Lemma \ref{lem:rootLength} garantiert, dass alle Bahnelemente dieselbe Norm besitzen.
-  Nach Lemma \ref{lem:maximalRoot} gilt aufgrund der Maximalität von $\beta$ nun $\beta - \alpha \succeq 0$.
-  Weiter ist $(\gamma, \beta - \alpha) \geq 0$ für alle $\gamma \in \overline{\mathfrak{C}(\Delta)}$, also insbesondere auch für $\gamma = \alpha$ und $\gamma = \beta$, was zu den Ungleichungen
+  Nach Lemma \ref{lem:maximalRoot} gilt, aufgrund der Maximalität von $\beta$, nun $\beta - \alpha \succeq 0$.
+  Daher folgt $(\gamma, \beta - \alpha) \geq 0$ ($\ast$) für alle $\gamma \in \overline{\mathfrak{C}(\Delta)}$, denn $\beta - \alpha$ lässt sich als Linearkombination einfacher Wurzeln mit sämtlich positiven Koeffizienten darstellen.
+  Die Ungleichung ($\ast$) gilt also insbesondere auch für $\gamma = \alpha$ und $\gamma = \beta$, was zu 
   \begin{displaymath}
     (\beta, \beta) - (\beta, \alpha) \geq 0 \quad\text{und}\quad 
     (\beta, \alpha) - (\alpha, \alpha) 

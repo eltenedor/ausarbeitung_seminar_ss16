@@ -83,10 +83,11 @@ Ein Lemma stellt sicher, dass es sich bei $\W$ um eine endliche Gruppe handelt.
     \draw[->,thick, black] (0, 0) -- (3,-3);
     \draw[thin] (2.0,0) -- (0,2.0) -- (-2.0,0) -- (0,-2.0) -- cycle;
   \end{tikzpicture}
-  \caption{Die \weyl\hyp{}Gruppe des Wurzelsystems $\mathbf{A_2}$ (links) bildet gerade die Symmetriegruppe $\mathbf{D_3}$ des eingezeichneten Dreiecks. Die gestrichelten Linien stellen die von den Wurzeln erzeugten Spiegelungsebenen dar. Im Falle des Wurzelsystems $\mathbf{B_2}$ (rechts) bildet die \weyl\hyp{}Gruppe gerade die Symmetriegruppe $\mathbf{D_4}$ des Quadrats.}
+  \caption{Die \weyl\hyp{}Gruppe des Wurzelsystems $\mathbf{A_2}$ (links) bildet die Symmetriegruppe $\mathbf{D_3}$ des eingezeichneten Dreiecks. Die gestrichelten Linien stellen die von den Wurzeln erzeugten Spiegelungsebenen dar. Im Falle des Wurzelsystems $\mathbf{B_2}$ (rechts) bildet die \weyl\hyp{}Gruppe die Symmetriegruppe $\mathbf{D_4}$ des Quadrats.}
 \end{figure}
 
 Es lassen sich nun unterschiedliche von $\W$ induzierte Gruppenoperationen betrachten. 
+Ziel dieses Abschnittes ist es zu beweisen, dass die durch die Gruppe $\W$ auf der Menge der Fundamentalsysteme induzierte Gruppenoperation scharf transitiv ist.
 Wir beginnen mit einer für beliebige Gruppenoperationen definierten Eigenschaft.
 
 \begin{defn}
@@ -94,7 +95,6 @@ Wir beginnen mit einer für beliebige Gruppenoperationen definierten Eigenschaft
   Die Gruppenoperation $\circ \colon G \times X \to X$ heißt \emph{scharf transitiv}, wenn für alle $x,y \in X$ genau ein $g \in G$ existiert, sodass $g \circ x = y$ gilt. 
 \end{defn}
 
-Ziel dieses Abschnittes ist es zu beweisen, dass die durch die Gruppe $\W$ auf der Menge der Fundamentalsysteme induzierte Gruppenoperation scharf transitiv ist.
 Folgende Proposition gibt über die Wohldefiniertheit der von uns zu betrachtenden Gruppenoperationen Auskunft.
 
 \begin{prop}
@@ -369,32 +369,32 @@ Eine Verschärfung von Lemma \ref{lem:fundamentalDomain} findet sich in \cite[S.
   Wir möchten nun zeigen, dass $\mu \in \overline{\mathfrak{C}(\Delta)}$ gilt.
   Sei dazu $\alpha \in \Delta$.
   Es ist $\sigma_\alpha(\mu) = \mu - \langle \mu, \alpha \rangle \alpha$.
-  Da $\sigma_\alpha(\mu) = \sigma_\alpha \sigma (\lambda) \in \W\lambda$ gilt, folgt $\langle \mu, \alpha \rangle \geq 0$, um nicht der Maximalität von $\mu$ zu widersprechen.
-  Damit liegt jedoch $\mu$ in $\overline{\mathfrak{C}(\Delta)}$.
+  Da $\sigma_\alpha(\mu) = \sigma_\alpha \sigma (\lambda) \in \W\lambda$ gilt, folgt $\langle \mu, \alpha \rangle \geq 0$ beziehungsweise $(\mu,\alpha) \geq 0$, um nicht der Maximalität von $\mu$ zu widersprechen.
+  Da $\alpha$ beliebig war, liegt somit $\mu$ in $\overline{\mathfrak{C}(\Delta)}$.
 
   (2):
   Wir führen einen Induktionsbeweis über die Länge $\ell(\sigma)$.
   Nach der konstruktiven Definition des Hüllenoperators für Gruppen und Satz \ref{thm:simplyTransitive} lässt sich annehmen, dass $\sigma_\alpha$ bereits Produkt einfacher Spiegelungen ist.
 
-  Ist $\ell(\sigma) = 0$, so folgt $\sigma = \mathds{1}$, womit sich $\lambda = \mu$ ergibt.
+  Ist $\ell(\sigma) = 0$, so folgt $\sigma = \mathds{1}$, womit sich $\lambda = \mathds{1}(\lambda) = \sigma(\lambda) = \mu$ ergibt.
 
   Sei nun $\ell(\sigma) > 0$ und die Aussage für alle $\tau \in \W$ mit $\ell(\tau) < \ell(\sigma)$ bereits bewiesen.
   Nach Lemma \ref{lem:lengthAndNegativeRoots} bildet $\sigma$ eine positive Wurzel auf eine negative Wurzel ab.
   
   Insbesondere existiert also eine einfache Wurzel $\alpha \in \Delta$ mit negativem Bild $\sigma(\alpha)$.
-  Für alle $\xi \in \mathfrak{C}(\Delta)$ gilt $(\xi, \sigma(\alpha)) = \sum_{\beta \in \Delta} k_\beta (\xi,\beta) < 0$, denn alle $k_\beta$ sind nach Voraussetzung negativ.  
-  Zudem gilt $(\xi,\beta) > 0$, weil $\xi$ als Element der Fundamentalkammer mit allen einfachen Wurzeln einen spitzen Winkel einschließt.
+  Für alle $\xi \in \mathfrak{C}(\Delta)$ gilt $(\xi, \sigma(\alpha)) = \sum_{\beta \in \Delta} k_\beta (\xi,\beta) < 0$, denn alle $k_\beta$ sind nach Voraussetzung negativ und gilt $(\xi,\beta) > 0$, weil $\xi$ als Element der Fundamentalkammer mit allen einfachen Wurzeln einen spitzen Winkel einschließt.
   Da $\mu \in \overline{\mathfrak{C}(\Delta)}$ vorausgesetzt wurde existiert eine Folge $(\xi_n)_{n \in \N}$ in $\mathfrak{C}(\Delta)$ mit $\lim_{n \to \infty} \xi_n = \mu$.
-  Aufgrund der Stetigkeit des Skalarproduktes ergibt sich somit auch
-\begin{displaymath}
-  (\mu, \sigma(\alpha)) = (\lim_{n \to \infty} \xi_n, \sigma(\alpha)) = \lim_{n \to \infty} ( \xi_n, \sigma(\alpha)) \leq 0.
-\end{displaymath}
-  
-  Andererseits folgt mit derselben Argumentation angewendet auf $\lambda$ die Ungleichungskette
+  Aufgrund der Stetigkeit des Skalarproduktes ergibt sich somit einerseits
   \begin{displaymath}
-    0 \leq (\lambda, \alpha) = (\sigma^{-1}(\mu), \alpha) = (\mu, \sigma(\alpha)) \leq 0,
+    (\lambda,\alpha)
+    = (\sigma(\mu),\alpha)
+    = (\mu, \sigma(\alpha)) 
+    = (\lim_{n \to \infty} \xi_n, \sigma(\alpha)) 
+    = \lim_{n \to \infty} ( \xi_n, \sigma(\alpha)) \leq 0,
   \end{displaymath}
-  weil Spiegelungen Isometrien sind.
+  weil $\sigma$ eine Isometrie ist.
+  Andererseits folgt aus $\lambda \in \overline{\mathfrak{C}(\Delta)}$ auch $0 \leq (\lambda,\alpha)$, da $\lambda = \lim_{n \to \infty} \eta_n$ für $\eta_n \in \mathfrak{C}(\Delta)$.
+
   Hieraus folgt $(\lambda, \alpha) = 0$, also gilt $\lambda \in P_\alpha$.
   Dies wiederum impliziert $\sigma_\alpha(\lambda) = \lambda$ und weiter noch $\sigma \sigma_\alpha(\lambda) = \mu$.
   Somit erfüllt $\sigma \sigma_\alpha$ die Voraussetzungen des zu beweisenden Lemmas. 
@@ -403,3 +403,4 @@ Eine Verschärfung von Lemma \ref{lem:fundamentalDomain} findet sich in \cite[S.
   Nach Lemma \ref{lem:lengthAndNegativeRoots}(1) gilt $n(\sigma\sigma_\alpha) = n(\sigma) - 1$, woraus schließlich mit \ref{lem:lengthAndNegativeRoots}(2) die Gleichheit $\ell(\sigma\sigma_\alpha) = \ell(\sigma) - 1$ folgt.
   Es gilt also $\ell(\sigma\sigma_\alpha) < \ell(\sigma)$ und darum lässt sich aufgrund der Induktionsannahme $\lambda = \mu$ folgern.
 \end{proof}
+
