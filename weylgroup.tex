@@ -87,12 +87,12 @@ Ein Lemma stellt sicher, dass es sich bei $\W$ um eine endliche Gruppe handelt.
 \end{figure}
 
 Es lassen sich nun unterschiedliche von $\W$ induzierte Gruppenoperationen betrachten. 
-Ziel dieses Abschnittes ist es zu beweisen, dass die durch die Gruppe $\W$ auf der Menge der Fundamentalsysteme induzierte Gruppenoperation scharf transitiv ist.
+Ziel dieses Abschnittes ist es zu beweisen, dass die durch die Gruppe $\W$ auf der Menge der Fundamentalsysteme induzierte Gruppenoperation einfach transitiv ist.
 Wir beginnen mit einer für beliebige Gruppenoperationen definierten Eigenschaft.
 
 \begin{defn}
   Eine Gruppe $G$ operiere auf einer Menge $X$.
-  Die Gruppenoperation $\circ \colon G \times X \to X$ heißt \emph{scharf transitiv}, wenn für alle $x,y \in X$ genau ein $g \in G$ existiert, sodass $g \circ x = y$ gilt. 
+  Die Gruppenoperation $\circ \colon G \times X \to X$ heißt \emph{einfach transitiv}, wenn für alle $x,y \in X$ genau ein $g \in G$ existiert, sodass $g \circ x = y$ gilt. 
 \end{defn}
 
 Folgende Proposition gibt über die Wohldefiniertheit der von uns zu betrachtenden Gruppenoperationen Auskunft.
@@ -167,7 +167,7 @@ Folgende Proposition gibt über die Wohldefiniertheit der von uns zu betrachtend
   Damit ist auch $\sigma(\Delta)$ ein Fundamentalsystem.
 
   (d):
-  Wir stellen zunächst fest, dass aufgrund der Aussage (c), die zu zeigende Gleichheit in dem Sinne wohldefiniert ist, dass $\sigma(\Delta(\gamma))$ als Bild eines Fundamentalsystems wieder ein Fundamentalsystem darstellt.
+  Wir stellen zunächst fest, dass aufgrund der Aussage (c), die zu zeigende Gleichheit in dem Sinne wohldefiniert ist, dass $\sigma(\Delta(\gamma))$ als Bild eines Fundamentalsystems wieder ein Fuxindamentalsystem darstellt.
 
   Sei nun $\sigma(\alpha) \in \sigma(\Delta(\gamma))$.
   Mit $\alpha \in \Delta(\gamma)$ gilt definitionsgemäß $(\alpha, \gamma) > 0$.
@@ -203,7 +203,7 @@ Nun zu dem zentralen Satz dieser Ausarbeitung.
     \item Die \weyl\hyp{}Gruppe $\W$ wird erzeugt von den Spiegelungen $\sigma_\alpha$ für $\alpha \in \Delta$.
 
     \item Ist $\sigma \in \W$ und gilt $\sigma(\Delta) = \Delta$, so folgt $\sigma = \mathds{1}$.
-      Also operiert $\W$ scharf transitiv auf der Menge der Fundamental\-systeme.
+      Also operiert $\W$ einfach transitiv auf der Menge der Fundamental\-systeme.
   \end{enumerate}
 \end{thm}
 \end{samepage}
@@ -286,13 +286,13 @@ Nun zu dem zentralen Satz dieser Ausarbeitung.
   Dann ist nach Korollar \ref{cor:minimalReflection} das Bild $\sigma(\alpha_t)$ negativ, also gilt insbesondere $\sigma(\alpha_t) \not\in \Delta$ im Widerspruch zur Voraussetzung.
   Die Annahme muss also verworfen werden und es folgt $\sigma = \mathds{1}$.
 
-  Es soll nun gezeigt werden, dass hieraus bereits die scharfe Transitivität der Gruppenoperation folgt.
+  Es soll nun gezeigt werden, dass hieraus bereits die einfache Transitivität der Gruppenoperation folgt.
   Dazu seien $\Delta_1,\Delta_2$ Fundamentalsysteme und $\sigma \in \mathcal{W}$ die nach (b) existierende Abbildung mit $\sigma(\Delta_1) = \Delta_2$.
   Ist $\sigma'$ eine weitere Abbildung mit $\sigma'(\Delta_1) = \Delta_2$, so gilt insbesondere $\sigma^{-1} \sigma'(\Delta_1) = \sigma^{-1}(\Delta_2) = \sigma(\Delta_2) = \Delta_1$.
   Nach (c) existiert zudem ein $\mu \in \W$ mit $\mu(\Delta) = \Delta_1$.
   Damit folgt $\sigma^{-1} \sigma' \mu (\Delta) = \mu (\Delta)$ oder äquivalent $\mu^{-1} \sigma^{-1} \sigma' \mu (\Delta)$.
   Mit dem vorangehenden Absatz folgt sogleich $\mu^{-1} \sigma^{-1} \sigma' \mu = \mathds{1}$ und daraus $\sigma = \sigma'$.
-  Also operiert $W$ sogar scharf transitiv auf der Menge der Fundamentalsysteme.
+  Also operiert $W$ sogar einfach transitiv auf der Menge der Fundamentalsysteme.
 \end{proof}
 
 Aus der Tatsache, dass $\W$ von einfachen Spiegelungen erzeugt wird, lassen sich nun weitere Aussagen folgern.
@@ -343,7 +343,7 @@ Aus der Tatsache, dass $\W$ von einfachen Spiegelungen erzeugt wird, lassen sich
   Mit der Induktions\-voraussetzung folgt somit $\ell(\sigma\sigma_\alpha) = n(\sigma\sigma_\alpha)$, also $\ell(\sigma) - 1 = n(\sigma) - 1$, woraus sich die Behauptung ergibt.
 \end{proof}
 
-Nun betrachten wir die scharf transitive Operation der \weyl\hyp{}Gruppe auf den \weyl\hyp{}Kammern aus Satz \ref{thm:simplyTransitive}.
+Nun betrachten wir die einfach transitive Operation der \weyl\hyp{}Gruppe auf den \weyl\hyp{}Kammern aus Satz \ref{thm:simplyTransitive}.
 Es soll gezeigt werden, dass der in der \euklid ischen Topologie gebildete Abschluss $\overline{\mathfrak{C}(\Delta)}$ der Fundamentalkammer bezüglich des Fundamentalsystems $\Delta$ ein \emph{Fundamentalbereich} der natürlichen Gruppenoperation von $\W$ auf $E$ ist.
 Dies bedeutet, dass für alle Vektoren $x \in E$ genau ein $y \in \overline{\mathfrak{C}(\Delta)}$ existiert mit $x \in \W y = \{\sigma(y) \mid \sigma \in \W\}$.
 
